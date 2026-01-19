@@ -9,17 +9,17 @@ import { hotels, events, bookedActivities } from '../data/verified-data'
 import ActivityCard from '../components/ActivityCard'
 import './JourneyPlanner.css'
 
-// Map each day number to a specific image for variety and accuracy
+// Map each day number to a specific image for variety and context
 const dayImages = {
-  1: images.transport.train.url,           // Day 1: Departure - train journey
-  2: images.lucerne.chapel_bridge.url,     // Day 2: Arrival in Lucerne
-  3: images.lucerne.lake.url,              // Day 3: Full day in Lucerne
-  4: images.rigi.above_clouds.url,         // Day 4: Rigi Kaltbad - above the clouds
-  5: images.grindelwald.village.url,       // Day 5: Arrive Grindelwald
-  6: images.grindelwald.first.url,         // Day 6: Adventure day - First gondola
-  7: images.activities.fondue.url,         // Day 7: Fondue Gondola day
-  8: images.zurich.old_town.url,           // Day 8: Zürich Old Town
-  9: images.zurich.river.url               // Day 9: Departure from Zürich
+  1: images.transport.flight.url,          // Day 1: Departure - flying to Switzerland
+  2: images.lucerne.chapel_bridge.url,     // Day 2: Arrival - iconic Chapel Bridge first impression
+  3: images.lucerne.pilatus.url,           // Day 3: Lucerne exploration - Pilatus option
+  4: images.rigi.spa.url,                  // Day 4: Rigi Kaltbad - thermal spa highlight
+  5: images.grindelwald.village.url,       // Day 5: Arrive Grindelwald - village with Eiger
+  6: images.grindelwald.jungfraujoch.url,  // Day 6: Adventure - Jungfraujoch/First options
+  7: images.activities.fondue.url,         // Day 7: Fondue Gondola - the booked experience
+  8: images.zurich.old_town.url,           // Day 8: Zürich - Old Town exploration
+  9: images.zurich.grossmunster.url        // Day 9: Departure - goodbye to Zürich's towers
 }
 
 // Map day locations to activity keys

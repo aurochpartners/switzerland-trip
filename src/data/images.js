@@ -146,6 +146,11 @@ export const images = {
       url: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1200&q=80",
       alt: "Cable car gondola ascending Swiss mountains",
       credit: "Alain Bonnardeaux"
+    },
+    flight: {
+      url: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80",
+      alt: "Airplane wing view above clouds at sunset",
+      credit: "Ross Parmly"
     }
   }
 }
