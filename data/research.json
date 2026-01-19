@@ -1,0 +1,237 @@
+{
+  "verifiedEvents": [
+    {
+      "name": "LILU Light Festival",
+      "location": "Lucerne",
+      "dates": {
+        "start": "2026-01-15",
+        "end": "2026-01-25"
+      },
+      "hours": "18:00 - 22:00 daily",
+      "tripOverlap": ["2026-01-20", "2026-01-21"],
+      "description": "Light art installations throughout Old Town and lake basin",
+      "cost": "FREE outdoor viewing",
+      "ticketedEvents": {
+        "jesuitChurchShow": {
+          "bookingUrl": "lichtfestivalluzern.ch",
+          "note": "Indoor light show, tickets required"
+        }
+      },
+      "locations": "~24 installations across city",
+      "weatherNote": "Runs rain or shine - magical in rain",
+      "verificationDate": "2026-01-19",
+      "source": "lichtfestivalluzern.ch"
+    },
+    {
+      "name": "World Snow Festival",
+      "location": "Grindelwald",
+      "dates": {
+        "start": "2026-01-19",
+        "end": "2026-01-24"
+      },
+      "tripOverlap": ["2026-01-23", "2026-01-24"],
+      "theme": "Myths and Legends",
+      "artistHours": "08:00 - 18:00",
+      "illuminated": "After dark",
+      "mainLocation": "Bärplatz (2 min walk from train station)",
+      "secondaryLocation": "Männlichen (requires lift ticket)",
+      "cost": "FREE in village",
+      "note": "Arrive Jan 23 - catch final 2 days when sculptures are complete",
+      "verificationDate": "2026-01-19",
+      "source": "grindelwald.swiss"
+    },
+    {
+      "name": "FLOW Immersive Experience",
+      "location": "Zürich",
+      "dates": {
+        "start": "2026-01-09",
+        "end": "2026-02-03"
+      },
+      "tripOverlap": ["2026-01-26"],
+      "description": "Immersive light and sound art experience",
+      "needsVerification": ["exact location", "hours", "ticket price"],
+      "verificationDate": "2026-01-19",
+      "source": "Previous research - needs reconfirmation"
+    }
+  ],
+  "closuresAndAlerts": [
+    {
+      "type": "CLOSURE",
+      "name": "Weggis Boat Station",
+      "status": "CLOSED for renovation",
+      "dates": {
+        "start": "2026-01-05",
+        "end": "2026-02-11"
+      },
+      "impact": "Cannot take boat directly to Weggis for Rigi cable car",
+      "workarounds": [
+        {
+          "option": "A",
+          "route": "Boat Lucerne → Vitznau → Cogwheel train to Rigi Kaltbad",
+          "recommended": true,
+          "notes": "Most scenic option"
+        },
+        {
+          "option": "B", 
+          "route": "Boat Lucerne → Hertenstein → Replacement bus to Weggis → Cable car to Rigi Kaltbad",
+          "notes": "More complex, uses replacement bus"
+        },
+        {
+          "option": "C",
+          "route": "Train Lucerne → Arth-Goldau → Cogwheel train to Rigi Kaltbad",
+          "notes": "All-rail option, different side of mountain"
+        }
+      ],
+      "source": "lakelucerne.ch",
+      "verificationDate": "2026-01-19"
+    },
+    {
+      "type": "SEASONAL",
+      "name": "Mount Pilatus Golden Round Trip",
+      "status": "NOT AVAILABLE in winter",
+      "impact": "Cannot do the classic boat-cogwheel-cable car loop",
+      "winterAlternative": "Cable car from Kriens operates year-round",
+      "fullServiceResumes": "Late spring",
+      "source": "pilatus.ch"
+    }
+  ],
+  "operatingHours": {
+    "museumOfTransport": {
+      "winterHours": "10:00 - 17:00",
+      "swissChocolateAdventure": {
+        "firstRide": "11:00",
+        "lastRide": "16:20"
+      },
+      "closedDays": "Open daily in January"
+    },
+    "firstGondola": {
+      "winterHours": "Verify at jungfrau.ch",
+      "firstFlyer": "Open in winter - verify hours",
+      "firstGlider": "Open in winter - verify hours",
+      "cliffWalk": "Open year-round, free with gondola"
+    },
+    "jungfraujoch": {
+      "operatingHours": "Year-round",
+      "firstTrainFromGrindelwald": "~07:30",
+      "lastTrainDown": "~17:00",
+      "weatherNote": "Check webcams at jungfrau.ch before going",
+      "clearDayPriority": "Go on clearest day available"
+    },
+    "rigiSpa": {
+      "hotelGuestAccess": "10:00 on arrival day through departure day",
+      "slippers": "Not provided - buy at reception CHF 6.50 or bring own",
+      "bathrobes": "Provided at reception"
+    }
+  },
+  "restaurants": {
+    "lucerne": {
+      "researched": [
+        {
+          "name": "Zunfthaus Pfistern",
+          "cuisine": "Traditional Swiss - fondue, raclette",
+          "setting": "Historic 1578 guild house on the river",
+          "priceRange": "CHF 50-70/person",
+          "specialFeature": "Fondue Carriage rides (CHF 98/pp)",
+          "phone": "+41 41 410 36 50",
+          "reservationRecommended": true
+        },
+        {
+          "name": "Rathaus Brauerei",
+          "cuisine": "Swiss - rösti, grilled fish, house beer",
+          "setting": "Brewery on Reuss River",
+          "priceRange": "CHF 35-50/person"
+        },
+        {
+          "name": "Wirtshaus Galliker",
+          "cuisine": "Traditional Lucerne - veal liver with rösti, cheese pie",
+          "setting": "Cozy, rustic, local favorite",
+          "priceRange": "CHF 40-60/person"
+        },
+        {
+          "name": "Old Swiss House",
+          "cuisine": "Historic - tableside Wiener Schnitzel",
+          "setting": "Famous historic restaurant",
+          "priceRange": "CHF 60-80/person",
+          "reservationRecommended": true
+        },
+        {
+          "name": "Schiffrestaurant Tell",
+          "cuisine": "Swiss - fondue",
+          "setting": "Dine on old paddle steamer",
+          "priceRange": "~CHF 36/person for fondue"
+        }
+      ]
+    },
+    "grindelwald": {
+      "needsResearch": true,
+      "note": "Need 3-4 dinner options beyond fondue gondola"
+    },
+    "zurich": {
+      "needsResearch": true,
+      "note": "Need romantic final night dinner recommendation near hotel"
+    }
+  },
+  "practicalInfo": {
+    "emergency": {
+      "general": "112",
+      "police": "117",
+      "ambulance": "144",
+      "fire": "118"
+    },
+    "greetings": {
+      "hello": "Grüezi (GROO-et-see)",
+      "thankyou": "Merci / Danke",
+      "goodbye": "Uf Wiederluege (oof VEE-der-loo-eg-eh)",
+      "excuseMe": "Entschuldigung",
+      "iWouldLike": "Ich hätt gärn...",
+      "theBillPlease": "D'Rächnig, bitte",
+      "cheers": "Prost!"
+    },
+    "tipping": {
+      "rule": "Not expected - service included",
+      "practice": "Round up bill or add 5-10% for exceptional service",
+      "note": "Very different from US - no 15-20%"
+    },
+    "shopping": {
+      "groceryStores": ["Migros", "Coop", "Denner"],
+      "convenienceStores": ["Migros Daily", "Coop Pronto", "Avec"],
+      "sundayNote": "Most shops closed Sunday except train station stores",
+      "alcohol": "Available at grocery stores. Age 16 for beer/wine, 18 for spirits."
+    },
+    "electrical": {
+      "plugType": "Type J (three-prong, recessed)",
+      "voltage": "230V",
+      "usPlugsWork": "No - need adapter",
+      "adapterNote": "Buy before trip or at airport"
+    },
+    "water": {
+      "tapWater": "Excellent quality - safe to drink everywhere",
+      "publicFountains": "Free drinking water - look for 'Trinkwasser' sign",
+      "restaurantWater": "Not free - must order"
+    },
+    "quietHours": {
+      "nighttime": "22:00 - 07:00",
+      "sundayNoon": "12:00 - 13:00 (sacred quiet time)",
+      "note": "Swiss value quiet - keep voices down in public"
+    }
+  },
+  "bookingDeadlines": [
+    {
+      "what": "Night Sledding at Bussalp",
+      "deadline": "14:00 same day",
+      "phone": "+41 33 854 16 16",
+      "critical": true
+    },
+    {
+      "what": "Fire & Ice Spa at Bergwelt",
+      "deadline": "On arrival day at spa reception",
+      "critical": false
+    }
+  ],
+  "webcamsToCheck": {
+    "jungfraujoch": "jungfrau.ch",
+    "grindelwaldFirst": "jungfrau.ch", 
+    "pilatus": "pilatus.ch",
+    "rigi": "rigi.ch"
+  }
+}

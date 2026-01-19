@@ -1,0 +1,253 @@
+{
+  "trip": {
+    "startDate": "2026-01-19",
+    "endDate": "2026-01-27",
+    "totalNights": 7,
+    "travelers": [
+      { "name": "Ray Pride", "email": "raymond.pride95@gmail.com", "phone": "+1 610-952-9836" },
+      { "name": "Katie Wiswall", "email": "katiewiswall@gmail.com", "phone": "+1 610-742-2203" }
+    ]
+  },
+  "flights": {
+    "outbound": {
+      "airline": "Icelandair",
+      "flightNumbers": ["FI622", "FI568"],
+      "route": "EWR → ZRH",
+      "departure": {
+        "date": "2026-01-19",
+        "time": "19:35",
+        "airport": "Newark Liberty International (EWR)"
+      },
+      "arrival": {
+        "date": "2026-01-20",
+        "time": "12:05",
+        "airport": "Zurich Airport (ZRH)"
+      },
+      "costUSD": 614.16,
+      "paidBy": "split",
+      "rayPaid": 307.08,
+      "katiePaid": 307.08
+    },
+    "return": {
+      "airline": "Icelandair",
+      "flightNumbers": ["FI569", "FI623"],
+      "route": "ZRH → EWR",
+      "departure": {
+        "date": "2026-01-27",
+        "time": "13:00",
+        "airport": "Zurich Airport (ZRH)"
+      },
+      "arrival": {
+        "date": "2026-01-27",
+        "time": "18:25",
+        "airport": "Newark Liberty International (EWR)"
+      },
+      "costUSD": 614.16,
+      "paidBy": "split",
+      "rayPaid": 307.08,
+      "katiePaid": 307.08
+    }
+  },
+  "hotels": [
+    {
+      "id": "lucerne",
+      "name": "Hotel Schweizerhof Luzern",
+      "confirmationNumber": "18387J104610",
+      "address": "Schweizerhofquai 3, 6002 Luzern, Switzerland",
+      "phone": "+41 41 410 04 10",
+      "email": "info@schweizerhof-luzern.ch",
+      "website": "www.schweizerhof-luzern.ch",
+      "checkIn": {
+        "date": "2026-01-20",
+        "time": "15:00"
+      },
+      "checkOut": {
+        "date": "2026-01-22",
+        "time": "12:00"
+      },
+      "nights": 2,
+      "roomType": "Lifestyle Junior Suite",
+      "roomSize": "45 m²",
+      "bedType": "King-size (200cm x 205cm) or Twin",
+      "includes": ["Breakfast (7am-10:30am)", "Spa access", "WiFi"],
+      "costCHF": 1192.00,
+      "cityTaxCHF": 11.00,
+      "totalCHF": 1203.00,
+      "paidBy": "Ray",
+      "notes": "City tax CHF 5.50/person/night. Corner room with lake and mountain views."
+    },
+    {
+      "id": "rigi",
+      "name": "Hotel Rigi Kaltbad",
+      "confirmationNumber": "24077UID9835",
+      "address": "Zentrum 4, 6356 Rigi Kaltbad, Switzerland",
+      "phone": "+41 41 399 81 81",
+      "email": "info@hotelrigikaltbad.ch",
+      "website": "hotelrigikaltbad.ch",
+      "checkIn": {
+        "date": "2026-01-22",
+        "time": "15:00",
+        "note": "Spa access available from 10:00am on arrival day"
+      },
+      "checkOut": {
+        "date": "2026-01-23",
+        "time": "11:00",
+        "note": "Spa access continues all day after checkout"
+      },
+      "nights": 1,
+      "roomType": "Doppelzimmer Superior mit Balkon (Superior Double with Balcony)",
+      "includes": ["Breakfast", "Mineralbad & Spa access", "Local guest card (50% off Rigi trains)", "WiFi", "Nespresso machine", "Water in room"],
+      "costCHF": 414.00,
+      "kurtaxeCHF": 4.40,
+      "totalCHF": 418.40,
+      "paidBy": "Ray",
+      "accessNotes": {
+        "carFree": true,
+        "options": [
+          "Cable car from Weggis (CLOSED Jan 5 - Feb 11, 2026)",
+          "Cogwheel train from Vitznau",
+          "Cogwheel train from Arth-Goldau"
+        ],
+        "hotelGuestDiscount": "50% off Rigi train tickets"
+      }
+    },
+    {
+      "id": "grindelwald",
+      "name": "Bergwelt Grindelwald - Alpine Design Resort",
+      "confirmationNumber": "2025123145141944",
+      "address": "Bergwelt 4, CH-3818 Grindelwald, Switzerland",
+      "phone": "+41 33 854 85 85",
+      "email": "reservations@bergweltgrindelwald.com",
+      "website": "bergweltgrindelwald.com",
+      "checkIn": {
+        "date": "2026-01-23",
+        "time": "15:00"
+      },
+      "checkOut": {
+        "date": "2026-01-26",
+        "time": "11:00"
+      },
+      "nights": 3,
+      "roomType": "Luxury Room with Eiger View",
+      "includes": ["Breakfast buffet"],
+      "nightlyRates": [
+        { "date": "2026-01-23", "rateCHF": 722.50 },
+        { "date": "2026-01-24", "rateCHF": 624.75 },
+        { "date": "2026-01-25", "rateCHF": 429.25 }
+      ],
+      "roomCostCHF": 1776.50,
+      "cityTaxCHF": 25.20,
+      "occupancyTaxCHF": 6.00,
+      "totalCHF": 1807.70,
+      "paidBy": "Katie",
+      "spa": {
+        "name": "Fire & Ice Spa",
+        "costPerPersonCHF": 35.00,
+        "sessionLength": "90 minutes",
+        "bookingNote": "Book at spa reception on arrival day"
+      },
+      "parking": {
+        "available": true,
+        "costPerDayCHF": 28.00,
+        "note": "Cannot reserve in advance"
+      },
+      "gps": {
+        "latitude": 46.623778,
+        "longitude": 8.040018
+      }
+    },
+    {
+      "id": "zurich",
+      "name": "Hotel Schweizerhof Zürich",
+      "confirmationNumber": "2025123145141911",
+      "address": "Bahnhofsplatz 7, 8001 Zürich, Switzerland",
+      "phone": "+41 44 218 88 88",
+      "email": "reservation@hotelschweizerhof.com",
+      "website": "hotelschweizerhof.com",
+      "checkIn": {
+        "date": "2026-01-26",
+        "time": "14:00"
+      },
+      "checkOut": {
+        "date": "2026-01-27",
+        "time": "12:00"
+      },
+      "nights": 1,
+      "roomType": "Standard Double Room",
+      "includes": ["Breakfast"],
+      "costCHF": 608.00,
+      "cityTaxCHF": 7.00,
+      "totalCHF": 615.00,
+      "paidBy": "Ray",
+      "location": "Adjacent to Zürich HB (main train station)",
+      "cancellationPolicy": "Non-refundable, 100% prepaid"
+    }
+  ],
+  "activities": {
+    "booked": [
+      {
+        "name": "Fondue Gondola at Hotel Belvedere",
+        "date": "2026-01-25",
+        "time": "16:00",
+        "location": "Grindelwald",
+        "description": "Private fondue dinner in vintage Männlichen gondola cabin",
+        "duration": "~1 hour 45 minutes",
+        "costCHF": 100.00,
+        "costFor": "total (both people)",
+        "paidBy": "Ray",
+        "confirmationNumber": null,
+        "notes": "Stationary gondola outdoors. A romantic highlight of the trip."
+      },
+      {
+        "name": "Mineralbad & Spa Rigi Kaltbad",
+        "date": "2026-01-22",
+        "time": "from 10:00am",
+        "location": "Rigi Kaltbad",
+        "description": "Mario Botta-designed thermal baths with Alpine views",
+        "features": ["35°C mineral water", "Indoor pool flowing to outdoor infinity pool", "Sauna", "Steam bath"],
+        "costCHF": 0,
+        "notes": "Included with hotel stay. Bring own slippers or buy at reception (CHF 6.50)."
+      }
+    ],
+    "toBook": [
+      {
+        "name": "Night Sledding + Fondue at Bussalp",
+        "possibleDates": ["2026-01-24", "2026-01-25"],
+        "recommendedDate": "2026-01-24",
+        "meetingPoint": "Grindelwald bus parking",
+        "meetingTime": "18:30",
+        "busDeparts": "18:50",
+        "includes": ["Bus to Bussalp", "Sled rental", "Cheese fondue", "Salad", "Dessert", "Headlamp", "4.5km sled descent"],
+        "costPerPersonCHF": 70.00,
+        "totalForTwoCHF": 140.00,
+        "bookingPhone": "+41 33 854 16 16",
+        "bookingDeadline": "14:00 same day",
+        "availableDays": ["Friday", "Saturday"],
+        "critical": "MUST BOOK BY 2PM ON DAY OF"
+      }
+    ]
+  },
+  "costSummary": {
+    "flights": {
+      "totalUSD": 1228.32,
+      "rayPaidUSD": 614.16,
+      "katiePaidUSD": 614.16
+    },
+    "hotels": {
+      "totalCHF": 4044.10,
+      "rayPaidCHF": 2236.40,
+      "katiePaidCHF": 1807.70
+    },
+    "activitiesBooked": {
+      "totalCHF": 100.00,
+      "rayPaidCHF": 100.00,
+      "katiePaidCHF": 0
+    },
+    "paidToDate": {
+      "rayTotalUSD": 614.16,
+      "rayTotalCHF": 2336.40,
+      "katieTotalUSD": 614.16,
+      "katieTotalCHF": 1807.70
+    }
+  }
+}

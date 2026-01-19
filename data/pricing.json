@@ -1,0 +1,260 @@
+{
+  "swissTravelPass": {
+    "description": "Unlimited travel on trains, boats, buses + free museums + mountain discounts",
+    "pricing2026": {
+      "secondClass": {
+        "3day": { "perPersonCHF": 254, "forTwoCHF": 508 },
+        "4day": { "perPersonCHF": 309, "forTwoCHF": 618 },
+        "6day": { "perPersonCHF": 399, "forTwoCHF": 798 },
+        "8day": { "perPersonCHF": 439, "forTwoCHF": 878 },
+        "15day": { "perPersonCHF": 499, "forTwoCHF": 998 }
+      }
+    },
+    "tripRecommendation": "8-day pass (Jan 20-27)",
+    "coverage": {
+      "free": [
+        "All SBB trains",
+        "All PostBus routes",
+        "All city trams and buses",
+        "Lake Lucerne boats (all scheduled routes)",
+        "Rigi - ALL transport (cogwheel, cable cars)",
+        "500+ museums including Museum of Transport"
+      ],
+      "fiftyPercentOff": [
+        "Grindelwald First gondola",
+        "Mount Pilatus",
+        "Mount Titlis",
+        "Most other mountain railways"
+      ],
+      "twentyFivePercentOff": [
+        "Jungfraujoch (Top of Europe)"
+      ],
+      "noDiscount": [
+        "First Flyer zipline",
+        "First Glider"
+      ]
+    }
+  },
+  "swissHalfFareCard": {
+    "description": "50% off almost everything for 1 month",
+    "perPersonCHF": 150,
+    "forTwoCHF": 300,
+    "validityDays": 30
+  },
+  "transport": {
+    "trains": {
+      "zurichAirportToLucerne": {
+        "durationMinutes": 60,
+        "fullFarePerPersonCHF": 31,
+        "withSwissPass": "FREE",
+        "frequency": "Every 30 minutes"
+      },
+      "lucerneToGrindelwald": {
+        "route": "Lucerne → Interlaken Ost → Grindelwald",
+        "durationMinutes": 130,
+        "transfers": 1,
+        "fullFarePerPersonCHF": 56,
+        "withSwissPass": "FREE"
+      },
+      "grindelwaldToZurich": {
+        "route": "Grindelwald → Interlaken Ost → Bern → Zürich HB",
+        "durationMinutes": 165,
+        "transfers": 1,
+        "fullFarePerPersonCHF": 75,
+        "withSwissPass": "FREE"
+      },
+      "zurichHBToAirport": {
+        "durationMinutes": 12,
+        "fullFarePerPersonCHF": 7,
+        "withSwissPass": "FREE",
+        "frequency": "Every 5-10 minutes"
+      }
+    },
+    "rigi": {
+      "viaVitznau": {
+        "route": "Lucerne → Vitznau (boat) → Rigi Kaltbad (cogwheel)",
+        "boatDurationMinutes": 60,
+        "cogwheelDurationMinutes": 30,
+        "fullFareRoundTripCHF": 78,
+        "withSwissPass": "FREE",
+        "withHotelGuestCard": "50% off (CHF 39)"
+      },
+      "viaArthGoldau": {
+        "route": "Lucerne → Arth-Goldau (train) → Rigi Kaltbad (cogwheel)",
+        "trainDurationMinutes": 30,
+        "cogwheelDurationMinutes": 45,
+        "fullFareRoundTripCHF": 78,
+        "withSwissPass": "FREE"
+      },
+      "note": "Weggis cable car route NOT available Jan 5 - Feb 11, 2026"
+    },
+    "lakeLucerneBoats": {
+      "lucerneToVitznau": {
+        "oneWayPerPersonCHF": 31,
+        "withSwissPass": "FREE"
+      },
+      "winterDayTicketCHF": 53,
+      "website": "lakelucerne.ch"
+    }
+  },
+  "activities": {
+    "lucerne": {
+      "museumOfTransport": {
+        "fullPricePerPersonCHF": 37,
+        "withSwissPass": "FREE",
+        "winterHours": "10:00 - 17:00",
+        "swissChocolateAdventure": {
+          "additionalCostCHF": 18,
+          "firstRide": "11:00",
+          "lastRide": "16:20"
+        }
+      },
+      "mountPilatus": {
+        "note": "Winter: Cable car from Kriens only (no Golden Round Trip)",
+        "cableCarRoundTripCHF": 72,
+        "withSwissPass": "CHF 36 (50% off)",
+        "durationHours": 4
+      },
+      "mountTitlis": {
+        "fromEngelberg": true,
+        "trainLucerneToEngelbergMinutes": 45,
+        "cableCarRoundTripCHF": 96,
+        "withSwissPass": "CHF 48 (50% off)",
+        "includes": ["Glacier", "Ice Flyer", "Cliff Walk"],
+        "durationHours": 5
+      },
+      "liluLightFestival": {
+        "dates": "January 15-25, 2026",
+        "hours": "18:00 - 22:00",
+        "cost": "FREE (outdoor installations)",
+        "ticketedEvents": "Jesuit Church light show (book at lichtfestivalluzern.ch)"
+      },
+      "fondueCariageZunfthausPfistern": {
+        "costPerPersonCHF": 98,
+        "includes": ["Mulled wine", "Carriage ride through Lucerne", "Fondue", "Dessert", "Drinks"],
+        "startTime": "18:30 (mulled wine), 19:00 (carriage departs)",
+        "bookingRequired": true,
+        "phone": "+41 41 410 36 50"
+      }
+    },
+    "grindelwald": {
+      "firstGondola": {
+        "roundTripPerPersonCHF": 72,
+        "withSwissPass": "CHF 36 (50% off)",
+        "includes": ["First Cliff Walk (free with gondola ticket)"]
+      },
+      "firstFlyer": {
+        "costPerPersonCHF": 31,
+        "withSwissPass": "CHF 31 (no discount)",
+        "description": "84 km/h zipline",
+        "duration": "~1 minute"
+      },
+      "firstGlider": {
+        "costPerPersonCHF": 31,
+        "withSwissPass": "CHF 31 (no discount)",
+        "description": "Hang-glider style panoramic ride"
+      },
+      "jungfraujoch": {
+        "fromGrindelwald": {
+          "fullPricePerPersonCHF": 201.20,
+          "withSwissPass": "CHF 148.60 (25% off above Grindelwald)",
+          "withHalfFare": "CHF 100.60"
+        },
+        "route": "Eiger Express gondola (45 min to top)",
+        "altitude": "3,454m (11,332 ft)",
+        "includes": ["Sphinx Observatory", "Ice Palace", "Alpine Sensation", "Lindt shop"],
+        "weatherDependent": true,
+        "webcams": "jungfrau.ch",
+        "durationHours": 5
+      },
+      "worldSnowFestival": {
+        "dates": "January 19-24, 2026",
+        "theme": "Myths and Legends",
+        "location": "Bärplatz (2 min walk from train station)",
+        "artistHours": "08:00 - 18:00",
+        "illuminatedAtNight": true,
+        "cost": "FREE"
+      },
+      "nightSledding": {
+        "costPerPersonCHF": 70,
+        "forTwoCHF": 140,
+        "includes": ["Bus to Bussalp", "Sled rental", "Fondue dinner", "Salad", "Dessert", "Headlamp"],
+        "sledDistance": "4.5 km",
+        "availableDays": ["Friday", "Saturday"],
+        "bookingPhone": "+41 33 854 16 16",
+        "bookingDeadline": "14:00 same day",
+        "meetingTime": "18:30",
+        "meetingPoint": "Grindelwald bus parking"
+      },
+      "bergweltSpa": {
+        "name": "Fire & Ice Spa",
+        "costPerPersonCHF": 35,
+        "sessionDuration": "90 minutes",
+        "bookingNote": "Book at spa reception on arrival"
+      }
+    },
+    "zurich": {
+      "flowImmersiveExperience": {
+        "dates": "January 9 - February 3, 2026",
+        "description": "Immersive light and sound experience",
+        "needToVerify": ["hours", "location", "ticket price"]
+      },
+      "grossmunsterTower": {
+        "costCHF": 5,
+        "steps": 187,
+        "description": "Climb for city views"
+      },
+      "fraumunster": {
+        "costCHF": 5,
+        "highlight": "Chagall stained glass windows"
+      },
+      "lindtHomeOfChocolate": {
+        "location": "Near airport (Kilchberg)",
+        "note": "Too far for tight departure day"
+      }
+    }
+  },
+  "passAnalysisScenarios": {
+    "minimal": {
+      "description": "Only confirmed activities + required transport",
+      "items": [
+        { "item": "ZRH → Lucerne", "fullCHF": 62, "withPassCHF": 0 },
+        { "item": "Lucerne → Rigi (via Vitznau)", "fullCHF": 39, "withPassCHF": 0, "note": "Using hotel 50% discount" },
+        { "item": "Rigi → Grindelwald", "fullCHF": 112, "withPassCHF": 0 },
+        { "item": "Grindelwald → Zürich", "fullCHF": 150, "withPassCHF": 0 },
+        { "item": "Zürich → ZRH Airport", "fullCHF": 14, "withPassCHF": 0 }
+      ],
+      "totalWithoutPassCHF": 377,
+      "totalWithPassCHF": 0,
+      "passValueCHF": 377
+    },
+    "moderate": {
+      "description": "Adds Museum of Transport, Lake Cruise, First Gondola",
+      "additionalItems": [
+        { "item": "Museum of Transport (2 ppl)", "fullCHF": 74, "withPassCHF": 0 },
+        { "item": "Lake Lucerne cruise (2 ppl)", "fullCHF": 62, "withPassCHF": 0 },
+        { "item": "First Gondola (2 ppl)", "fullCHF": 144, "withPassCHF": 72 }
+      ],
+      "totalWithoutPassCHF": 657,
+      "totalWithPassCHF": 72,
+      "passValueCHF": 585
+    },
+    "comprehensive": {
+      "description": "Adds Jungfraujoch",
+      "additionalItems": [
+        { "item": "Jungfraujoch (2 ppl)", "fullCHF": 402, "withPassCHF": 297 }
+      ],
+      "totalWithoutPassCHF": 1059,
+      "totalWithPassCHF": 369,
+      "passValueCHF": 690
+    },
+    "passBreakEven": {
+      "pass8dayCostCHF": 878,
+      "minimalSavings": -501,
+      "moderateSavings": -293,
+      "comprehensiveSavings": -188,
+      "conclusion": "Pass does NOT pay off financially for this trip",
+      "flexibilityValue": "Consider if spontaneity worth ~CHF 200-500 premium"
+    }
+  }
+}

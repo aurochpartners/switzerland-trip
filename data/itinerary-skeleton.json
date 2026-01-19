@@ -1,0 +1,422 @@
+{
+  "days": [
+    {
+      "dayNumber": 1,
+      "date": "2026-01-19",
+      "dayOfWeek": "Monday",
+      "location": "Newark → In Transit",
+      "title": "Departure Day",
+      "hotel": null,
+      "highlights": [],
+      "schedule": {
+        "evening": {
+          "time": "19:35",
+          "activity": "Depart EWR on Icelandair",
+          "notes": "Overnight flight with connection"
+        }
+      },
+      "meals": {
+        "dinner": "Airport or plane"
+      }
+    },
+    {
+      "dayNumber": 2,
+      "date": "2026-01-20",
+      "dayOfWeek": "Tuesday",
+      "location": "Zürich → Lucerne",
+      "title": "Arrival Day - Lucerne",
+      "hotel": "Hotel Schweizerhof Luzern",
+      "hotelId": "lucerne",
+      "checkIn": "15:00",
+      "highlights": ["LILU Light Festival (Night 1)"],
+      "events": ["LILU Light Festival 18:00-22:00"],
+      "schedule": {
+        "midday": {
+          "time": "12:05",
+          "activity": "Arrive Zürich Airport",
+          "notes": "Clear customs, find train station"
+        },
+        "afternoon": {
+          "time": "~13:00-14:00",
+          "activity": "Train ZRH → Lucerne",
+          "duration": "~1 hour",
+          "notes": "Jet-lagged - keep activities light"
+        },
+        "lateAfternoon": {
+          "time": "15:00+",
+          "activity": "Check into hotel, freshen up",
+          "options": ["Rest at hotel", "Light Old Town walk - Chapel Bridge, Water Tower"]
+        },
+        "evening": {
+          "time": "18:00-22:00",
+          "activity": "LILU Light Festival",
+          "notes": "Walk illuminated Old Town - free outdoor installations"
+        }
+      },
+      "meals": {
+        "lunch": "Train station or Old Town (light, post-flight)",
+        "dinner": "Old Town - fondue or traditional Swiss"
+      },
+      "weatherContingency": "LILU runs rain or shine - bring umbrella"
+    },
+    {
+      "dayNumber": 3,
+      "date": "2026-01-21",
+      "dayOfWeek": "Wednesday",
+      "location": "Lucerne",
+      "title": "Full Day Lucerne",
+      "hotel": "Hotel Schweizerhof Luzern",
+      "hotelId": "lucerne",
+      "highlights": ["LILU Light Festival (Final Night)"],
+      "events": ["LILU Light Festival 18:00-22:00 (last night)"],
+      "activityOptions": {
+        "optionA": {
+          "name": "Museum of Transport + Chocolate",
+          "description": "Switzerland's most-visited museum + Swiss Chocolate Adventure",
+          "duration": "3-4 hours",
+          "cost": "CHF 37/pp (free with Swiss Pass) + CHF 18 chocolate",
+          "weatherDependent": false
+        },
+        "optionB": {
+          "name": "Mount Pilatus",
+          "description": "Cable car from Kriens to summit",
+          "duration": "4-5 hours",
+          "cost": "CHF 72/pp (CHF 36 with Swiss Pass)",
+          "weatherDependent": true
+        },
+        "optionC": {
+          "name": "Mount Titlis Day Trip",
+          "description": "Train to Engelberg, glacier experience",
+          "duration": "5-6 hours",
+          "cost": "CHF 96/pp (CHF 48 with Swiss Pass)",
+          "weatherDependent": true
+        },
+        "optionD": {
+          "name": "Old Town Deep Dive + Lake Cruise",
+          "description": "Musegg Wall towers, Jesuit Church, 1-hour lake cruise",
+          "duration": "4-5 hours",
+          "cost": "CHF 30-50/pp for cruise",
+          "weatherDependent": "Partially"
+        }
+      },
+      "schedule": {
+        "morning": {
+          "time": "07:00-10:30",
+          "activity": "Breakfast at hotel"
+        },
+        "midday": {
+          "activity": "Choose from activity options"
+        },
+        "evening": {
+          "time": "18:00-22:00",
+          "activity": "LILU Light Festival - Final Night",
+          "notes": "Catch any installations missed yesterday"
+        }
+      },
+      "meals": {
+        "breakfast": "Included at hotel",
+        "lunch": "Depends on activity choice",
+        "dinner": "Zunfthaus Pfistern, Rathaus Brauerei, or Wirtshaus Galliker"
+      },
+      "specialOption": {
+        "name": "Fondue Carriage",
+        "description": "Zunfthaus Pfistern's carriage ride through illuminated Lucerne",
+        "cost": "CHF 98/pp",
+        "time": "18:30 start",
+        "notes": "Alternative fondue experience - reserve in advance"
+      }
+    },
+    {
+      "dayNumber": 4,
+      "date": "2026-01-22",
+      "dayOfWeek": "Thursday",
+      "location": "Lucerne → Rigi Kaltbad",
+      "title": "Travel to Rigi + Spa Day",
+      "hotel": "Hotel Rigi Kaltbad",
+      "hotelId": "rigi",
+      "checkOut": "12:00 (Lucerne)",
+      "checkIn": "15:00 (Rigi) - spa access from 10:00",
+      "highlights": ["Mineralbad & Spa"],
+      "alerts": ["⚠️ Weggis boat station CLOSED - use Vitznau route"],
+      "transport": {
+        "recommended": {
+          "route": "Lucerne → Vitznau (boat) → Rigi Kaltbad (cogwheel)",
+          "boatDuration": "60 min",
+          "cogwheelDuration": "30 min",
+          "notes": "Most scenic option. Hotel guest card = 50% off trains."
+        },
+        "alternative": {
+          "route": "Lucerne → Arth-Goldau (train) → Rigi Kaltbad (cogwheel)",
+          "duration": "~75 min total",
+          "notes": "All-rail option if weather is bad for boat"
+        }
+      },
+      "schedule": {
+        "morning": {
+          "time": "07:00-10:30",
+          "activity": "Breakfast at Lucerne hotel",
+          "options": ["Final Old Town stroll", "Quick museum visit"]
+        },
+        "midday": {
+          "time": "~11:00-12:00",
+          "activity": "Check out, head to boat/train"
+        },
+        "afternoon": {
+          "time": "~13:30-14:00",
+          "activity": "Arrive Rigi Kaltbad",
+          "notes": "Drop bags at hotel, spa access from 10am"
+        },
+        "lateAfternoon": {
+          "activity": "Mineralbad & Spa",
+          "description": "Mario Botta-designed thermal baths, indoor/outdoor pools",
+          "notes": "Bring slippers or buy at reception (CHF 6.50)"
+        },
+        "evening": {
+          "activity": "Dinner at hotel restaurant",
+          "notes": "Limited options on mountain - hotel is excellent"
+        }
+      },
+      "meals": {
+        "breakfast": "Included at Lucerne hotel",
+        "lunch": "Light - on the move",
+        "dinner": "Hotel Rigi Kaltbad restaurant"
+      },
+      "weatherContingency": "Spa is indoor/outdoor - works in any weather. Fog can be mystical."
+    },
+    {
+      "dayNumber": 5,
+      "date": "2026-01-23",
+      "dayOfWeek": "Friday",
+      "location": "Rigi Kaltbad → Grindelwald",
+      "title": "Travel to Grindelwald + Snow Festival",
+      "hotel": "Bergwelt Grindelwald",
+      "hotelId": "grindelwald",
+      "checkOut": "11:00 (Rigi) - can use spa all day",
+      "checkIn": "15:00 (Grindelwald)",
+      "highlights": ["World Snow Festival (Day 1 of 2)"],
+      "events": ["World Snow Festival - ice sculptures illuminated at night"],
+      "transport": {
+        "route": "Rigi Kaltbad → Vitznau (cogwheel) → Lucerne (boat/train) → Interlaken → Grindelwald",
+        "totalDuration": "~3-3.5 hours",
+        "notes": "Scenic journey - break at Interlaken if desired"
+      },
+      "schedule": {
+        "morning": {
+          "time": "Flexible",
+          "activity": "Breakfast with mountain views",
+          "options": ["Morning spa session", "Short winter walk on Rigi", "Rigi summit excursion"]
+        },
+        "midday": {
+          "time": "~11:00",
+          "activity": "Check out, begin journey to Grindelwald"
+        },
+        "afternoon": {
+          "time": "~15:00-16:00",
+          "activity": "Arrive Grindelwald, check into Bergwelt",
+          "notes": "Book spa slot at reception if interested"
+        },
+        "lateAfternoon": {
+          "activity": "Explore village",
+          "mustSee": "World Snow Festival at Bärplatz (2 min from station)"
+        },
+        "evening": {
+          "activity": "Snow sculptures illuminated after dark",
+          "dinner": "Village restaurant (research options)"
+        }
+      },
+      "meals": {
+        "breakfast": "Included at Rigi hotel",
+        "lunch": "En route or Interlaken",
+        "dinner": "Grindelwald village"
+      },
+      "nightSleddingNote": "Available today (Friday) - call +41 33 854 16 16 by 14:00 if interested"
+    },
+    {
+      "dayNumber": 6,
+      "date": "2026-01-24",
+      "dayOfWeek": "Saturday",
+      "location": "Grindelwald",
+      "title": "Adventure Day",
+      "hotel": "Bergwelt Grindelwald",
+      "hotelId": "grindelwald",
+      "highlights": ["World Snow Festival (Final Day)", "Night Sledding + Fondue (RECOMMENDED)"],
+      "events": ["World Snow Festival ends today"],
+      "activityOptions": {
+        "optionA": {
+          "name": "First Gondola + Adventures",
+          "morning": ["First Gondola up (beat crowds)", "First Cliff Walk (free)", "First Flyer OR First Glider"],
+          "afternoon": "Village exploration, World Snow Festival (last day)",
+          "evening": "Night Sledding + Fondue",
+          "totalCost": "CHF 72 (gondola) + CHF 31 (flyer) + CHF 70 (sledding) = CHF 173/pp"
+        },
+        "optionB": {
+          "name": "Jungfraujoch (Weather Permitting)",
+          "checkFirst": "Webcams at jungfrau.ch - ONLY GO IF CLEAR",
+          "morning": "07:30 Eiger Express to Top of Europe",
+          "midday": "Sphinx Observatory, Ice Palace, Alpine Sensation",
+          "afternoon": "Descend via Kleine Scheidegg (scenic)",
+          "evening": "Night Sledding + Fondue",
+          "totalCost": "CHF 201 (Jungfrau) + CHF 70 (sledding) = CHF 271/pp"
+        },
+        "optionC": {
+          "name": "Relaxed Day + Night Sledding",
+          "morning": "Sleep in, leisurely breakfast",
+          "midday": "Village, chocolate shops, Snow Festival (last day)",
+          "afternoon": "Optional day sledding or spa",
+          "evening": "Night Sledding + Fondue (the highlight)",
+          "totalCost": "CHF 70/pp (sledding only)"
+        }
+      },
+      "criticalReminder": {
+        "what": "BOOK NIGHT SLEDDING",
+        "deadline": "14:00 TODAY",
+        "phone": "+41 33 854 16 16",
+        "details": "Meet 18:30 at Grindelwald bus parking"
+      },
+      "schedule": {
+        "byTwoPM": "MUST book night sledding if doing it tonight"
+      },
+      "meals": {
+        "breakfast": "Included at hotel",
+        "lunch": "Mountain restaurant or village",
+        "dinner": "Fondue at Bussalp (included with night sledding)"
+      },
+      "weatherContingency": {
+        "badWeather": ["Sportzentrum (ice rink, climbing, pool)", "Grindelwald Museum", "Bergwelt Fire & Ice Spa", "Day trip to Bern (~1hr 40min)"]
+      }
+    },
+    {
+      "dayNumber": 7,
+      "date": "2026-01-25",
+      "dayOfWeek": "Sunday",
+      "location": "Grindelwald",
+      "title": "Fondue Gondola Day",
+      "hotel": "Bergwelt Grindelwald",
+      "hotelId": "grindelwald",
+      "highlights": ["⭐ FONDUE GONDOLA 16:00 (BOOKED)"],
+      "schedule": {
+        "morning": {
+          "options": ["Sleep in after night sledding", "Repeat favorite activity from yesterday", "First Gondola if missed yesterday"]
+        },
+        "afternoon": {
+          "time": "Until 15:30",
+          "activity": "Light activity, village souvenir shopping",
+          "notes": "Return to hotel to freshen up before gondola"
+        },
+        "lateAfternoon": {
+          "time": "16:00",
+          "activity": "⭐ FONDUE GONDOLA at Hotel Belvedere",
+          "duration": "~1 hour 45 minutes",
+          "description": "Private fondue dinner in vintage Männlichen gondola",
+          "notes": "Ray's surprise for Katie. Trip highlight."
+        },
+        "evening": {
+          "activity": "Light dinner or drinks only (will be full from fondue)",
+          "options": ["Village walk", "Pack for Zürich tomorrow"]
+        }
+      },
+      "meals": {
+        "breakfast": "Included at hotel",
+        "lunch": "Light - save appetite for fondue",
+        "dinner": "Fondue Gondola (main meal)"
+      }
+    },
+    {
+      "dayNumber": 8,
+      "date": "2026-01-26",
+      "dayOfWeek": "Monday",
+      "location": "Grindelwald → Zürich",
+      "title": "Travel to Zürich + Final Night",
+      "hotel": "Hotel Schweizerhof Zürich",
+      "hotelId": "zurich",
+      "checkOut": "Check Grindelwald policy",
+      "checkIn": "Check Zürich policy",
+      "highlights": ["Zürich Old Town", "Final Swiss dinner"],
+      "transport": {
+        "route": "Grindelwald → Interlaken Ost → Zürich HB",
+        "duration": "~2.5 hours",
+        "transfers": 1,
+        "scenic": true
+      },
+      "schedule": {
+        "morning": {
+          "activity": "Breakfast, pack, checkout"
+        },
+        "midday": {
+          "time": "~09:30-10:00",
+          "activity": "Depart for Zürich"
+        },
+        "afternoon": {
+          "time": "~12:30-13:00",
+          "activity": "Arrive Zürich HB, check into hotel (next door)"
+        },
+        "lateAfternoon": {
+          "activity": "Zürich Old Town walk (2-3 hours)",
+          "route": ["Bahnhofstrasse", "Augustinergasse", "Lindenhof viewpoint", "St. Peter's Church", "Fraumünster (Chagall windows)", "Grossmünster towers", "Niederdorf"]
+        },
+        "evening": {
+          "activity": "Final dinner in Switzerland"
+        }
+      },
+      "meals": {
+        "breakfast": "Included at Grindelwald hotel",
+        "lunch": "Zürich (after checking in)",
+        "dinner": "Special final night - research romantic option"
+      },
+      "zurichAttractions": {
+        "walkable": ["Bahnhofstrasse", "Lindenhof", "Grossmünster", "Fraumünster", "Niederdorf"],
+        "optional": ["FLOW immersive experience (if confirmed)"]
+      }
+    },
+    {
+      "dayNumber": 9,
+      "date": "2026-01-27",
+      "dayOfWeek": "Tuesday",
+      "location": "Zürich → Home",
+      "title": "⚠️ Departure Day - TIGHT TIMELINE",
+      "hotel": null,
+      "flightTime": "13:00",
+      "alerts": ["⚠️ TIGHT TIMELINE - Flight at 1:00pm", "Arrive airport by 10:00am (3 hours early)"],
+      "schedule": {
+        "morning": {
+          "time": "07:30-08:30",
+          "activity": "Breakfast at hotel"
+        },
+        "earlyMorning": {
+          "time": "08:30-09:00",
+          "options": ["Quick walk to Lindenhof viewpoint", "Coffee at Babu's Bakery (8 min from station)", "Pack and rest"]
+        },
+        "checkout": {
+          "time": "09:30",
+          "activity": "Checkout hotel"
+        },
+        "toAirport": {
+          "time": "09:45",
+          "activity": "Train Zürich HB → Zürich Airport",
+          "duration": "12 minutes",
+          "frequency": "Every 5-10 minutes"
+        },
+        "atAirport": {
+          "time": "10:00",
+          "activity": "Arrive airport, check in, security"
+        },
+        "departure": {
+          "time": "13:00",
+          "activity": "Depart ZRH"
+        },
+        "arrival": {
+          "time": "18:25",
+          "activity": "Arrive EWR"
+        }
+      },
+      "meals": {
+        "breakfast": "Included at hotel",
+        "lunch": "Airport after security"
+      },
+      "lastMinuteOptions": {
+        "sprüngli": "Grab chocolate truffles for the plane (at Paradeplatz or airport)",
+        "babusBakery": "Best breakfast in Zürich (8 min from station) - only if time allows"
+      }
+    }
+  ]
+}
