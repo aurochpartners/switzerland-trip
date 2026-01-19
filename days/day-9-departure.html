@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 9: Departure | Switzerland 2026</title>
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  
+  <style>
+    .day-hero {
+      min-height: 50vh;
+      background-image: 
+        linear-gradient(to bottom, rgba(26, 26, 46, 0.5) 0%, rgba(26, 26, 46, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1540339832862-474599807836?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .content-section {
+      padding: var(--space-12) var(--space-6);
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+    
+    .nav-days {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      background-color: var(--color-cream-dark);
+      position: sticky;
+      top: 60px;
+      z-index: var(--z-sticky);
+    }
+    
+    .nav-day-link {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+    }
+    
+    .nav-day-link:hover {
+      color: var(--color-amber-dark);
+    }
+    
+    .critical-box {
+      background: linear-gradient(135deg, var(--color-danger) 0%, #c53030 100%);
+      color: white;
+      padding: var(--space-6);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      margin-bottom: var(--space-8);
+    }
+    
+    .critical-box h3 {
+      color: white;
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-2);
+    }
+    
+    .flight-card {
+      background-color: var(--color-night);
+      color: var(--color-cream);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+    
+    .flight-card h3 {
+      color: var(--color-cream);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">Switzerland 2026</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#journey" class="nav-link">Journey</a></li>
+        <li><a href="../index.html#days" class="nav-link">Days</a></li>
+        <li><a href="../quick-reference.html" class="nav-link">Quick Ref</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero day-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Day 9 · Tuesday, January 27</p>
+      <h1 class="hero-title">Departure Day</h1>
+      <p class="hero-subtitle">Auf Wiedersehen, Switzerland.</p>
+    </div>
+  </section>
+
+  <!-- Day Navigation -->
+  <div class="nav-days">
+    <a href="day-8-zurich.html" class="nav-day-link">← Day 8: Zürich</a>
+    <span class="nav-day-link text-muted">The End</span>
+  </div>
+
+  <!-- Content -->
+  <main class="content-section">
+    
+    <!-- Critical Warning -->
+    <div class="critical-box">
+      <h3>Flight at 1:00 PM – Arrive Airport by 10:00 AM</h3>
+      <p>Train to airport by 9:45 AM · 12 minute ride · Don't be late!</p>
+    </div>
+
+    <!-- Flight Details -->
+    <div class="flight-card">
+      <h3 class="card-title mb-4">Flight Home</h3>
+      <div class="grid grid-2 gap-6">
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Departure</p>
+          <p class="text-xl font-medium">1:00 PM</p>
+          <p class="text-sm text-cream-dark">Zürich Airport (ZRH)</p>
+        </div>
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Arrival</p>
+          <p class="text-xl font-medium">6:25 PM</p>
+          <p class="text-sm text-cream-dark">Newark (EWR) – same day</p>
+        </div>
+      </div>
+      <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
+      <p class="text-sm">Icelandair FI569 · FI623 (via Reykjavik)</p>
+    </div>
+
+    <!-- Strict Schedule -->
+    <h2 class="mb-6">Strict Morning Schedule</h2>
+    
+    <div class="timeline mb-8">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">7:30 – 8:30 AM</p>
+        <h4 class="timeline-title">Breakfast at Hotel</h4>
+        <p class="timeline-description">Included with your stay. Don't rush, but don't linger too long either.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">8:30 – 9:00 AM</p>
+        <h4 class="timeline-title">Quick Optional Activity</h4>
+        <p class="timeline-description">If time allows: quick walk to Lindenhof viewpoint (5 min) or coffee at Babu's Bakery (8 min from station). Only if you're packed and ready.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">9:30 AM</p>
+        <h4 class="timeline-title">Checkout Hotel</h4>
+        <p class="timeline-description">Hotel is next to the station—you can checkout and head straight to the platform.</p>
+      </div>
+      
+      <div class="timeline-item highlight">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">9:45 AM</p>
+        <h4 class="timeline-title">Train to Airport</h4>
+        <p class="timeline-description">Zürich HB → Zürich Airport. Trains every 5-10 minutes. Only 12 minutes. Easy.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">10:00 AM</p>
+        <h4 class="timeline-title">Arrive at Airport</h4>
+        <p class="timeline-description">Check in, drop bags, go through security. You'll have time to browse duty-free and grab lunch.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">1:00 PM</p>
+        <h4 class="timeline-title">Flight Departs</h4>
+        <p class="timeline-description">Gate closes 30-45 min before. Be at the gate by 12:15 PM latest.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">6:25 PM (local time)</p>
+        <h4 class="timeline-title">Land at Newark</h4>
+        <p class="timeline-description">Welcome home! You'll arrive same day due to time zone difference.</p>
+      </div>
+    </div>
+
+    <!-- Last Minute -->
+    <div class="card mb-6">
+      <h3 class="card-title mb-4">Last-Minute Swiss Treats</h3>
+      <ul>
+        <li><strong>Sprüngli at Airport</strong> – Grab Luxemburgerli (Swiss macarons) for the plane</li>
+        <li><strong>Chocolate</strong> – The airport has great chocolate shops if you need last-minute gifts</li>
+        <li><strong>Swiss Army Knife</strong> – Pack it in checked luggage, not carry-on!</li>
+      </ul>
+    </div>
+
+    <!-- Tips -->
+    <div class="alert alert-info">
+      <span class="alert-icon">💡</span>
+      <div class="alert-content">
+        <p class="alert-title">Airport Tips</p>
+        <p>Zürich Airport is efficient and easy to navigate. Arrive 3 hours early for international flights. VAT refund desk is in the departures hall if you have qualifying purchases.</p>
+      </div>
+    </div>
+
+    <!-- Farewell -->
+    <div class="highlight mt-8">
+      <p class="highlight-title">Auf Wiedersehen!</p>
+      <p>You made it—from Lucerne's lights to Rigi's spa, Grindelwald's peaks to Zürich's charm. What a journey. Until next time, Switzerland.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h3 class="footer-title">Ray & Katie's Swiss Adventure</h3>
+      <p class="footer-subtitle">January 19–27, 2026</p>
+      <p class="footer-hearts">♡ ♡ ♡</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switzerland 2026 | Ray & Katie</title>
+  <meta name="description" content="Our winter journey through Switzerland - January 19-27, 2026">
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  
+  <style>
+    /* Landing page specific styles */
+    .landing-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-8);
+      background-image: 
+        linear-gradient(
+          to bottom,
+          rgba(26, 26, 46, 0.4) 0%,
+          rgba(26, 26, 46, 0.6) 50%,
+          rgba(26, 26, 46, 0.95) 100%
+        ),
+        url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
+    .landing-date {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-widest);
+      color: var(--color-amber);
+      margin-bottom: var(--space-6);
+    }
+    
+    .landing-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-7xl);
+      font-weight: var(--weight-light);
+      color: var(--color-cream);
+      line-height: 1;
+      margin-bottom: var(--space-4);
+    }
+    
+    .landing-subtitle {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: var(--weight-light);
+      font-style: italic;
+      color: var(--color-cream-dark);
+      margin-bottom: var(--space-10);
+    }
+    
+    .landing-cta {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .scroll-indicator {
+      position: absolute;
+      bottom: var(--space-8);
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--color-cream-dark);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wider);
+      animation: bounce 2s infinite;
+    }
+    
+    .scroll-indicator::after {
+      content: '↓';
+      display: block;
+      margin-top: var(--space-2);
+      font-size: var(--text-xl);
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+    
+    /* Journey Section */
+    .journey-section {
+      background-color: var(--color-night);
+      color: var(--color-cream);
+      padding: var(--space-20) var(--space-6);
+    }
+    
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      max-width: var(--container-xl);
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 1024px) {
+      .journey-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .journey-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .landing-title {
+        font-size: var(--text-5xl);
+      }
+    }
+    
+    .destination-card {
+      position: relative;
+      height: 400px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform var(--duration-normal) var(--ease-out);
+    }
+    
+    .destination-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .destination-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-out);
+    }
+    
+    .destination-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .destination-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(26, 26, 46, 0.95) 0%,
+        rgba(26, 26, 46, 0.3) 60%,
+        transparent 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-6);
+    }
+    
+    .destination-dates {
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-widest);
+      color: var(--color-amber);
+      margin-bottom: var(--space-2);
+    }
+    
+    .destination-name {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      font-weight: var(--weight-medium);
+      margin-bottom: var(--space-2);
+    }
+    
+    .destination-highlight {
+      font-size: var(--text-sm);
+      color: var(--color-cream-dark);
+    }
+    
+    /* Days Section */
+    .days-section {
+      padding: var(--space-20) var(--space-6);
+      background-color: var(--color-cream);
+    }
+    
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto var(--space-12);
+    }
+    
+    .section-eyebrow {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-widest);
+      color: var(--color-amber-dark);
+      margin-bottom: var(--space-3);
+    }
+    
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-4xl);
+      font-weight: var(--weight-regular);
+      color: var(--color-night);
+      margin-bottom: var(--space-4);
+    }
+    
+    .section-description {
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+    
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      max-width: var(--container-xl);
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 1024px) {
+      .days-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .days-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .day-card {
+      background-color: var(--color-cream-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5);
+      text-decoration: none;
+      color: inherit;
+      transition: all var(--duration-normal) var(--ease-out);
+      border: 2px solid transparent;
+    }
+    
+    .day-card:hover {
+      border-color: var(--color-amber);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .day-number {
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-widest);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-1);
+    }
+    
+    .day-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: var(--weight-medium);
+      color: var(--color-night);
+      margin-bottom: var(--space-2);
+    }
+    
+    .day-location {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-3);
+    }
+    
+    .day-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    
+    /* Guides Section */
+    .guides-section {
+      padding: var(--space-20) var(--space-6);
+      background-color: var(--color-cream-dark);
+    }
+    
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      max-width: var(--container-lg);
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+      .guides-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .guide-card {
+      background-color: var(--color-cream-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: all var(--duration-normal) var(--ease-out);
+    }
+    
+    .guide-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .guide-icon {
+      font-size: var(--text-4xl);
+      margin-bottom: var(--space-4);
+    }
+    
+    .guide-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: var(--weight-medium);
+      color: var(--color-night);
+      margin-bottom: var(--space-2);
+    }
+    
+    .guide-description {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Switzerland 2026</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#journey" class="nav-link">Journey</a></li>
+        <li><a href="#days" class="nav-link">Day by Day</a></li>
+        <li><a href="#guides" class="nav-link">Guides</a></li>
+        <li><a href="quick-reference.html" class="nav-link">Quick Ref</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="landing-hero">
+    <div class="landing-content">
+      <p class="landing-date">January 19–27, 2026</p>
+      <h1 class="landing-title">Switzerland</h1>
+      <p class="landing-subtitle">A winter journey through the Alps</p>
+      <div class="landing-cta">
+        <a href="#journey" class="btn btn-primary">Explore the Journey</a>
+        <a href="quick-reference.html" class="btn btn-secondary" style="color: var(--color-cream); border-color: var(--color-cream);">Quick Reference</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">Scroll</div>
+  </section>
+
+  <!-- Journey Overview -->
+  <section class="journey-section" id="journey">
+    <div class="section-header" style="margin-bottom: var(--space-12);">
+      <p class="section-eyebrow" style="color: var(--color-amber);">The Journey</p>
+      <h2 class="section-title" style="color: var(--color-cream);">Four Destinations, One Adventure</h2>
+      <p class="section-description" style="color: var(--color-cream-dark);">
+        From the lakeside charm of Lucerne to the alpine peaks of Grindelwald, 
+        with a spa retreat on Mount Rigi and a final night in cosmopolitan Zürich.
+      </p>
+    </div>
+    
+    <div class="journey-grid">
+      <!-- Lucerne -->
+      <a href="days/day-2-lucerne.html" class="destination-card">
+        <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=800&q=80" alt="Lucerne, Switzerland" loading="lazy">
+        <div class="destination-overlay">
+          <span class="destination-dates">Jan 20–22 · 2 nights</span>
+          <h3 class="destination-name">Lucerne</h3>
+          <p class="destination-highlight">LILU Light Festival · Chapel Bridge · Old Town</p>
+        </div>
+      </a>
+      
+      <!-- Rigi -->
+      <a href="days/day-4-rigi.html" class="destination-card">
+        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=80" alt="Mount Rigi, Switzerland" loading="lazy">
+        <div class="destination-overlay">
+          <span class="destination-dates">Jan 22–23 · 1 night</span>
+          <h3 class="destination-name">Rigi Kaltbad</h3>
+          <p class="destination-highlight">Thermal Spa · Mountain Views · Mario Botta Design</p>
+        </div>
+      </a>
+      
+      <!-- Grindelwald -->
+      <a href="days/day-5-grindelwald.html" class="destination-card">
+        <img src="https://images.unsplash.com/photo-1476067897447-d0c5df27b5df?w=800&q=80" alt="Grindelwald, Switzerland" loading="lazy">
+        <div class="destination-overlay">
+          <span class="destination-dates">Jan 23–26 · 3 nights</span>
+          <h3 class="destination-name">Grindelwald</h3>
+          <p class="destination-highlight">Snow Festival · Night Sledding · Fondue Gondola</p>
+        </div>
+      </a>
+      
+      <!-- Zürich -->
+      <a href="days/day-8-zurich.html" class="destination-card">
+        <img src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=800&q=80" alt="Zürich, Switzerland" loading="lazy">
+        <div class="destination-overlay">
+          <span class="destination-dates">Jan 26–27 · 1 night</span>
+          <h3 class="destination-name">Zürich</h3>
+          <p class="destination-highlight">Old Town · Final Dinner · Departure</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Day by Day -->
+  <section class="days-section" id="days">
+    <div class="section-header">
+      <p class="section-eyebrow">The Itinerary</p>
+      <h2 class="section-title">Day by Day</h2>
+      <p class="section-description">
+        Nine days of alpine adventures, cozy dinners, and unforgettable moments.
+        Tap any day to see the full schedule.
+      </p>
+    </div>
+    
+    <div class="days-grid">
+      <!-- Day 1 -->
+      <a href="days/day-1-departure.html" class="day-card">
+        <p class="day-number">Day 1 · Monday, Jan 19</p>
+        <h3 class="day-title">Departure Day</h3>
+        <p class="day-location">Newark → In Transit</p>
+        <div class="day-badges">
+          <span class="badge badge-night">Evening Flight</span>
+        </div>
+      </a>
+      
+      <!-- Day 2 -->
+      <a href="days/day-2-lucerne.html" class="day-card">
+        <p class="day-number">Day 2 · Tuesday, Jan 20</p>
+        <h3 class="day-title">Arrival in Lucerne</h3>
+        <p class="day-location">Zürich → Lucerne</p>
+        <div class="day-badges">
+          <span class="badge badge-lucerne">LILU Festival</span>
+        </div>
+      </a>
+      
+      <!-- Day 3 -->
+      <a href="days/day-3-lucerne.html" class="day-card">
+        <p class="day-number">Day 3 · Wednesday, Jan 21</p>
+        <h3 class="day-title">Full Day Lucerne</h3>
+        <p class="day-location">Lucerne</p>
+        <div class="day-badges">
+          <span class="badge badge-lucerne">LILU Final Night</span>
+        </div>
+      </a>
+      
+      <!-- Day 4 -->
+      <a href="days/day-4-rigi.html" class="day-card">
+        <p class="day-number">Day 4 · Thursday, Jan 22</p>
+        <h3 class="day-title">Travel to Rigi + Spa</h3>
+        <p class="day-location">Lucerne → Rigi Kaltbad</p>
+        <div class="day-badges">
+          <span class="badge badge-rigi">Thermal Spa</span>
+        </div>
+      </a>
+      
+      <!-- Day 5 -->
+      <a href="days/day-5-grindelwald.html" class="day-card">
+        <p class="day-number">Day 5 · Friday, Jan 23</p>
+        <h3 class="day-title">To Grindelwald</h3>
+        <p class="day-location">Rigi → Grindelwald</p>
+        <div class="day-badges">
+          <span class="badge badge-grindelwald">Snow Festival</span>
+        </div>
+      </a>
+      
+      <!-- Day 6 -->
+      <a href="days/day-6-adventure.html" class="day-card">
+        <p class="day-number">Day 6 · Saturday, Jan 24</p>
+        <h3 class="day-title">Adventure Day</h3>
+        <p class="day-location">Grindelwald</p>
+        <div class="day-badges">
+          <span class="badge badge-grindelwald">Night Sledding</span>
+          <span class="badge badge-amber">Book by 2pm!</span>
+        </div>
+      </a>
+      
+      <!-- Day 7 -->
+      <a href="days/day-7-fondue.html" class="day-card">
+        <p class="day-number">Day 7 · Sunday, Jan 25</p>
+        <h3 class="day-title">Fondue Gondola Day</h3>
+        <p class="day-location">Grindelwald</p>
+        <div class="day-badges">
+          <span class="badge badge-amber">4pm Fondue Gondola</span>
+        </div>
+      </a>
+      
+      <!-- Day 8 -->
+      <a href="days/day-8-zurich.html" class="day-card">
+        <p class="day-number">Day 8 · Monday, Jan 26</p>
+        <h3 class="day-title">Zürich Final Night</h3>
+        <p class="day-location">Grindelwald → Zürich</p>
+        <div class="day-badges">
+          <span class="badge badge-zurich">Old Town</span>
+        </div>
+      </a>
+      
+      <!-- Day 9 -->
+      <a href="days/day-9-departure.html" class="day-card">
+        <p class="day-number">Day 9 · Tuesday, Jan 27</p>
+        <h3 class="day-title">Departure</h3>
+        <p class="day-location">Zürich → Home</p>
+        <div class="day-badges">
+          <span class="badge badge-night">1pm Flight</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Guides -->
+  <section class="guides-section" id="guides">
+    <div class="section-header">
+      <p class="section-eyebrow">Essential Reading</p>
+      <h2 class="section-title">Travel Guides</h2>
+      <p class="section-description">
+        Everything you need to know about getting around, Swiss customs, 
+        and making the most of your trip.
+      </p>
+    </div>
+    
+    <div class="guides-grid">
+      <a href="guides/getting-around.html" class="guide-card">
+        <div class="guide-icon">🚂</div>
+        <h3 class="guide-title">Getting Around</h3>
+        <p class="guide-description">Trains, boats, cable cars, and the Swiss Pass explained</p>
+      </a>
+      
+      <a href="guides/swiss-essentials.html" class="guide-card">
+        <div class="guide-icon">🇨🇭</div>
+        <h3 class="guide-title">Swiss Essentials</h3>
+        <p class="guide-description">Money, customs, phrases, and first-timer tips</p>
+      </a>
+      
+      <a href="guides/pass-analysis.html" class="guide-card">
+        <div class="guide-icon">💳</div>
+        <h3 class="guide-title">Swiss Pass Analysis</h3>
+        <p class="guide-description">Is the Swiss Travel Pass worth it? A cost breakdown</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h3 class="footer-title">Ray & Katie's Swiss Adventure</h3>
+      <p class="footer-subtitle">January 19–27, 2026</p>
+      <p class="footer-hearts">♡ ♡ ♡</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/navigation.js"></script>
+  <script src="js/scroll-effects.js"></script>
+</body>
+</html>

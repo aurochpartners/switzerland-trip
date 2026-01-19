@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Around | Switzerland 2026</title>
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  
+  <style>
+    .guide-hero {
+      min-height: 40vh;
+      background-image: 
+        linear-gradient(to bottom, rgba(26, 26, 46, 0.5) 0%, rgba(26, 26, 46, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .content-section {
+      padding: var(--space-12) var(--space-6);
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+    
+    .route-table {
+      width: 100%;
+      margin: var(--space-6) 0;
+      background-color: var(--color-cream-light);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+    
+    .route-table th {
+      background-color: var(--color-night);
+      color: var(--color-cream);
+      padding: var(--space-4);
+      text-align: left;
+    }
+    
+    .route-table td {
+      padding: var(--space-4);
+      border-bottom: 1px solid var(--color-cream-dark);
+    }
+    
+    .route-table tr:last-child td {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">Switzerland 2026</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#journey" class="nav-link">Journey</a></li>
+        <li><a href="../index.html#days" class="nav-link">Days</a></li>
+        <li><a href="../quick-reference.html" class="nav-link">Quick Ref</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero guide-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Travel Guide</p>
+      <h1 class="hero-title">Getting Around</h1>
+      <p class="hero-subtitle">Trains, boats, cable cars, and the world's best public transport.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="content-section">
+    
+    <h2 class="mb-4">Swiss Trains: The Basics</h2>
+    
+    <div class="card mb-8">
+      <h3 class="card-title mb-4">What You Need to Know</h3>
+      <ul>
+        <li><strong>Punctuality:</strong> Swiss trains are famously on time. If the schedule says 14:07, it leaves at 14:07.</li>
+        <li><strong>No reserved seats:</strong> Most trains are first-come, first-served. Just hop on.</li>
+        <li><strong>Platform displays:</strong> Look for the yellow departure boards. Find your train, note the platform (Gleis).</li>
+        <li><strong>Tickets:</strong> Buy at machines, at the counter, or via the SBB Mobile app (recommended).</li>
+        <li><strong>Luggage:</strong> No porters—you carry your own. Storage between cars or overhead.</li>
+      </ul>
+    </div>
+
+    <div class="alert alert-info mb-8">
+      <span class="alert-icon">📱</span>
+      <div class="alert-content">
+        <p class="alert-title">Download SBB Mobile</p>
+        <p>The official Swiss rail app. Buy tickets, check real-time departures, see platform info. Works offline for timetables. Essential.</p>
+      </div>
+    </div>
+
+    <h2 class="mb-4">Your Routes</h2>
+
+    <h3 class="mt-8 mb-4">Route 1: Zürich Airport → Lucerne (Day 2)</h3>
+    <table class="route-table">
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Duration</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+        <td>Zürich Airport (ZRH)</td>
+        <td>Lucerne</td>
+        <td>~1 hour (direct or 1 change)</td>
+        <td>CHF 31/pp · FREE with Swiss Pass</td>
+      </tr>
+    </table>
+    <p class="text-sm text-muted">Trains every 30 min. Sit on right side for lake views as you approach Lucerne.</p>
+
+    <h3 class="mt-8 mb-4">Route 2: Lucerne → Rigi Kaltbad (Day 4)</h3>
+    
+    <div class="alert alert-danger mb-4">
+      <span class="alert-icon">⚠️</span>
+      <div class="alert-content">
+        <p class="alert-title">Weggis Route Closed</p>
+        <p>The Weggis boat station is closed through Feb 11, 2026. Use the Vitznau route instead.</p>
+      </div>
+    </div>
+
+    <table class="route-table">
+      <tr>
+        <th>Leg</th>
+        <th>Mode</th>
+        <th>Duration</th>
+      </tr>
+      <tr>
+        <td>Lucerne → Vitznau</td>
+        <td>Boat</td>
+        <td>60 min</td>
+      </tr>
+      <tr>
+        <td>Vitznau → Rigi Kaltbad</td>
+        <td>Cogwheel train</td>
+        <td>20-30 min</td>
+      </tr>
+    </table>
+    <p class="text-sm text-muted mb-4">Total: ~1.5 hours. FREE with Swiss Pass. Your hotel guest card gives 50% off Rigi trains.</p>
+
+    <p class="mb-4"><strong>Alternative (bad weather):</strong></p>
+    <table class="route-table">
+      <tr>
+        <th>Leg</th>
+        <th>Mode</th>
+        <th>Duration</th>
+      </tr>
+      <tr>
+        <td>Lucerne → Arth-Goldau</td>
+        <td>Train</td>
+        <td>30 min</td>
+      </tr>
+      <tr>
+        <td>Arth-Goldau → Rigi Kaltbad</td>
+        <td>Cogwheel train</td>
+        <td>45 min</td>
+      </tr>
+    </table>
+
+    <h3 class="mt-8 mb-4">Route 3: Rigi Kaltbad → Grindelwald (Day 5)</h3>
+    <table class="route-table">
+      <tr>
+        <th>Leg</th>
+        <th>Mode</th>
+        <th>Duration</th>
+      </tr>
+      <tr>
+        <td>Rigi Kaltbad → Vitznau</td>
+        <td>Cogwheel</td>
+        <td>30 min</td>
+      </tr>
+      <tr>
+        <td>Vitznau → Lucerne</td>
+        <td>Boat or train</td>
+        <td>60 min</td>
+      </tr>
+      <tr>
+        <td>Lucerne → Interlaken Ost</td>
+        <td>Train</td>
+        <td>~2 hours</td>
+      </tr>
+      <tr>
+        <td>Interlaken Ost → Grindelwald</td>
+        <td>Train</td>
+        <td>35 min</td>
+      </tr>
+    </table>
+    <p class="text-sm text-muted">Total: ~3-3.5 hours. Consider breaking for lunch in Interlaken.</p>
+
+    <h3 class="mt-8 mb-4">Route 4: Grindelwald → Zürich (Day 8)</h3>
+    <table class="route-table">
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Duration</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+        <td>Grindelwald</td>
+        <td>Zürich HB</td>
+        <td>~2.5 hours (1 change at Interlaken)</td>
+        <td>CHF 75/pp · FREE with Swiss Pass</td>
+      </tr>
+    </table>
+
+    <h3 class="mt-8 mb-4">Route 5: Zürich HB → Airport (Day 9)</h3>
+    <table class="route-table">
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Duration</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+        <td>Zürich HB</td>
+        <td>Zürich Airport</td>
+        <td>12 minutes</td>
+        <td>CHF 7/pp · FREE with Swiss Pass</td>
+      </tr>
+    </table>
+    <p class="text-sm text-muted">Trains every 5-10 min. Dead easy.</p>
+
+    <h2 class="mt-12 mb-4">Mountain Transport</h2>
+
+    <div class="card mb-6">
+      <h3 class="card-title mb-4">Rigi</h3>
+      <ul>
+        <li>Cogwheel trains from Vitznau or Arth-Goldau</li>
+        <li><strong>FREE with Swiss Pass</strong></li>
+        <li>50% off with hotel guest card (you'll get one at check-in)</li>
+        <li>Schedules at rigi.ch</li>
+      </ul>
+    </div>
+
+    <div class="card mb-6">
+      <h3 class="card-title mb-4">Grindelwald First</h3>
+      <ul>
+        <li>Gondola from village center</li>
+        <li><strong>50% off with Swiss Pass</strong> (~CHF 36 instead of CHF 72)</li>
+        <li>First Cliff Walk: FREE with gondola ticket</li>
+        <li>First Flyer/Glider: CHF 31 each (no Swiss Pass discount)</li>
+      </ul>
+    </div>
+
+    <div class="card mb-6">
+      <h3 class="card-title mb-4">Jungfraujoch (if you go)</h3>
+      <ul>
+        <li>Eiger Express gondola from Grindelwald (45 min to top)</li>
+        <li><strong>25% off with Swiss Pass</strong> (~CHF 150 instead of CHF 201)</li>
+        <li>Weather dependent—check webcams at jungfrau.ch before going</li>
+        <li>Only worth it on clear days!</li>
+      </ul>
+    </div>
+
+    <h2 class="mt-12 mb-4">Train Etiquette</h2>
+
+    <div class="card">
+      <ul>
+        <li><strong>Quiet zones:</strong> Marked with a phone icon. Keep voices down.</li>
+        <li><strong>Seats:</strong> Give up your seat for elderly, pregnant, or disabled passengers.</li>
+        <li><strong>Volume:</strong> Swiss people are quiet on trains. Don't be the loud Americans.</li>
+        <li><strong>Feet:</strong> Not on seats, even if they're empty.</li>
+        <li><strong>Food:</strong> Eating is fine, but avoid smelly foods. Clean up after yourself.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-subtitle">The Swiss train system is a joy. Enjoy it.</p>
+    </div>
+  </footer>
+</body>
+</html>

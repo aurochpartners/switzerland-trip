@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 2: Arrival in Lucerne | Switzerland 2026</title>
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  
+  <style>
+    .day-hero {
+      min-height: 50vh;
+      background-image: 
+        linear-gradient(to bottom, rgba(26, 26, 46, 0.4) 0%, rgba(26, 26, 46, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .content-section {
+      padding: var(--space-12) var(--space-6);
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+    
+    .nav-days {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      background-color: var(--color-cream-dark);
+      position: sticky;
+      top: 60px;
+      z-index: var(--z-sticky);
+    }
+    
+    .nav-day-link {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+    }
+    
+    .nav-day-link:hover {
+      color: var(--color-amber-dark);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">Switzerland 2026</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#journey" class="nav-link">Journey</a></li>
+        <li><a href="../index.html#days" class="nav-link">Days</a></li>
+        <li><a href="../quick-reference.html" class="nav-link">Quick Ref</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero day-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Day 2 · Tuesday, January 20</p>
+      <h1 class="hero-title">Arrival in Lucerne</h1>
+      <p class="hero-subtitle">Touchdown in Switzerland. First glimpse of the Alps.</p>
+    </div>
+  </section>
+
+  <!-- Day Navigation -->
+  <div class="nav-days">
+    <a href="day-1-departure.html" class="nav-day-link">← Day 1: Departure</a>
+    <a href="day-3-lucerne.html" class="nav-day-link">Day 3: Lucerne →</a>
+  </div>
+
+  <!-- Content -->
+  <main class="content-section">
+    
+    <!-- Hotel Card -->
+    <div class="hotel-card mb-8">
+      <h3 class="hotel-name">Hotel Schweizerhof Luzern</h3>
+      <p class="hotel-address">Schweizerhofquai 3, 6002 Luzern</p>
+      <div class="hotel-details">
+        <div class="hotel-detail">
+          <span class="hotel-detail-label">Check-in</span>
+          <span class="hotel-detail-value">3:00 PM</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="hotel-detail-label">Confirmation</span>
+          <span class="hotel-detail-value">18387J104610</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="hotel-detail-label">Room</span>
+          <span class="hotel-detail-value">Lifestyle Junior Suite</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="hotel-detail-label">Phone</span>
+          <a href="tel:+41414100410" class="hotel-phone">+41 41 410 04 10</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Today's Highlight -->
+    <div class="highlight mb-8">
+      <p class="highlight-title">LILU Light Festival Tonight</p>
+      <p>6:00 PM – 10:00 PM · Free outdoor light installations across Old Town</p>
+    </div>
+
+    <!-- Schedule -->
+    <h2 class="mb-6">Today's Schedule</h2>
+    
+    <div class="timeline mb-8">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">12:05 PM</p>
+        <h4 class="timeline-title">Land at Zürich Airport</h4>
+        <p class="timeline-description">Clear customs, collect bags. Find the train station (follow signs to "Bahn/Rail" – it's inside the airport).</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">~1:00 PM</p>
+        <h4 class="timeline-title">Train to Lucerne</h4>
+        <p class="timeline-description">Direct trains every 30 min, ~1 hour journey. Buy tickets at SBB machine or use the app. Sit on the right side for lake views as you approach Lucerne.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">~2:00 PM</p>
+        <h4 class="timeline-title">Arrive Lucerne</h4>
+        <p class="timeline-description">The hotel is a 5-minute walk from the station. Head toward the lake—you'll see it.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">3:00 PM</p>
+        <h4 class="timeline-title">Check into Hotel</h4>
+        <p class="timeline-description">Drop bags, freshen up. You'll be jet-lagged—maybe a quick rest or coffee to push through.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">4:00 – 5:30 PM</p>
+        <h4 class="timeline-title">Optional: Light Old Town Walk</h4>
+        <p class="timeline-description">Chapel Bridge (Kapellbrücke), Water Tower, wander the cobblestone streets. Don't overdo it—save energy for tonight.</p>
+      </div>
+      
+      <div class="timeline-item highlight">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">6:00 – 10:00 PM</p>
+        <h4 class="timeline-title">LILU Light Festival</h4>
+        <p class="timeline-description">Walk through illuminated Old Town. Free outdoor installations transform the city. Magical at night, runs rain or shine.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">7:30 – 8:30 PM</p>
+        <h4 class="timeline-title">Dinner in Old Town</h4>
+        <p class="timeline-description">Find a cozy spot for your first Swiss meal. Fondue? Rösti? You've earned it.</p>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="alert alert-info mb-6">
+      <span class="alert-icon">💡</span>
+      <div class="alert-content">
+        <p class="alert-title">Jet Lag Strategy</p>
+        <p>Try to stay awake until at least 9 PM local time. A short walk in natural light helps reset your body clock. Don't nap for more than 20 minutes if you must.</p>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <span class="alert-icon">☂️</span>
+      <div class="alert-content">
+        <p class="alert-title">Weather Note</p>
+        <p>January in Lucerne: expect around 3°C (37°F). LILU runs rain or shine—bring an umbrella and dress warmly for the evening walk.</p>
+      </div>
+    </div>
+
+    <!-- Meals -->
+    <h2 class="mt-8 mb-6">Meals</h2>
+    
+    <div class="card">
+      <div class="grid grid-2 gap-6">
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Lunch</p>
+          <p>Grab something light at the train station or a café in Old Town. You'll probably be too tired for a big meal.</p>
+        </div>
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Dinner</p>
+          <p>Old Town has plenty of options. Try <strong>Wirtshaus Galliker</strong> for traditional Lucerne cuisine or <strong>Restaurant Schiff</strong> on a historic paddle steamer.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-subtitle">Welcome to Switzerland!</p>
+    </div>
+  </footer>
+</body>
+</html>

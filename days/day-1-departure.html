@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 1: Departure | Switzerland 2026</title>
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  
+  <style>
+    .day-hero {
+      min-height: 50vh;
+      background-image: 
+        linear-gradient(to bottom, rgba(26, 26, 46, 0.5) 0%, rgba(26, 26, 46, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .content-section {
+      padding: var(--space-12) var(--space-6);
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+    
+    .nav-days {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      background-color: var(--color-cream-dark);
+      position: sticky;
+      top: 60px;
+      z-index: var(--z-sticky);
+    }
+    
+    .nav-day-link {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    
+    .nav-day-link:hover {
+      color: var(--color-amber-dark);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">Switzerland 2026</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#journey" class="nav-link">Journey</a></li>
+        <li><a href="../index.html#days" class="nav-link">Days</a></li>
+        <li><a href="../quick-reference.html" class="nav-link">Quick Ref</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero day-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Day 1 · Monday, January 19</p>
+      <h1 class="hero-title">Departure Day</h1>
+      <p class="hero-subtitle">The adventure begins. Newark to Zürich via Reykjavik.</p>
+    </div>
+  </section>
+
+  <!-- Day Navigation -->
+  <div class="nav-days">
+    <span class="nav-day-link text-muted">← Previous</span>
+    <a href="day-2-lucerne.html" class="nav-day-link">Day 2: Lucerne →</a>
+  </div>
+
+  <!-- Content -->
+  <main class="content-section">
+    <div class="highlight mb-8">
+      <p class="highlight-title">Flight Tonight at 7:35pm</p>
+      <p>Icelandair FI622 from Newark (EWR)</p>
+    </div>
+
+    <h2 class="mb-6">Flight Details</h2>
+    
+    <div class="card mb-6">
+      <div class="card-header">
+        <h3 class="card-title">Newark → Zürich</h3>
+        <p class="card-subtitle">Via Reykjavik · Icelandair</p>
+      </div>
+      <div class="card-body">
+        <div class="grid grid-2 gap-6">
+          <div>
+            <p class="text-sm text-muted uppercase tracking-wide mb-1">Departure</p>
+            <p class="text-xl font-medium">7:35 PM</p>
+            <p class="text-sm text-muted">Newark Liberty (EWR)</p>
+          </div>
+          <div>
+            <p class="text-sm text-muted uppercase tracking-wide mb-1">Arrival</p>
+            <p class="text-xl font-medium">12:05 PM +1</p>
+            <p class="text-sm text-muted">Zürich Airport (ZRH)</p>
+          </div>
+        </div>
+        
+        <hr class="my-6">
+        
+        <p class="text-sm text-muted uppercase tracking-wide mb-2">Flight Numbers</p>
+        <p>FI622 · FI568 (connection in Reykjavik)</p>
+      </div>
+    </div>
+
+    <h2 class="mb-6">Pre-Flight Checklist</h2>
+    
+    <ul class="mb-8">
+      <li>Passports (valid 6+ months beyond return)</li>
+      <li>Boarding passes (on phone or printed)</li>
+      <li>Travel adapters (Type J for Switzerland)</li>
+      <li>Warm layers for the plane and Alps</li>
+      <li>Phone chargers and cables</li>
+      <li>Any medications needed</li>
+      <li>Download offline maps of Switzerland</li>
+      <li>Download SBB Mobile app for trains</li>
+    </ul>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">💡</span>
+      <div class="alert-content">
+        <p class="alert-title">Overnight Flight Tips</p>
+        <p>Try to sleep on the plane—you'll arrive at noon local time. Bring a neck pillow, eye mask, and stay hydrated. Skip the alcohol to help with jet lag.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-subtitle">Safe travels! See you in Switzerland.</p>
+    </div>
+  </footer>
+</body>
+</html>

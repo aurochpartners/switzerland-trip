@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 5: To Grindelwald | Switzerland 2026</title>
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  
+  <style>
+    .day-hero {
+      min-height: 50vh;
+      background-image: 
+        linear-gradient(to bottom, rgba(26, 26, 46, 0.3) 0%, rgba(26, 26, 46, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1476067897447-d0c5df27b5df?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .content-section {
+      padding: var(--space-12) var(--space-6);
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+    
+    .nav-days {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      background-color: var(--color-cream-dark);
+      position: sticky;
+      top: 60px;
+      z-index: var(--z-sticky);
+    }
+    
+    .nav-day-link {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+    }
+    
+    .nav-day-link:hover {
+      color: var(--color-amber-dark);
+    }
+    
+    .route-card {
+      background-color: var(--color-cream-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin-bottom: var(--space-4);
+    }
+    
+    .route-steps {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-3);
+      font-size: var(--text-sm);
+    }
+    
+    .route-step {
+      background-color: var(--color-grindelwald);
+      color: white;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+    }
+    
+    .route-arrow {
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">Switzerland 2026</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#journey" class="nav-link">Journey</a></li>
+        <li><a href="../index.html#days" class="nav-link">Days</a></li>
+        <li><a href="../quick-reference.html" class="nav-link">Quick Ref</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero day-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Day 5 · Friday, January 23</p>
+      <h1 class="hero-title">To Grindelwald</h1>
+      <p class="hero-subtitle">Into the heart of the Bernese Alps. The Eiger awaits.</p>
+    </div>
+  </section>
+
+  <!-- Day Navigation -->
+  <div class="nav-days">
+    <a href="day-4-rigi.html" class="nav-day-link">← Day 4: Rigi</a>
+    <a href="day-6-adventure.html" class="nav-day-link">Day 6: Adventure →</a>
+  </div>
+
+  <!-- Content -->
+  <main class="content-section">
+    
+    <!-- Hotel Card -->
+    <div class="hotel-card mb-8">
+      <h3 class="hotel-name">Bergwelt Grindelwald – Alpine Design Resort</h3>
+      <p class="hotel-address">Bergwelt 4, CH-3818 Grindelwald</p>
+      <div class="hotel-details">
+        <div class="hotel-detail">
+          <span class="hotel-detail-label">Check-in</span>
+          <span class="hotel-detail-value">3:00 PM</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="hotel-detail-label">Confirmation</span>
+          <span class="hotel-detail-value">2025123145141944</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="hotel-detail-label">Room</span>
+          <span class="hotel-detail-value">Luxury Room with Eiger View</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="hotel-detail-label">Phone</span>
+          <a href="tel:+41338548585" class="hotel-phone">+41 33 854 85 85</a>
+        </div>
+      </div>
+      <div class="mt-4 p-4 bg-cream-dark rounded-lg">
+        <p class="text-sm"><strong>Included:</strong> Breakfast buffet. <strong>Optional:</strong> Fire & Ice Spa (CHF 35/pp, 90 min) – book at reception.</p>
+      </div>
+    </div>
+
+    <!-- Today's Highlight -->
+    <div class="highlight mb-8">
+      <p class="highlight-title">World Snow Festival</p>
+      <p>Ice sculptures illuminated after dark at Bärplatz (2 min from station). Today is Day 1 of 2!</p>
+    </div>
+
+    <!-- Getting There -->
+    <h2 class="mb-4">Getting There</h2>
+    
+    <div class="route-card">
+      <h4>Rigi Kaltbad → Grindelwald</h4>
+      <div class="route-steps">
+        <span class="route-step">Rigi Kaltbad</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Cogwheel</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Vitznau</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Boat/Train</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Lucerne</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Train</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Interlaken</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Train</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Grindelwald</span>
+      </div>
+      <p class="mt-3 text-sm text-muted">~3–3.5 hours total. A scenic journey through the Swiss heartland. Consider breaking for lunch in Interlaken.</p>
+    </div>
+
+    <!-- Schedule -->
+    <h2 class="mt-10 mb-6">Today's Schedule</h2>
+    
+    <div class="timeline mb-8">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">Flexible Morning</p>
+        <h4 class="timeline-title">Breakfast with Mountain Views</h4>
+        <p class="timeline-description">Take your time. Maybe a final morning spa session or short walk on Rigi.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">11:00 AM</p>
+        <h4 class="timeline-title">Check Out & Depart</h4>
+        <p class="timeline-description">Note: You can use the spa all day even after checkout! But today you're moving on to Grindelwald.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">11:00 AM – 2:30 PM</p>
+        <h4 class="timeline-title">Journey to Grindelwald</h4>
+        <p class="timeline-description">Cogwheel down, then train via Lucerne and Interlaken. The scenery keeps getting more dramatic as you approach the Alps.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">~3:00 – 4:00 PM</p>
+        <h4 class="timeline-title">Arrive & Check In</h4>
+        <p class="timeline-description">The Bergwelt is a stunning modern alpine resort. If you want spa time, book at reception.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">4:30 – 6:00 PM</p>
+        <h4 class="timeline-title">Explore the Village</h4>
+        <p class="timeline-description">Grindelwald is a classic Swiss alpine village. Walk the main street, take in the mountain views. The Eiger looms above.</p>
+      </div>
+      
+      <div class="timeline-item highlight">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">After Dark</p>
+        <h4 class="timeline-title">World Snow Festival</h4>
+        <p class="timeline-description">Head to Bärplatz (2 min from station) to see the illuminated snow sculptures. The festival runs Jan 19-24, so you're catching it near the end when sculptures are complete.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">7:30 – 9:00 PM</p>
+        <h4 class="timeline-title">Dinner in the Village</h4>
+        <p class="timeline-description">Find a cozy restaurant. You'll be here for 3 nights, so you have time to try different spots.</p>
+      </div>
+    </div>
+
+    <!-- Night Sledding Note -->
+    <div class="alert alert-info">
+      <span class="alert-icon">🛷</span>
+      <div class="alert-content">
+        <p class="alert-title">Night Sledding Available Tonight</p>
+        <p>It's Friday, so night sledding at Bussalp is available! If you want to do it tonight instead of tomorrow, call <a href="tel:+41338541616" class="text-amber">+41 33 854 16 16</a> by 2:00 PM. But we recommend tomorrow (Saturday) so you're not rushed on arrival day.</p>
+      </div>
+    </div>
+
+    <!-- Weather -->
+    <div class="alert alert-warning mt-6">
+      <span class="alert-icon">❄️</span>
+      <div class="alert-content">
+        <p class="alert-title">Grindelwald Weather</p>
+        <p>Expect temperatures around -10°C to 2°C (14-36°F). Dress in warm layers. The village is at 1,034m elevation—significantly colder than Lucerne.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-subtitle">Welcome to the Alps.</p>
+    </div>
+  </footer>
+</body>
+</html>

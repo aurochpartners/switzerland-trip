@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiss Pass Analysis | Switzerland 2026</title>
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  
+  <style>
+    .guide-hero {
+      min-height: 40vh;
+      background-image: 
+        linear-gradient(to bottom, rgba(26, 26, 46, 0.5) 0%, rgba(26, 26, 46, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .content-section {
+      padding: var(--space-12) var(--space-6);
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+    
+    .verdict-box {
+      background-color: var(--color-night);
+      color: var(--color-cream);
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      margin-bottom: var(--space-8);
+    }
+    
+    .verdict-box h2 {
+      color: var(--color-amber);
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-2);
+    }
+    
+    .analysis-table {
+      width: 100%;
+      margin: var(--space-6) 0;
+      background-color: var(--color-cream-light);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+    
+    .analysis-table th {
+      background-color: var(--color-night);
+      color: var(--color-cream);
+      padding: var(--space-4);
+      text-align: left;
+    }
+    
+    .analysis-table td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--color-cream-dark);
+    }
+    
+    .analysis-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .analysis-table .free {
+      color: var(--color-success);
+      font-weight: var(--weight-semibold);
+    }
+    
+    .analysis-table .discount {
+      color: var(--color-amber-dark);
+      font-weight: var(--weight-semibold);
+    }
+    
+    .total-row {
+      background-color: var(--color-cream-dark);
+      font-weight: var(--weight-semibold);
+    }
+    
+    .savings-positive {
+      color: var(--color-success);
+    }
+    
+    .savings-negative {
+      color: var(--color-danger);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">Switzerland 2026</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#journey" class="nav-link">Journey</a></li>
+        <li><a href="../index.html#days" class="nav-link">Days</a></li>
+        <li><a href="../quick-reference.html" class="nav-link">Quick Ref</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero guide-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Cost Analysis</p>
+      <h1 class="hero-title">Swiss Travel Pass</h1>
+      <p class="hero-subtitle">Is it worth it for this trip? Let's do the math.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="content-section">
+    
+    <!-- Verdict -->
+    <div class="verdict-box">
+      <p class="text-sm uppercase tracking-widest mb-2">The Verdict</p>
+      <h2>The Pass Doesn't Pay Off</h2>
+      <p class="text-cream-dark">For this specific trip, buying individual tickets is cheaper. But read on for the full picture.</p>
+    </div>
+
+    <h2 class="mb-4">Pass Options</h2>
+    
+    <table class="analysis-table">
+      <tr>
+        <th>Option</th>
+        <th>Price (2 people)</th>
+        <th>What You Get</th>
+      </tr>
+      <tr>
+        <td>Swiss Travel Pass (8-day, 2nd class)</td>
+        <td>CHF 878</td>
+        <td>Unlimited trains, boats, buses + mountain discounts</td>
+      </tr>
+      <tr>
+        <td>Swiss Half-Fare Card</td>
+        <td>CHF 300</td>
+        <td>50% off almost everything for 1 month</td>
+      </tr>
+      <tr>
+        <td>Point-to-Point Tickets</td>
+        <td>Varies</td>
+        <td>Pay only for what you use</td>
+      </tr>
+    </table>
+
+    <h2 class="mt-12 mb-4">What the Swiss Pass Covers</h2>
+    
+    <div class="card mb-6">
+      <h3 class="card-title mb-4">FREE with Swiss Pass</h3>
+      <ul>
+        <li>All SBB trains</li>
+        <li>All PostBus routes</li>
+        <li>City trams and buses</li>
+        <li>Lake Lucerne boats</li>
+        <li><strong>Rigi – ALL transport</strong> (cogwheel, cable cars)</li>
+        <li>500+ museums including Museum of Transport</li>
+      </ul>
+    </div>
+
+    <div class="card mb-6">
+      <h3 class="card-title mb-4">50% Off</h3>
+      <ul>
+        <li>Grindelwald First gondola</li>
+        <li>Mount Pilatus</li>
+        <li>Mount Titlis</li>
+        <li>Most other mountain railways</li>
+      </ul>
+    </div>
+
+    <div class="card mb-6">
+      <h3 class="card-title mb-4">25% Off</h3>
+      <ul>
+        <li>Jungfraujoch (Top of Europe)</li>
+      </ul>
+    </div>
+
+    <div class="card mb-8">
+      <h3 class="card-title mb-4">No Discount</h3>
+      <ul>
+        <li>First Flyer zipline</li>
+        <li>First Glider</li>
+      </ul>
+    </div>
+
+    <h2 class="mb-4">Cost Breakdown: Your Trip</h2>
+    
+    <h3 class="mt-8 mb-4">Scenario A: Minimal (Just Required Transport)</h3>
+    <table class="analysis-table">
+      <tr>
+        <th>Item</th>
+        <th>Full Price (2 ppl)</th>
+        <th>With Pass</th>
+      </tr>
+      <tr>
+        <td>ZRH → Lucerne</td>
+        <td>CHF 62</td>
+        <td class="free">FREE</td>
+      </tr>
+      <tr>
+        <td>Lucerne → Rigi (via Vitznau)</td>
+        <td>CHF 78*</td>
+        <td class="free">FREE</td>
+      </tr>
+      <tr>
+        <td>Rigi → Grindelwald</td>
+        <td>CHF 112</td>
+        <td class="free">FREE</td>
+      </tr>
+      <tr>
+        <td>Grindelwald → Zürich</td>
+        <td>CHF 150</td>
+        <td class="free">FREE</td>
+      </tr>
+      <tr>
+        <td>Zürich → ZRH Airport</td>
+        <td>CHF 14</td>
+        <td class="free">FREE</td>
+      </tr>
+      <tr class="total-row">
+        <td><strong>Total Transport</strong></td>
+        <td><strong>CHF 416</strong></td>
+        <td><strong>CHF 0</strong></td>
+      </tr>
+    </table>
+    <p class="text-sm text-muted">*Hotel guest card gives 50% off Rigi trains anyway</p>
+
+    <div class="card mt-6 mb-8">
+      <h4>Scenario A Result</h4>
+      <p>Transport cost without pass: <strong>CHF 377</strong> (with hotel discount)</p>
+      <p>8-day Swiss Pass cost: <strong>CHF 878</strong></p>
+      <p class="text-lg mt-2 savings-negative"><strong>Net: -CHF 501</strong> (Pass costs more)</p>
+    </div>
+
+    <h3 class="mt-8 mb-4">Scenario B: Moderate (Add Museum + First)</h3>
+    <table class="analysis-table">
+      <tr>
+        <th>Additional Items</th>
+        <th>Full Price (2 ppl)</th>
+        <th>With Pass</th>
+      </tr>
+      <tr>
+        <td>Scenario A transport</td>
+        <td>CHF 377</td>
+        <td class="free">FREE</td>
+      </tr>
+      <tr>
+        <td>Museum of Transport</td>
+        <td>CHF 74</td>
+        <td class="free">FREE</td>
+      </tr>
+      <tr>
+        <td>Lake Lucerne cruise</td>
+        <td>CHF 62</td>
+        <td class="free">FREE</td>
+      </tr>
+      <tr>
+        <td>First Gondola</td>
+        <td>CHF 144</td>
+        <td class="discount">CHF 72</td>
+      </tr>
+      <tr class="total-row">
+        <td><strong>Total</strong></td>
+        <td><strong>CHF 657</strong></td>
+        <td><strong>CHF 72</strong></td>
+      </tr>
+    </table>
+
+    <div class="card mt-6 mb-8">
+      <h4>Scenario B Result</h4>
+      <p>Cost without pass: <strong>CHF 657</strong></p>
+      <p>Cost with pass: <strong>CHF 878 + CHF 72 = CHF 950</strong></p>
+      <p class="text-lg mt-2 savings-negative"><strong>Net: -CHF 293</strong> (Pass still costs more)</p>
+    </div>
+
+    <h3 class="mt-8 mb-4">Scenario C: Comprehensive (Add Jungfraujoch)</h3>
+    <table class="analysis-table">
+      <tr>
+        <th>Additional Items</th>
+        <th>Full Price (2 ppl)</th>
+        <th>With Pass</th>
+      </tr>
+      <tr>
+        <td>Scenario B total</td>
+        <td>CHF 657</td>
+        <td>CHF 72</td>
+      </tr>
+      <tr>
+        <td>Jungfraujoch</td>
+        <td>CHF 402</td>
+        <td class="discount">CHF 297</td>
+      </tr>
+      <tr class="total-row">
+        <td><strong>Total</strong></td>
+        <td><strong>CHF 1,059</strong></td>
+        <td><strong>CHF 369</strong></td>
+      </tr>
+    </table>
+
+    <div class="card mt-6 mb-8">
+      <h4>Scenario C Result</h4>
+      <p>Cost without pass: <strong>CHF 1,059</strong></p>
+      <p>Cost with pass: <strong>CHF 878 + CHF 369 = CHF 1,247</strong></p>
+      <p class="text-lg mt-2 savings-negative"><strong>Net: -CHF 188</strong> (Pass STILL costs more)</p>
+    </div>
+
+    <h2 class="mt-12 mb-4">The Flexibility Argument</h2>
+    
+    <div class="alert alert-info">
+      <span class="alert-icon">🤔</span>
+      <div class="alert-content">
+        <p class="alert-title">When the Pass Makes Sense</p>
+        <p>The numbers say no, but consider: with the pass, you can hop on any train, any boat, any time without thinking about cost. Weather bad? Take a train somewhere else. Feel like an extra museum? Go for it. That freedom is worth something. Is it worth CHF 200-500? That's your call.</p>
+      </div>
+    </div>
+
+    <h2 class="mt-12 mb-4">Recommendation</h2>
+    
+    <div class="card">
+      <h3 class="card-title mb-4">For This Trip: Skip the Pass</h3>
+      <p class="mb-4">Based on your itinerary, buying individual tickets saves money. Here's the strategy:</p>
+      <ol>
+        <li><strong>Buy train tickets via SBB app</strong> – easy, often has Supersaver fares</li>
+        <li><strong>Use your Rigi hotel guest card</strong> – 50% off Rigi transport</li>
+        <li><strong>Consider Half-Fare Card (CHF 150/pp)</strong> if you want discounts on mountain excursions</li>
+        <li><strong>Pay as you go</strong> for activities</li>
+      </ol>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-subtitle">Sometimes the simple approach wins.</p>
+    </div>
+  </footer>
+</body>
+</html>

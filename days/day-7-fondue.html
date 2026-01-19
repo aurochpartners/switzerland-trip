@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 7: Fondue Gondola | Switzerland 2026</title>
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  
+  <style>
+    .day-hero {
+      min-height: 50vh;
+      background-image: 
+        linear-gradient(to bottom, rgba(26, 26, 46, 0.3) 0%, rgba(26, 26, 46, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1606567595334-d39972c85dfd?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .content-section {
+      padding: var(--space-12) var(--space-6);
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+    
+    .nav-days {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      background-color: var(--color-cream-dark);
+      position: sticky;
+      top: 60px;
+      z-index: var(--z-sticky);
+    }
+    
+    .nav-day-link {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+    }
+    
+    .nav-day-link:hover {
+      color: var(--color-amber-dark);
+    }
+    
+    .special-moment {
+      background: linear-gradient(135deg, var(--color-amber-light) 0%, var(--color-amber) 100%);
+      color: var(--color-night);
+      padding: var(--space-8);
+      border-radius: var(--radius-2xl);
+      text-align: center;
+      margin-bottom: var(--space-8);
+      box-shadow: var(--glow-amber);
+    }
+    
+    .special-moment h2 {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      font-weight: var(--weight-medium);
+      color: var(--color-night);
+      margin-bottom: var(--space-2);
+    }
+    
+    .special-moment .time {
+      font-size: var(--text-xl);
+      font-weight: var(--weight-semibold);
+      margin-bottom: var(--space-4);
+    }
+    
+    .special-moment p {
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: var(--leading-relaxed);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">Switzerland 2026</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#journey" class="nav-link">Journey</a></li>
+        <li><a href="../index.html#days" class="nav-link">Days</a></li>
+        <li><a href="../quick-reference.html" class="nav-link">Quick Ref</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero day-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Day 7 · Sunday, January 25</p>
+      <h1 class="hero-title">Fondue Gondola Day</h1>
+      <p class="hero-subtitle">A romantic dinner in a vintage gondola cabin.</p>
+    </div>
+  </section>
+
+  <!-- Day Navigation -->
+  <div class="nav-days">
+    <a href="day-6-adventure.html" class="nav-day-link">← Day 6: Adventure</a>
+    <a href="day-8-zurich.html" class="nav-day-link">Day 8: Zürich →</a>
+  </div>
+
+  <!-- Content -->
+  <main class="content-section">
+    
+    <!-- Special Moment -->
+    <div class="special-moment">
+      <p class="time">4:00 PM</p>
+      <h2>Fondue Gondola</h2>
+      <p>Private fondue dinner for two in a vintage Männlichen gondola cabin at Hotel Belvedere. A romantic highlight of the trip.</p>
+    </div>
+
+    <!-- Morning -->
+    <h2 class="mb-4">Morning</h2>
+    <p class="mb-6 text-muted">Take it easy after last night's sledding adventure.</p>
+    
+    <div class="card mb-8">
+      <h3 class="card-title mb-4">Morning Options</h3>
+      <ul>
+        <li><strong>Sleep in</strong> – You earned it after night sledding</li>
+        <li><strong>Repeat a favorite</strong> – Go back to First, try something you missed</li>
+        <li><strong>First Gondola</strong> – If you didn't do it yesterday, today's your last full day in Grindelwald</li>
+        <li><strong>Relax at the hotel</strong> – Maybe hit the Fire & Ice Spa if you haven't yet</li>
+      </ul>
+    </div>
+
+    <!-- Schedule -->
+    <h2 class="mb-6">Today's Schedule</h2>
+    
+    <div class="timeline mb-8">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">Flexible Morning</p>
+        <h4 class="timeline-title">Breakfast & Relax</h4>
+        <p class="timeline-description">No rush today. Enjoy the Eiger views from your room or hotel breakfast.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">Late Morning – 2:00 PM</p>
+        <h4 class="timeline-title">Light Activity</h4>
+        <p class="timeline-description">Village walk, souvenir shopping, maybe a quick gondola ride. Don't fill up on lunch—save room for fondue!</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">2:00 – 3:30 PM</p>
+        <h4 class="timeline-title">Return to Hotel</h4>
+        <p class="timeline-description">Freshen up before your special dinner. Maybe a light snack if needed, but don't spoil your appetite.</p>
+      </div>
+      
+      <div class="timeline-item highlight">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">4:00 PM</p>
+        <h4 class="timeline-title">Fondue Gondola at Hotel Belvedere</h4>
+        <p class="timeline-description">~1 hour 45 minutes. Private fondue dinner in a vintage gondola cabin, outdoors with alpine views. A once-in-a-lifetime experience.</p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <p class="timeline-time">~6:00 PM onwards</p>
+        <h4 class="timeline-title">Evening</h4>
+        <p class="timeline-description">You'll be full from fondue! Light evening walk through the village, maybe a drink somewhere cozy. Pack for tomorrow—you're heading to Zürich.</p>
+      </div>
+    </div>
+
+    <!-- Fondue Gondola Details -->
+    <div class="card mb-6">
+      <h3 class="card-title mb-4">Fondue Gondola Details</h3>
+      <div class="grid grid-2 gap-6">
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Location</p>
+          <p>Hotel Belvedere, Grindelwald</p>
+        </div>
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Time</p>
+          <p>4:00 PM</p>
+        </div>
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Duration</p>
+          <p>~1 hour 45 minutes</p>
+        </div>
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">What to Expect</p>
+          <p>Private dinner in a stationary vintage Männlichen gondola cabin</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="alert alert-info">
+      <span class="alert-icon">💡</span>
+      <div class="alert-content">
+        <p class="alert-title">Tips for Tonight</p>
+        <p>Dress warmly—the gondola is outdoors. Bring a camera. This is your last full evening in the Alps, so soak it in.</p>
+      </div>
+    </div>
+
+    <!-- Packing Reminder -->
+    <div class="alert alert-warning mt-6">
+      <span class="alert-icon">📦</span>
+      <div class="alert-content">
+        <p class="alert-title">Pack Tonight</p>
+        <p>Tomorrow you're heading to Zürich for your final night. Have your bags ready for checkout.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-subtitle">A night to remember.</p>
+    </div>
+  </footer>
+</body>
+</html>
