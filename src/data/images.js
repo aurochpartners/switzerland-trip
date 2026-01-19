@@ -10,12 +10,12 @@ export const images = {
     credit: "Samuel Ferrara"
   },
   
-  // Lucerne - actual Chapel Bridge and landmarks
+  // Lucerne - Chapel Bridge and landmarks
   lucerne: {
     chapel_bridge: {
-      url: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=1200&q=80",
-      alt: "Chapel Bridge (Kapellbrücke) and Water Tower in Lucerne",
-      credit: "Sven Fischer"
+      url: "https://images.unsplash.com/photo-1519923041502-2ed5d7c3ab7c?w=1200&q=80",
+      alt: "Chapel Bridge (Kapellbrücke) and Water Tower in Lucerne at dusk",
+      credit: "Ricardo Gomez Angel"
     },
     lake: {
       url: "https://images.unsplash.com/photo-1548585744-fd5b01af7db1?w=1200&q=80",
@@ -34,17 +34,17 @@ export const images = {
     }
   },
   
-  // Rigi Kaltbad - mountain and thermal spa
+  // Rigi Kaltbad - mountain above clouds
   rigi: {
     above_clouds: {
-      url: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80",
+      url: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=1200&q=80",
       alt: "View from Mount Rigi above the clouds at sunrise",
-      credit: "Eberhard Grossgasteiger"
+      credit: "Dino Reichmuth"
     },
     summit: {
-      url: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=1200&q=80",
-      alt: "Rigi summit panoramic Alpine view with snow",
-      credit: "Dino Reichmuth"
+      url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80",
+      alt: "Mountain summit panoramic Alpine view",
+      credit: "Kalen Emsley"
     },
     cogwheel: {
       url: "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?w=1200&q=80",
@@ -52,9 +52,9 @@ export const images = {
       credit: "Sebastian Pichler"
     },
     spa: {
-      url: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80",
-      alt: "Thermal spa pool with mountain views",
-      credit: "Crystal Spa"
+      url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80",
+      alt: "Outdoor infinity pool with mountain views",
+      credit: "Shifaaz Shamoon"
     }
   },
   
@@ -109,9 +109,9 @@ export const images = {
   // Activities
   activities: {
     fondue: {
-      url: "https://images.unsplash.com/photo-1606567595334-d39972c85dfd?w=1200&q=80",
-      alt: "Swiss cheese fondue bubbling in traditional pot",
-      credit: "Kelsey Knight"
+      url: "https://images.unsplash.com/photo-1529262353753-e7f137c78c95?w=1200&q=80",
+      alt: "Swiss cheese fondue with bread in traditional pot",
+      credit: "Angela Pham"
     },
     sledding: {
       url: "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1200&q=80",

@@ -17,7 +17,7 @@ const LOCATIONS = [
 function Planner() {
   const [activeLocation, setActiveLocation] = useState('lucerne')
   const [showCostTracker, setShowCostTracker] = useState(false)
-  const { selected, preferences, toggleSwissPass } = useTripState()
+  const { selected, preferences, toggleSwissPass, syncStatus } = useTripState()
 
   const locationActivities = activities[activeLocation] || []
 
@@ -29,6 +29,10 @@ function Planner() {
           <div className="planner-title-group">
             <h1>Pick Your Adventures</h1>
             <p>Mark what interests you, see the costs</p>
+            <span className={`sync-status sync-status--${syncStatus}`}>
+              {syncStatus === 'synced' ? 'Synced with Katie' : 
+               syncStatus === 'loading' ? 'Loading...' : 'Offline mode'}
+            </span>
           </div>
           <button 
             className="planner-cost-toggle"

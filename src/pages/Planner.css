@@ -50,6 +50,30 @@
   margin: 0.25rem 0 0;
 }
 
+/* Sync status */
+.sync-status {
+  display: inline-block;
+  font-size: 0.6875rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+.sync-status--synced {
+  background: rgba(80, 180, 80, 0.2);
+  color: #6ecf6e;
+}
+
+.sync-status--loading {
+  background: rgba(200, 168, 124, 0.2);
+  color: #c9a87c;
+}
+
+.sync-status--offline {
+  background: rgba(180, 80, 80, 0.2);
+  color: #cf6e6e;
+}
+
 .planner-cost-toggle {
   padding: 0.5rem 1rem;
   border: 1px solid #333;
