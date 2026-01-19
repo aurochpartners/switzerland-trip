@@ -122,19 +122,13 @@ function CostTracker({ minimal = false }) {
 
       <div className={`cost-tracker-verdict ${costs.passWorthIt ? 'verdict--pass' : 'verdict--no-pass'}`}>
         {costs.passWorthIt ? (
-          <>
-            <span className="verdict-icon">✓</span>
-            <span className="verdict-text">
-              Swiss Pass saves CHF {costs.savings}
-            </span>
-          </>
+          <span className="verdict-text">
+            Swiss Pass saves CHF {costs.savings}
+          </span>
         ) : (
-          <>
-            <span className="verdict-icon">→</span>
-            <span className="verdict-text">
-              Skip the pass, save CHF {costs.savings}
-            </span>
-          </>
+          <span className="verdict-text">
+            Skip the pass, save CHF {costs.savings}
+          </span>
         )}
       </div>
 
@@ -160,8 +154,8 @@ function CostTracker({ minimal = false }) {
                   CHF {hasSwissPass 
                     ? (activity.price.withPass ?? activity.price.regular) 
                     : activity.price.regular}
-                  {activity.price.withPass < activity.price.regular && hasSwissPass && (
-                    <span className="selected-savings"> ✓</span>
+                  {hasSwissPass && activity.price.withPass !== undefined && activity.price.withPass < activity.price.regular && (
+                    <span className="selected-savings"> saved</span>
                   )}
                 </span>
               </li>

@@ -4,11 +4,11 @@ import './ActivityCard.css'
 function WeatherIcon({ weather }) {
   switch (weather) {
     case 'clear':
-      return <span className="weather-icon weather-clear" title="Clear weather recommended">☀️</span>
+      return <span className="weather-icon weather-clear" title="Clear weather recommended">Clear</span>
     case 'clear-only':
-      return <span className="weather-icon weather-clear-only" title="Clear weather required">☀️!</span>
+      return <span className="weather-icon weather-clear-only" title="Clear weather required">Clear only</span>
     case 'any':
-      return <span className="weather-icon weather-any" title="Any weather">☁️</span>
+      return <span className="weather-icon weather-any" title="Any weather">Any</span>
     default:
       return null
   }
@@ -81,14 +81,14 @@ function ActivityCard({ activity, compact = false }) {
             onClick={(e) => handleVote('interested', e)}
             title="Interested"
           >
-            ♡
+            Maybe
           </button>
           <button 
             className={`vote-btn vote-btn--must ${currentVote === 'must-do' ? 'vote-btn--active' : ''}`}
             onClick={(e) => handleVote('must-do', e)}
             title="Must do"
           >
-            ★
+            Yes
           </button>
         </div>
       </div>
@@ -117,7 +117,7 @@ function ActivityCard({ activity, compact = false }) {
           {displayPrice > 0 ? (
             <span className="activity-card-price">
               CHF {displayPrice}/person
-              {hasSwissPass && price.withPass < price.regular && (
+              {hasSwissPass && price.withPass !== undefined && price.withPass < price.regular && (
                 <span className="activity-card-savings"> (save CHF {price.regular - price.withPass})</span>
               )}
             </span>
@@ -167,15 +167,13 @@ function ActivityCard({ activity, compact = false }) {
             onClick={(e) => handleVote('interested', e)}
             title="Interested"
           >
-            <span className="vote-icon">♡</span>
-            <span className="vote-label">Interested</span>
+            <span className="vote-label">Maybe</span>
           </button>
           <button 
             className={`vote-btn vote-btn--must ${currentVote === 'must-do' ? 'vote-btn--active' : ''}`}
             onClick={(e) => handleVote('must-do', e)}
             title="Must do"
           >
-            <span className="vote-icon">★</span>
             <span className="vote-label">Must Do</span>
           </button>
         </div>
@@ -215,7 +213,7 @@ function ActivityCard({ activity, compact = false }) {
             className={`action-btn action-btn--select ${selected ? 'action-btn--selected' : ''}`}
             onClick={handleSelect}
           >
-            {selected ? '✓ Added' : '+ Add to Plan'}
+            {selected ? 'Added' : 'Add to Plan'}
           </button>
         </div>
       </div>

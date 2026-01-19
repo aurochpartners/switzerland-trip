@@ -90,11 +90,7 @@ function DayAccordion({ day }) {
                       <div className="ref-option-header">
                         <h5>{opt.name}</h5>
                         <span className="ref-option-weather" title={`Weather: ${opt.weather}`}>
-                          {opt.weather === 'Any' && '☁️'}
-                          {opt.weather === 'Clear only' && '☀️'}
-                          {opt.weather === 'Clear preferred' && '🌤️'}
-                          {opt.weather === 'Partial' && '⛅'}
-                          {opt.weather === 'CLEAR ONLY' && '☀️ Only'}
+                          {opt.weather}
                         </span>
                       </div>
                       <p className="ref-option-desc">{opt.description}</p>

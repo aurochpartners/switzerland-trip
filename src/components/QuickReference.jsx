@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom'
-import { hotels, flights, bookedActivities, toBookActivities, emergency, quickFacts } from '../data/verified-data'
+import { hotels, flights, bookedActivities, emergency, quickFacts } from '../data/verified-data'
 import './QuickReference.css'
+
+// Format date string (YYYY-MM-DD) without timezone issues
+function formatDate(dateStr, options = { month: 'short', day: 'numeric' }) {
+  const [year, month, day] = dateStr.split('-').map(Number)
+  const date = new Date(year, month - 1, day) // Local time, not UTC
+  return date.toLocaleDateString('en-US', options)
+}
 
 function QuickReference() {
   return (
@@ -42,16 +49,16 @@ function QuickReference() {
             <div className="quick-ref-flight">
               <div className="quick-ref-flight-leg">
                 <span className="quick-ref-flight-direction">Outbound</span>
-                <strong>{flights.outbound.date}</strong>
+                <strong>{formatDate(flights.outbound.date, { weekday: 'short', month: 'short', day: 'numeric' })}</strong>
                 <span>{flights.outbound.departure.time} {flights.outbound.departure.airport}</span>
-                <span>→ {flights.outbound.arrival.time} {flights.outbound.arrival.airport}</span>
+                <span>Arrive {flights.outbound.arrival.time} {flights.outbound.arrival.airport}</span>
                 <code>{flights.outbound.flights}</code>
               </div>
               <div className="quick-ref-flight-leg">
                 <span className="quick-ref-flight-direction">Return</span>
-                <strong>{flights.return.date}</strong>
+                <strong>{formatDate(flights.return.date, { weekday: 'short', month: 'short', day: 'numeric' })}</strong>
                 <span>{flights.return.departure.time} {flights.return.departure.airport}</span>
-                <span>→ {flights.return.arrival.time} {flights.return.arrival.airport}</span>
+                <span>Arrive {flights.return.arrival.time} {flights.return.arrival.airport}</span>
                 <code>{flights.return.flights}</code>
                 <span className="quick-ref-flight-warning">{flights.return.warning}</span>
               </div>
@@ -68,7 +75,7 @@ function QuickReference() {
                 <div className="quick-ref-hotel-header">
                   <strong>{hotel.name}</strong>
                   <span className="quick-ref-hotel-dates">
-                    {new Date(hotel.dates.checkIn).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - {new Date(hotel.dates.checkOut).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                    {formatDate(hotel.dates.checkIn)} - {formatDate(hotel.dates.checkOut)}
                   </span>
                 </div>
                 <p className="quick-ref-hotel-addr">{hotel.address}</p>
@@ -92,30 +99,13 @@ function QuickReference() {
               <div className="quick-ref-booked-header">
                 <strong>{activity.name}</strong>
                 <span className="quick-ref-booked-datetime">
-                  {new Date(activity.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} @ {activity.time}
+                  {formatDate(activity.date, { weekday: 'short', month: 'short', day: 'numeric' })} @ {activity.time}
                 </span>
               </div>
               <p>{activity.location}</p>
               {activity.confirmation && <span>Conf: <code>{activity.confirmation}</code></span>}
               {activity.phone && <a href={`tel:${activity.phone}`}>{activity.phone}</a>}
               {activity.note && <p className="quick-ref-note">{activity.note}</p>}
-            </div>
-          ))}
-        </section>
-
-        {/* To Book */}
-        <section className="quick-ref-section">
-          <h2>To Book On-Site</h2>
-          {toBookActivities.map((activity, i) => (
-            <div key={i} className="quick-ref-card quick-ref-tobook">
-              <div className="quick-ref-tobook-header">
-                <strong>{activity.name}</strong>
-                {activity.critical && <span className="quick-ref-critical-badge">Critical</span>}
-              </div>
-              <p>Recommended: {new Date(activity.recommendedDate).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</p>
-              <p className="quick-ref-deadline">Book by: {activity.bookingDeadline}</p>
-              <a href={`tel:${activity.bookingPhone}`} className="quick-ref-book-phone">{activity.bookingPhone}</a>
-              <p className="quick-ref-price">{activity.price}</p>
             </div>
           ))}
         </section>
@@ -136,8 +126,9 @@ function QuickReference() {
 
       <footer className="quick-ref-footer">
         <div className="quick-ref-footer-links">
-          <Link to="/story">Story View</Link>
-          <Link to="/reference">Full Reference</Link>
+          <Link to="/story">Story</Link>
+          <Link to="/reference">Full Guide</Link>
+          <Link to="/planner">Planner</Link>
         </div>
         <p>Ray & Katie | Switzerland 2026</p>
       </footer>

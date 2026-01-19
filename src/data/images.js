@@ -3,11 +3,11 @@
 // Images selected for accuracy to actual locations
 
 export const images = {
-  // Hero - Swiss Alps winter panorama
+  // Hero - Matterhorn, the iconic Swiss mountain
   hero: {
-    url: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1920&q=80",
-    alt: "Swiss Alps panorama with snow-capped peaks and valley",
-    credit: "Sven Scheuermeier"
+    url: "https://images.unsplash.com/photo-1529973565457-a60a2ccf750d?w=1920&q=80",
+    alt: "Matterhorn peak at dawn with snow-covered Swiss Alps",
+    credit: "Fabrice Villard"
   },
   
   // Lucerne - actual Chapel Bridge and landmarks
