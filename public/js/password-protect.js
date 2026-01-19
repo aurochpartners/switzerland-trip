@@ -11,7 +11,7 @@
     return; // Already verified, show the page normally
   }
   
-  // Hide the page content and show password screen
+  // Hide the page content until password is entered
   document.documentElement.style.visibility = 'hidden';
   
   function showLockScreen() {
