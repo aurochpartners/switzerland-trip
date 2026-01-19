@@ -268,15 +268,15 @@ function Landing() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="/planner" className="nav-card nav-card--planner">
+            <Link to="/journey" className="nav-card nav-card--planner">
               <div 
                 className="nav-card-bg" 
                 style={{ backgroundImage: `url(${images.grindelwald.first.url})` }} 
               />
               <div className="nav-card-overlay" />
               <div className="nav-card-content">
-                <h3>Plan Your Trip</h3>
-                <p>Pick activities, compare costs, build your itinerary</p>
+                <h3>Plan Your Journey</h3>
+                <p>Day-by-day guide with activities to choose</p>
               </div>
             </Link>
           </motion.div>
@@ -287,15 +287,15 @@ function Landing() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Link to="/reference" className="nav-card nav-card--reference">
+            <Link to="/quick" className="nav-card nav-card--reference">
               <div 
                 className="nav-card-bg" 
                 style={{ backgroundImage: `url(${images.lucerne.lake.url})` }} 
               />
               <div className="nav-card-overlay" />
               <div className="nav-card-content">
-                <h3>Full Guide</h3>
-                <p>Day-by-day details and options</p>
+                <h3>Quick Reference</h3>
+                <p>Confirmations, contacts, emergency info</p>
               </div>
             </Link>
           </motion.div>
@@ -306,10 +306,10 @@ function Landing() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Link to="/quick" className="nav-card nav-card--quick">
+            <Link to="/reference" className="nav-card nav-card--quick">
               <div className="nav-card-content">
-                <h3>Quick Reference</h3>
-                <p>Confirmations, contacts, emergency info</p>
+                <h3>Full Reference</h3>
+                <p>Detailed day-by-day breakdown</p>
               </div>
             </Link>
           </motion.div>

@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Landing from './pages/Landing'
 import ReferenceMode from './pages/ReferenceMode'
 import Planner from './pages/Planner'
+import JourneyPlanner from './pages/JourneyPlanner'
 import QuickReference from './components/QuickReference'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Route path="/" element={<Landing />} />
       <Route path="/reference" element={<ReferenceMode />} />
       <Route path="/planner" element={<Planner />} />
+      <Route path="/journey" element={<JourneyPlanner />} />
       <Route path="/quick" element={<QuickReference />} />
     </Routes>
   )

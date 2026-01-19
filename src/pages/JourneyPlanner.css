@@ -1,0 +1,980 @@
+/* Journey Planner - Hybrid timeline view */
+
+.journey-planner {
+  min-height: 100vh;
+  background: #f8f8f6;
+}
+
+/* ================================
+   Header
+   ================================ */
+.journey-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.journey-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.journey-back {
+  font-size: 0.875rem;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.journey-back:hover {
+  color: #fff;
+}
+
+.journey-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.journey-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.journey-sync {
+  font-size: 0.6875rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.journey-sync--synced {
+  background: rgba(80, 180, 80, 0.2);
+  color: #6ecf6e;
+}
+
+.journey-sync--loading {
+  background: rgba(200, 168, 124, 0.2);
+  color: #c9a87c;
+}
+
+.journey-sync--offline {
+  background: rgba(180, 80, 80, 0.2);
+  color: #cf6e6e;
+}
+
+.journey-pass-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.journey-pass-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: #c9a87c;
+}
+
+.journey-pass-toggle input:checked + span {
+  color: #c9a87c;
+}
+
+/* ================================
+   Day Progress Dots
+   ================================ */
+.day-progress {
+  padding: 0.75rem 1.5rem 1rem;
+  background: #1a1a1a;
+}
+
+.day-progress-track {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.day-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #444;
+  background: transparent;
+  color: #666;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-dot:hover {
+  border-color: #666;
+  color: #999;
+}
+
+.day-dot--active {
+  border-color: #c9a87c;
+  background: #c9a87c;
+  color: #1a1a1a;
+}
+
+.day-dot--filled:not(.day-dot--active) {
+  border-color: #c9a87c;
+  background: rgba(201, 168, 124, 0.2);
+  color: #c9a87c;
+}
+
+.day-dot-number {
+  line-height: 1;
+}
+
+/* ================================
+   Day Hero Section
+   ================================ */
+.day-hero {
+  position: relative;
+  height: 45vh;
+  min-height: 300px;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-hero-bg {
+  position: absolute;
+  inset: -20%;
+  background-size: cover;
+  background-position: center;
+}
+
+.day-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.day-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+}
+
+.day-hero-date {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.75rem;
+}
+
+.day-hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.day-hero-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* ================================
+   Day Content Area
+   ================================ */
+.day-section {
+  scroll-margin-top: 120px;
+}
+
+.day-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ================================
+   Hotel Card
+   ================================ */
+.journey-hotel {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.journey-hotel-header {
+  margin-bottom: 0.5rem;
+}
+
+.journey-hotel-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+}
+
+.journey-hotel-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem;
+}
+
+.journey-hotel-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.journey-hotel-conf {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.journey-hotel-conf strong {
+  color: #888;
+  font-weight: 500;
+}
+
+.journey-hotel-phone {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.journey-hotel-phone:hover {
+  text-decoration: underline;
+}
+
+.journey-hotel-times {
+  font-size: 0.8125rem;
+  color: #888;
+  margin: 0;
+}
+
+/* ================================
+   Event Card
+   ================================ */
+.journey-event {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  border: 1px solid #ffd54f;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.journey-event-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #ff9800;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.journey-event-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #5d4037;
+  margin: 0 0 0.5rem;
+}
+
+.journey-event-time {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #795548;
+  margin: 0 0 0.5rem;
+}
+
+.journey-event-desc {
+  font-size: 0.875rem;
+  color: #6d4c41;
+  margin: 0;
+}
+
+/* ================================
+   Alert Card
+   ================================ */
+.journey-alert {
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.journey-alert--warning {
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+  border-left: 4px solid #ff9800;
+}
+
+.journey-alert--critical {
+  background: #ffebee;
+  border: 1px solid #ef9a9a;
+  border-left: 4px solid #f44336;
+}
+
+.journey-alert strong {
+  display: block;
+  font-size: 0.9375rem;
+  margin-bottom: 0.375rem;
+}
+
+.journey-alert--warning strong {
+  color: #e65100;
+}
+
+.journey-alert--critical strong {
+  color: #c62828;
+}
+
+.journey-alert p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.journey-alert--warning p {
+  color: #bf360c;
+}
+
+.journey-alert--critical p {
+  color: #b71c1c;
+}
+
+/* ================================
+   Critical Booking Card
+   ================================ */
+.journey-critical {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border: 2px solid #ef5350;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.journey-critical-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #d32f2f;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.journey-critical strong {
+  display: block;
+  font-size: 1rem;
+  color: #b71c1c;
+  margin-bottom: 0.5rem;
+}
+
+.journey-critical-phone {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #c62828;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.journey-critical-phone:hover {
+  text-decoration: underline;
+}
+
+.journey-critical p {
+  font-size: 0.875rem;
+  color: #c62828;
+  margin: 0;
+}
+
+/* ================================
+   Booked Activity Card
+   ================================ */
+.journey-booked {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border: 1px solid #81c784;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.journey-booked-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.journey-booked-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #43a047;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.journey-booked-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.journey-booked-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1b5e20;
+  margin: 0 0 0.5rem;
+}
+
+.journey-booked-location {
+  font-size: 0.9375rem;
+  color: #388e3c;
+  margin: 0 0 0.5rem;
+}
+
+.journey-booked-conf {
+  font-size: 0.875rem;
+  color: #2e7d32;
+  margin: 0 0 0.75rem;
+}
+
+.journey-booked-conf code {
+  font-family: 'DM Mono', monospace;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+}
+
+.journey-booked-desc {
+  font-size: 0.875rem;
+  color: #33691e;
+  margin: 0 0 0.5rem;
+}
+
+.journey-booked-note {
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: #558b2f;
+  margin: 0;
+}
+
+/* ================================
+   Activities Section
+   ================================ */
+.day-activities {
+  margin-top: 2rem;
+}
+
+.day-activities-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.day-activities-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .day-activities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================================
+   Day Details (Expandable)
+   ================================ */
+.journey-details {
+  margin-top: 2rem;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.journey-details-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border: none;
+  background: transparent;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.journey-details-toggle:hover {
+  background: #fafafa;
+}
+
+.journey-details-toggle svg {
+  color: #888;
+  transition: transform 0.2s;
+}
+
+.journey-details-toggle--open svg {
+  transform: rotate(180deg);
+}
+
+.journey-details-content {
+  padding: 0 1.25rem 1.25rem;
+  overflow: hidden;
+}
+
+.journey-details-content h5 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #333;
+  margin: 1rem 0 0.75rem;
+}
+
+.journey-details-content h5:first-child {
+  margin-top: 0;
+}
+
+/* Schedule */
+.journey-schedule ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+.schedule-activity {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.schedule-details {
+  grid-column: 2;
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+.schedule-item--critical .schedule-time,
+.schedule-item--critical .schedule-activity {
+  color: #c62828;
+  font-weight: 500;
+}
+
+.schedule-item--booked .schedule-activity {
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+/* Meals */
+.journey-meals p {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0.375rem 0;
+}
+
+.journey-meals strong {
+  color: #333;
+}
+
+/* Walking Route */
+.journey-walking ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.journey-walking li {
+  font-size: 0.875rem;
+  color: #555;
+  padding: 0.25rem 0;
+}
+
+/* Tips */
+.journey-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.journey-tips li {
+  font-size: 0.875rem;
+  color: #555;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  position: relative;
+}
+
+.journey-tips li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #c9a87c;
+}
+
+/* ================================
+   Floating Plan Bar
+   ================================ */
+.plan-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 199;
+}
+
+.floating-plan-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+  transition: border-radius 0.3s;
+}
+
+.floating-plan-bar--open {
+  border-radius: 20px 20px 0 0;
+}
+
+.floating-plan-bar-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.floating-plan-bar-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+}
+
+.floating-plan-bar-count {
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+.floating-plan-bar-total {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.floating-plan-bar-cta {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #c9a87c;
+}
+
+/* Plan Sheet */
+.plan-sheet {
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.plan-sheet-content {
+  padding: 0 1.5rem 1.5rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.plan-sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  margin-bottom: 1rem;
+}
+
+.plan-sheet-header h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+.plan-sheet-total {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c9a87c;
+}
+
+.plan-sheet-empty {
+  font-size: 0.9375rem;
+  color: #888;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.plan-sheet-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-sheet-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.plan-sheet-item:last-child {
+  border-bottom: none;
+}
+
+.plan-sheet-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.plan-sheet-item-name {
+  font-size: 0.9375rem;
+  color: #fff;
+}
+
+.plan-sheet-item-location {
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: capitalize;
+}
+
+.plan-sheet-item-price {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.plan-sheet-savings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-top: 0.5rem;
+  border-top: 1px solid #333;
+}
+
+.plan-sheet-savings span:first-child {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.plan-sheet-savings-amount {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #6ecf6e;
+}
+
+.plan-sheet-pass {
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.plan-sheet-pass-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.plan-sheet-pass-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: #c9a87c;
+}
+
+/* ================================
+   Footer
+   ================================ */
+.journey-footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 3rem 2rem 6rem;
+  text-align: center;
+}
+
+.journey-footer p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1.5rem;
+}
+
+.journey-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.journey-footer-links a {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.journey-footer-links a:hover {
+  color: #fff;
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+@media (max-width: 768px) {
+  .journey-header-content {
+    padding: 0.75rem 1rem;
+  }
+
+  .journey-title {
+    font-size: 1rem;
+  }
+
+  .day-progress {
+    padding: 0.5rem 1rem 0.75rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .day-progress-track {
+    gap: 0.375rem;
+  }
+
+  .day-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 0.6875rem;
+    flex-shrink: 0;
+  }
+
+  .day-hero {
+    height: 35vh;
+    min-height: 250px;
+  }
+
+  .day-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .day-content {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .day-activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-footer {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-header-content {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .journey-back {
+    order: 1;
+    font-size: 0.75rem;
+  }
+
+  .journey-header-center {
+    order: 3;
+    width: 100%;
+  }
+
+  .journey-pass-toggle {
+    order: 2;
+    font-size: 0.75rem;
+  }
+
+  .floating-plan-bar-toggle {
+    padding: 0.875rem 1rem;
+  }
+
+  .plan-sheet-content {
+    padding: 0 1rem 1rem;
+  }
+}
