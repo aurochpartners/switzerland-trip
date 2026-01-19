@@ -1,10 +1,45 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { images } from '../data/images'
-import { hotels, bookedActivities, events } from '../data/verified-data'
+import { hotels, bookedActivities, events, tripInfo } from '../data/verified-data'
 import { getMapsUrl } from '../utils/maps'
 import './Landing.css'
+
+// Countdown timer hook
+function useCountdown(targetDate) {
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate))
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft(targetDate))
+    }, 1000)
+    
+    return () => clearInterval(timer)
+  }, [targetDate])
+  
+  return timeLeft
+}
+
+function calculateTimeLeft(targetDate) {
+  const now = new Date()
+  const target = new Date(targetDate)
+  target.setHours(19, 35, 0, 0) // Flight departure time: 7:35 PM
+  
+  const difference = target - now
+  
+  if (difference <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true }
+  }
+  
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / (1000 * 60)) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
+    isPast: false
+  }
+}
 
 // Reusable location section with parallax background
 function LocationSection({ title, subtitle, image, children, id, isSpecial }) {
@@ -52,6 +87,9 @@ function Landing() {
   
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.2])
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+  
+  // Countdown to trip departure
+  const countdown = useCountdown(tripInfo.dates.start)
 
   const scrollToStory = () => {
     document.getElementById('lucerne')?.scrollIntoView({ behavior: 'smooth' })
@@ -94,6 +132,46 @@ function Landing() {
           >
             Ray & Katie
           </motion.p>
+          
+          {/* Countdown Timer */}
+          {!countdown.isPast && (
+            <motion.div 
+              className="landing-countdown"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              <div className="countdown-unit">
+                <span className="countdown-number">{countdown.days}</span>
+                <span className="countdown-label">days</span>
+              </div>
+              <div className="countdown-separator">:</div>
+              <div className="countdown-unit">
+                <span className="countdown-number">{String(countdown.hours).padStart(2, '0')}</span>
+                <span className="countdown-label">hours</span>
+              </div>
+              <div className="countdown-separator">:</div>
+              <div className="countdown-unit">
+                <span className="countdown-number">{String(countdown.minutes).padStart(2, '0')}</span>
+                <span className="countdown-label">min</span>
+              </div>
+              <div className="countdown-separator">:</div>
+              <div className="countdown-unit">
+                <span className="countdown-number">{String(countdown.seconds).padStart(2, '0')}</span>
+                <span className="countdown-label">sec</span>
+              </div>
+            </motion.div>
+          )}
+          {countdown.isPast && (
+            <motion.div 
+              className="landing-countdown landing-countdown--active"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              <span className="countdown-active-text">The adventure has begun!</span>
+            </motion.div>
+          )}
         </motion.div>
 
         <motion.button 
@@ -310,6 +388,20 @@ function Landing() {
               <div className="nav-card-content">
                 <h3>Full Reference</h3>
                 <p>Detailed day-by-day breakdown</p>
+              </div>
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Link to="/packing" className="nav-card nav-card--packing">
+              <div className="nav-card-content">
+                <h3>Packing List</h3>
+                <p>Winter essentials checklist</p>
               </div>
             </Link>
           </motion.div>

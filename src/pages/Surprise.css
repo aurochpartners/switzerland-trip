@@ -1,0 +1,168 @@
+.surprise {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* Background */
+.surprise-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.surprise-bg-image {
+  position: absolute;
+  inset: -10%;
+  background-size: cover;
+  background-position: center;
+}
+
+.surprise-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.6) 0%,
+    rgba(0,0,0,0.4) 50%,
+    rgba(0,0,0,0.6) 100%
+  );
+}
+
+/* Content */
+.surprise-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.surprise-header {
+  margin-bottom: 2.5rem;
+}
+
+.surprise-for {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.5rem;
+}
+
+.surprise-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(4rem, 15vw, 8rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 0.9;
+  margin: 0;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+/* Message */
+.surprise-message {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.surprise-note {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+  padding: 1.5rem 2rem;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Signature */
+.surprise-signature {
+  margin-bottom: 1.5rem;
+}
+
+.surprise-signature p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.125rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  margin: 0.25rem 0;
+}
+
+.surprise-from {
+  font-size: 1.5rem !important;
+  color: #c9a87c !important;
+  font-style: normal !important;
+}
+
+/* Hearts row */
+.surprise-hearts-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Hint */
+.surprise-hint {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+/* Floating hearts */
+.floating-heart {
+  position: absolute;
+  font-size: 2rem;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Back link */
+.surprise-back {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.surprise-back a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.surprise-back a:hover {
+  color: #c9a87c;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .surprise-content {
+    padding: 1.5rem;
+  }
+  
+  .surprise-note {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .surprise-message {
+    min-height: 100px;
+  }
+}

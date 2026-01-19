@@ -4,6 +4,8 @@ import ReferenceMode from './pages/ReferenceMode'
 import Planner from './pages/Planner'
 import JourneyPlanner from './pages/JourneyPlanner'
 import QuickReference from './components/QuickReference'
+import PackingChecklist from './components/PackingChecklist'
+import Surprise from './pages/Surprise'
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Route path="/planner" element={<Planner />} />
       <Route path="/journey" element={<JourneyPlanner />} />
       <Route path="/quick" element={<QuickReference />} />
+      <Route path="/packing" element={<PackingChecklist />} />
+      <Route path="/for-katie" element={<Surprise />} />
     </Routes>
   )
 }

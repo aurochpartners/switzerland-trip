@@ -376,27 +376,157 @@
 /* Print styles */
 @media print {
   .quick-ref {
-    background: #fff;
-    color: #000;
+    background: #fff !important;
+    color: #000 !important;
+    min-height: auto;
+  }
+  
+  .quick-ref::before {
+    display: none !important;
   }
   
   .quick-ref-back,
-  .quick-ref-footer-links {
-    display: none;
+  .quick-ref-footer-links,
+  .quick-ref-footer {
+    display: none !important;
+  }
+  
+  .quick-ref-header {
+    border-bottom: 2px solid #333;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .quick-ref-header h1 {
+    font-size: 1.75rem;
+    color: #000;
+  }
+  
+  .quick-ref-header p {
+    color: #666;
+  }
+  
+  .quick-ref-main {
+    padding: 0;
+    max-width: none;
+  }
+  
+  .quick-ref-section {
+    margin-bottom: 1.5rem;
+    page-break-inside: avoid;
+  }
+  
+  .quick-ref-section h2 {
+    color: #333;
+    font-size: 1.125rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.25rem;
   }
   
   .quick-ref-card,
   .quick-ref-emerg-btn,
   .quick-ref-fact {
-    border-color: #ddd;
-    background: #fff;
+    border: 1px solid #ddd;
+    background: #fff !important;
+    page-break-inside: avoid;
   }
   
-  .quick-ref-section h2 {
+  /* Emergency section - inline for print */
+  .quick-ref-emergency-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .quick-ref-emerg-btn {
+    flex: 1 1 auto;
+    min-width: 100px;
+    padding: 0.75rem;
+    border-color: #c0392b;
+  }
+  
+  .quick-ref-emerg-num {
+    color: #c0392b;
+    font-size: 1.25rem;
+  }
+  
+  .quick-ref-emerg-label {
+    color: #666;
+    font-size: 0.625rem;
+  }
+  
+  /* Flight info */
+  .quick-ref-flight-conf code,
+  .quick-ref-flight-leg code,
+  .quick-ref-hotel-meta code,
+  .quick-ref-booked code {
     color: #333;
+    font-weight: 600;
+    background: #f5f5f5;
+    padding: 0.125rem 0.25rem;
+    border-radius: 2px;
   }
   
-  a {
+  .quick-ref-flight-warning {
+    color: #c0392b !important;
+  }
+  
+  /* Hotels */
+  .quick-ref-hotel {
+    margin-bottom: 0.5rem;
+  }
+  
+  .quick-ref-hotel-header strong {
     color: #000;
+  }
+  
+  .quick-ref-hotel-addr,
+  .quick-ref-location-link {
+    color: #2980b9 !important;
+  }
+  
+  .quick-ref-hotel-meta a {
+    color: #2980b9;
+  }
+  
+  /* Quick facts */
+  .quick-ref-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .quick-ref-fact {
+    padding: 0.5rem;
+  }
+  
+  .quick-ref-fact-key {
+    color: #666;
+  }
+  
+  .quick-ref-fact-val {
+    color: #000;
+    font-size: 0.875rem;
+  }
+  
+  /* Hide links that don't work in print */
+  a[href^="tel:"]::after {
+    content: none;
+  }
+  
+  /* Page settings */
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+  
+  /* Title for printed version */
+  .quick-ref-header::after {
+    content: 'Print this page and keep it with your passport';
+    display: block;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #888;
+    margin-top: 0.5rem;
   }
 }

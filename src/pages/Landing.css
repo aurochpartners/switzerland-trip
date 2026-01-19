@@ -69,6 +69,63 @@
   margin: 1.5rem 0 0;
 }
 
+/* Countdown Timer */
+.landing-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 48px;
+}
+
+.countdown-number {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 500;
+  color: #c9a87c;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.25rem;
+}
+
+.countdown-separator {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  color: rgba(255,255,255,0.3);
+  padding-bottom: 1rem;
+}
+
+.landing-countdown--active {
+  background: linear-gradient(135deg, rgba(201,168,124,0.2) 0%, rgba(201,168,124,0.1) 100%);
+  border-color: rgba(201,168,124,0.3);
+}
+
+.countdown-active-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.125rem;
+  font-style: italic;
+  color: #c9a87c;
+}
+
 /* Scroll hint - now a button */
 .landing-scroll-hint {
   position: absolute;
@@ -310,9 +367,9 @@
 
 .landing-nav-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -384,6 +441,15 @@
   justify-content: center;
 }
 
+/* Packing card */
+.nav-card--packing {
+  background: linear-gradient(135deg, #4a3728 0%, #2d2119 100%);
+}
+
+.nav-card--packing .nav-card-content {
+  justify-content: center;
+}
+
 /* Footer */
 .landing-footer {
   padding: 5rem 2rem;
@@ -401,14 +467,21 @@
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+  .landing-nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
   .landing-nav-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
   }
   
   .nav-card {
-    min-height: 180px;
+    min-height: 160px;
   }
 }
 
