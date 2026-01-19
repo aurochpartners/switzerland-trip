@@ -1,0 +1,135 @@
+.journey-map {
+  background-color: var(--slate-deep);
+  color: var(--text-inverse);
+  padding: var(--space-4xl) 0;
+}
+
+.journey-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.journey-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose-gold-light);
+  margin-bottom: var(--space-md);
+}
+
+.journey-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 400;
+  color: var(--warm-white);
+}
+
+.journey-track {
+  position: relative;
+  padding: var(--space-xl) 0;
+}
+
+.journey-line-svg {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  height: 60px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.journey-stops {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.journey-stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.stop-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--slate-deep);
+  border: 3px solid var(--rose-gold);
+  border-radius: 50%;
+  transition: all 0.3s var(--ease-out);
+}
+
+.journey-stop:hover .stop-dot {
+  background-color: var(--rose-gold);
+  transform: scale(1.2);
+}
+
+.stop-name {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--warm-white);
+  transition: color 0.3s var(--ease-out);
+}
+
+.journey-stop:hover .stop-name {
+  color: var(--rose-gold-light);
+}
+
+.stop-dates {
+  font-size: 0.75rem;
+  color: rgba(250, 249, 246, 0.6);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .journey-map {
+    padding: var(--space-3xl) 0;
+  }
+  
+  .journey-track {
+    overflow-x: auto;
+    padding: var(--space-lg) 0;
+    margin: 0 calc(-1 * var(--space-md));
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .journey-stops {
+    min-width: 500px;
+  }
+  
+  .journey-line-svg {
+    left: 0;
+    width: 100%;
+    min-width: 500px;
+  }
+  
+  .stop-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-stops {
+    min-width: 400px;
+  }
+  
+  .journey-line-svg {
+    min-width: 400px;
+  }
+  
+  .journey-stop {
+    padding: var(--space-sm);
+  }
+}
