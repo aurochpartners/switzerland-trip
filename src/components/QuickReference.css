@@ -111,6 +111,20 @@
 }
 
 /* Flight */
+.quick-ref-flight-conf {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.quick-ref-flight-conf code {
+  color: #c9a87c;
+}
+
 .quick-ref-flight {
   display: flex;
   flex-direction: column;

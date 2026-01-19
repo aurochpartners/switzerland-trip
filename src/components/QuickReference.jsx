@@ -46,6 +46,10 @@ function QuickReference() {
         <section className="quick-ref-section">
           <h2>Flight</h2>
           <div className="quick-ref-card">
+            <div className="quick-ref-flight-conf">
+              <span>Booking: <code>{flights.confirmation}</code></span>
+              <span>PIN: <code>{flights.pin}</code></span>
+            </div>
             <div className="quick-ref-flight">
               <div className="quick-ref-flight-leg">
                 <span className="quick-ref-flight-direction">Outbound</span>

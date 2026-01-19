@@ -109,9 +109,9 @@ export const images = {
   // Activities
   activities: {
     fondue: {
-      url: "https://images.unsplash.com/photo-1529262353753-e7f137c78c95?w=1200&q=80",
-      alt: "Swiss cheese fondue with bread in traditional pot",
-      credit: "Angela Pham"
+      url: "/fondue-gondola.png",
+      alt: "Fondue dinner in vintage gondola cabin with Eiger mountain backdrop at dusk",
+      credit: "Hotel Belvedere Grindelwald"
     },
     sledding: {
       url: "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1200&q=80",

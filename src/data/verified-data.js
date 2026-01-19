@@ -12,12 +12,15 @@ export const tripInfo = {
 
 // CONFIRMED BOOKINGS (Ground Truth)
 export const flights = {
+  confirmation: "40-850876768",
+  pin: "4428",
   outbound: {
     date: "2026-01-19",
     departure: { time: "19:35", airport: "Newark (EWR)" },
     arrival: { date: "2026-01-20", time: "12:05", airport: "Zürich (ZRH)" },
     airline: "Icelandair",
     flights: "FI622 / FI568",
+    duration: "10h 30m",
     via: "Reykjavik"
   },
   return: {
@@ -26,9 +29,11 @@ export const flights = {
     arrival: { time: "18:25", airport: "Newark (EWR)" },
     airline: "Icelandair",
     flights: "FI569 / FI623",
+    duration: "11h 25m",
     via: "Reykjavik",
-    warning: "TIGHT TIMELINE - Leave hotel by 9:30am"
-  }
+    warning: "Leave hotel by 9:30am"
+  },
+  totalCost: "$1,228.32"
 }
 
 export const hotels = [
