@@ -3,11 +3,11 @@
 // Images selected for accuracy to actual locations
 
 export const images = {
-  // Hero - Matterhorn, the iconic Swiss mountain
+  // Hero - Eiger, Mönch and Jungfrau panorama
   hero: {
-    url: "https://images.unsplash.com/photo-1529973565457-a60a2ccf750d?w=1920&q=80",
-    alt: "Matterhorn peak at dawn with snow-covered Swiss Alps",
-    credit: "Fabrice Villard"
+    url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80",
+    alt: "Dramatic view of Eiger, Mönch and Jungfrau mountains in Swiss Alps",
+    credit: "Samuel Ferrara"
   },
   
   // Lucerne - actual Chapel Bridge and landmarks

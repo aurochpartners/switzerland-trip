@@ -199,7 +199,7 @@ function ReferenceMode() {
           <h1>Reference Guide</h1>
           <p className="ref-subtitle">January 19-27, 2026</p>
           <nav className="ref-nav-links">
-            <Link to="/story">Story View</Link>
+            <Link to="/">Home</Link>
             <Link to="/quick">Quick Reference</Link>
           </nav>
         </div>
@@ -274,7 +274,7 @@ function ReferenceMode() {
       <footer className="ref-footer">
         <p>Switzerland 2026 | Ray & Katie</p>
         <div className="ref-footer-links">
-          <Link to="/story">Story</Link>
+          <Link to="/">Home</Link>
           <Link to="/quick">Quick Ref</Link>
         </div>
       </footer>

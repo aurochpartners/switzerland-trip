@@ -126,7 +126,7 @@ function QuickReference() {
 
       <footer className="quick-ref-footer">
         <div className="quick-ref-footer-links">
-          <Link to="/story">Story</Link>
+          <Link to="/">Home</Link>
           <Link to="/reference">Full Guide</Link>
           <Link to="/planner">Planner</Link>
         </div>

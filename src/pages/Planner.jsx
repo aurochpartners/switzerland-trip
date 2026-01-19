@@ -147,7 +147,7 @@ function Planner() {
       {/* Footer nav */}
       <footer className="planner-footer">
         <div className="planner-footer-links">
-          <Link to="/story">Story View</Link>
+          <Link to="/">Home</Link>
           <Link to="/reference">Full Reference</Link>
           <Link to="/quick">Quick Reference</Link>
         </div>
