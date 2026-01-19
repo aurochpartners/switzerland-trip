@@ -1,35 +1,30 @@
 :root {
-  /* Alpine Twilight Palette */
-  --slate-deep: #1B2838;
-  --slate-mid: #2D3E50;
-  --slate-light: #3D5166;
+  /* Colors - Alpine palette */
+  --slate-dark: #111;
+  --slate-mid: #1a1a1a;
+  --slate-light: #333;
   
-  --warm-white: #FAF9F6;
-  --warm-cream: #F5F1EB;
-  --warm-stone: #E8E2D9;
+  --cream: #f8f8f6;
+  --cream-dark: #f0f0ec;
   
-  --rose-gold: #B76E79;
-  --rose-gold-light: #D4A5AD;
-  --rose-gold-dark: #9A5A64;
+  --gold: #c9a87c;
+  --gold-light: #d4b896;
+  --gold-dark: #8b6914;
   
-  --alpine-green: #2D5A45;
-  --alpine-green-light: #4A7A62;
+  --text-dark: #1a1a1a;
+  --text-mid: #666;
+  --text-light: #888;
+  --text-white: #f5f5f5;
   
-  /* Text */
-  --text-primary: #1B2838;
-  --text-secondary: #5A6978;
-  --text-muted: #8A949F;
-  --text-inverse: #FAF9F6;
-  
-  /* Functional */
-  --success: #4A7A62;
-  --warning: #C9A227;
-  --danger: #A63D40;
+  --red: #c0392b;
+  --orange: #e67e22;
+  --blue: #2980b9;
+  --green: #27ae60;
   
   /* Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'DM Mono', 'SF Mono', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'DM Mono', 'SF Mono', 'Monaco', monospace;
   
   /* Spacing */
   --space-xs: 0.25rem;
@@ -39,24 +34,14 @@
   --space-xl: 2rem;
   --space-2xl: 3rem;
   --space-3xl: 4rem;
-  --space-4xl: 6rem;
   
-  /* Sizing */
-  --container-max: 1200px;
-  --content-max: 720px;
-  
-  /* Transitions */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(27, 40, 56, 0.05);
-  --shadow-md: 0 4px 12px rgba(27, 40, 56, 0.08);
-  --shadow-lg: 0 12px 32px rgba(27, 40, 56, 0.12);
-  
-  /* Border Radius */
+  /* Radii */
   --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-lg: 12px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
 }

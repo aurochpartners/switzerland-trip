@@ -1,338 +1,418 @@
 .quick-ref {
   min-height: 100vh;
-  background-color: var(--slate-deep);
-  color: var(--warm-white);
+  background: #111;
+  color: #f5f5f5;
 }
 
+/* Header */
 .quick-ref-header {
-  padding: var(--space-xl) var(--space-lg);
+  position: relative;
+  padding: 2rem 1.5rem;
   text-align: center;
-  border-bottom: 1px solid rgba(250, 249, 246, 0.1);
+  border-bottom: 1px solid #333;
 }
 
 .quick-ref-back {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   font-size: 0.875rem;
-  color: rgba(250, 249, 246, 0.6);
-  margin-bottom: var(--space-lg);
-  transition: color 0.2s;
+  color: #888;
+  text-decoration: none;
 }
 
 .quick-ref-back:hover {
-  color: var(--warm-white);
+  color: #fff;
 }
 
 .quick-ref-header h1 {
-  font-family: var(--font-display);
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 2rem;
   font-weight: 400;
-  color: var(--warm-white);
-  margin-bottom: var(--space-xs);
+  margin: 0 0 0.25rem;
 }
 
 .quick-ref-header p {
-  color: rgba(250, 249, 246, 0.6);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
+  color: #888;
+  margin: 0;
 }
 
-.quick-ref-content {
+/* Main */
+.quick-ref-main {
   max-width: 600px;
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-lg);
+  padding: 1.5rem 1rem;
 }
 
+/* Sections */
 .quick-ref-section {
-  margin-bottom: var(--space-2xl);
+  margin-bottom: 2rem;
 }
 
-.section-title {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--rose-gold-light);
-  margin-bottom: var(--space-lg);
+.quick-ref-section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #c9a87c;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+/* Card */
+.quick-ref-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Emergency */
-.emergency-section {
-  background-color: rgba(166, 61, 64, 0.15);
-  margin: 0 calc(-1 * var(--space-lg));
-  padding: var(--space-lg);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-2xl);
-}
-
-.emergency-section .section-title {
-  color: #E57373;
-}
-
-.emergency-grid {
+.quick-ref-emergency-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+  gap: 0.75rem;
 }
 
-.emergency-item {
+.quick-ref-emerg-btn {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: #1a1a1a;
+  border: 1px solid #c0392b;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
 }
 
-.emergency-label {
+.quick-ref-emerg-btn:hover {
+  background: #c0392b;
+}
+
+.quick-ref-emerg-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.quick-ref-emerg-label {
   font-size: 0.75rem;
-  color: rgba(250, 249, 246, 0.6);
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+.quick-ref-emerg-btn:hover .quick-ref-emerg-label {
+  color: #fff;
+}
+
+/* Flight */
+.quick-ref-flight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.quick-ref-flight-leg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.quick-ref-flight-direction {
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: #888;
 }
 
-.emergency-number {
-  font-family: var(--font-mono);
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--warm-white);
+.quick-ref-flight-leg strong {
+  font-size: 1rem;
+  color: #fff;
 }
 
-/* Reminders */
-.reminder-card {
-  background-color: rgba(183, 110, 121, 0.15);
-  border-left: 3px solid var(--rose-gold);
-  padding: var(--space-md) var(--space-lg);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-md);
-}
-
-.reminder-card strong {
-  display: block;
-  margin-bottom: var(--space-xs);
-  color: var(--warm-white);
-}
-
-.reminder-card p {
+.quick-ref-flight-leg span {
   font-size: 0.9375rem;
-  color: rgba(250, 249, 246, 0.8);
-  margin-bottom: var(--space-sm);
+  color: #ccc;
 }
 
-.reminder-phone {
-  font-family: var(--font-mono);
-  font-size: 1.125rem;
+.quick-ref-flight-leg code {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  color: #c9a87c;
+}
+
+.quick-ref-flight-warning {
+  font-size: 0.8125rem;
+  color: #e74c3c;
   font-weight: 500;
-  color: var(--rose-gold-light);
-}
-
-.reminder-card.warning {
-  background-color: rgba(201, 162, 39, 0.15);
-  border-color: var(--warning);
+  margin-top: 0.25rem;
 }
 
 /* Hotels */
-.hotels-list {
+.quick-ref-hotels {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 0.75rem;
 }
 
-.hotel-item {
-  background-color: var(--slate-mid);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-}
-
-.hotel-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-xs);
-}
-
-.hotel-item-location {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--rose-gold-light);
-}
-
-.hotel-item-dates {
-  font-size: 0.75rem;
-  color: rgba(250, 249, 246, 0.5);
-}
-
-.hotel-item-name {
-  font-family: var(--font-display);
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: var(--warm-white);
-  margin-bottom: var(--space-md);
-}
-
-.hotel-item-details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
-}
-
-.hotel-item-field {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.field-label {
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: rgba(250, 249, 246, 0.5);
-}
-
-.field-value {
-  font-size: 0.9375rem;
-  color: var(--warm-white);
-}
-
-.field-value.mono {
-  font-family: var(--font-mono);
-  font-weight: 500;
-}
-
-.field-value.phone {
-  font-family: var(--font-mono);
-  color: var(--rose-gold-light);
-}
-
-/* Flights */
-.flight-card {
-  background-color: var(--slate-mid);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-}
-
-.flight-row {
+.quick-ref-hotel-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: var(--space-md) 0;
-  border-bottom: 1px solid rgba(250, 249, 246, 0.1);
+  margin-bottom: 0.5rem;
 }
 
-.flight-row:first-child {
-  padding-top: 0;
+.quick-ref-hotel-header strong {
+  font-size: 1.0625rem;
+  color: #fff;
 }
 
-.flight-row:last-of-type {
-  border-bottom: none;
-  padding-bottom: 0;
+.quick-ref-hotel-dates {
+  font-size: 0.8125rem;
+  color: #888;
 }
 
-.flight-label {
+.quick-ref-hotel-addr {
+  font-size: 0.875rem;
+  color: #aaa;
+  margin: 0 0 0.5rem;
+}
+
+.quick-ref-hotel-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quick-ref-hotel-meta span {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.quick-ref-hotel-meta code {
+  font-family: 'DM Mono', monospace;
+  color: #c9a87c;
+}
+
+.quick-ref-hotel-meta a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9375rem;
+  color: #5dade2;
+  text-decoration: none;
+}
+
+.quick-ref-hotel-meta a:hover {
+  color: #85c1e9;
+}
+
+.quick-ref-hotel-times {
+  font-size: 0.8125rem;
+  color: #666;
+  margin: 0.5rem 0 0;
+}
+
+/* Booked activities */
+.quick-ref-booked-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.quick-ref-booked-header strong {
+  font-size: 1.0625rem;
+  color: #fff;
+}
+
+.quick-ref-booked-datetime {
+  font-size: 0.875rem;
+  color: #c9a87c;
+}
+
+.quick-ref-booked p {
+  font-size: 0.875rem;
+  color: #aaa;
+  margin: 0.25rem 0;
+}
+
+.quick-ref-booked span {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.quick-ref-booked code {
+  font-family: 'DM Mono', monospace;
+  color: #c9a87c;
+}
+
+.quick-ref-booked a {
   display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9375rem;
+  color: #5dade2;
+  text-decoration: none;
+  margin: 0.25rem 0;
+}
+
+.quick-ref-note {
+  font-style: italic;
+  color: #888;
+}
+
+/* To book */
+.quick-ref-tobook {
+  border-color: #c9a87c;
+}
+
+.quick-ref-tobook-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.quick-ref-tobook-header strong {
+  font-size: 1.0625rem;
+  color: #fff;
+}
+
+.quick-ref-critical-badge {
   font-size: 0.6875rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(250, 249, 246, 0.5);
-  margin-bottom: 2px;
+  color: #fff;
+  background: #c0392b;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 }
 
-.flight-route {
+.quick-ref-tobook p {
+  font-size: 0.875rem;
+  color: #aaa;
+  margin: 0.25rem 0;
+}
+
+.quick-ref-deadline {
+  color: #e67e22;
   font-weight: 500;
-  color: var(--warm-white);
 }
 
-.flight-details {
+.quick-ref-book-phone {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.25rem;
+  color: #c9a87c;
+  text-decoration: none;
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background: rgba(200, 160, 100, 0.1);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.quick-ref-book-phone:hover {
+  background: rgba(200, 160, 100, 0.2);
+}
+
+.quick-ref-price {
+  font-size: 0.875rem;
+  color: #888;
   text-align: right;
 }
 
-.flight-details span {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.9375rem;
-  color: var(--warm-white);
-}
-
-.flight-arrive {
-  font-size: 0.8125rem !important;
-  color: rgba(250, 249, 246, 0.6) !important;
-}
-
-.flight-numbers {
-  margin-top: var(--space-md);
-  padding-top: var(--space-md);
-  border-top: 1px solid rgba(250, 249, 246, 0.1);
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  color: rgba(250, 249, 246, 0.5);
-}
-
-/* Facts */
-.facts-grid {
+/* Quick facts */
+.quick-ref-facts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+  gap: 0.5rem;
 }
 
-.fact-item {
+.quick-ref-fact {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: var(--space-md);
-  background-color: var(--slate-mid);
-  border-radius: var(--radius-md);
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 0.75rem;
 }
 
-.fact-label {
+.quick-ref-fact-key {
   font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(250, 249, 246, 0.5);
+  color: #666;
+  margin-bottom: 0.25rem;
 }
 
-.fact-value {
+.quick-ref-fact-val {
   font-size: 0.9375rem;
-  color: var(--warm-white);
+  color: #fff;
 }
 
 /* Footer */
 .quick-ref-footer {
-  padding: var(--space-2xl) var(--space-lg);
+  padding: 2rem 1rem;
   text-align: center;
-  border-top: 1px solid rgba(250, 249, 246, 0.1);
+  border-top: 1px solid #333;
+}
+
+.quick-ref-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.quick-ref-footer-links a {
+  font-size: 0.875rem;
+  color: #888;
+  text-decoration: none;
+}
+
+.quick-ref-footer-links a:hover {
+  color: #fff;
 }
 
 .quick-ref-footer p {
-  font-size: 0.875rem;
-  color: rgba(250, 249, 246, 0.4);
-  margin-bottom: var(--space-xs);
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0;
 }
 
-.quick-ref-footer p:first-child {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: rgba(250, 249, 246, 0.6);
-}
-
-@media (max-width: 480px) {
-  .emergency-grid,
-  .hotel-item-details,
-  .facts-grid {
-    grid-template-columns: 1fr;
+/* Print styles */
+@media print {
+  .quick-ref {
+    background: #fff;
+    color: #000;
   }
   
-  .hotel-item-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xs);
+  .quick-ref-back,
+  .quick-ref-footer-links {
+    display: none;
   }
   
-  .flight-row {
-    flex-direction: column;
-    gap: var(--space-sm);
+  .quick-ref-card,
+  .quick-ref-emerg-btn,
+  .quick-ref-fact {
+    border-color: #ddd;
+    background: #fff;
   }
   
-  .flight-details {
-    text-align: left;
+  .quick-ref-section h2 {
+    color: #333;
+  }
+  
+  a {
+    color: #000;
   }
 }

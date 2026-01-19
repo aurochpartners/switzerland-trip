@@ -1,11 +1,15 @@
 import { Routes, Route } from 'react-router-dom'
 import Landing from './pages/Landing'
+import StoryMode from './pages/StoryMode'
+import ReferenceMode from './pages/ReferenceMode'
 import QuickReference from './components/QuickReference'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
+      <Route path="/story" element={<StoryMode />} />
+      <Route path="/reference" element={<ReferenceMode />} />
       <Route path="/quick" element={<QuickReference />} />
     </Routes>
   )

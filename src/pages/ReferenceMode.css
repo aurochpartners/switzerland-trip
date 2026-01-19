@@ -1,0 +1,643 @@
+.reference-mode {
+  min-height: 100vh;
+  background: #f8f8f6;
+  color: #1a1a1a;
+}
+
+/* Header */
+.ref-header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.ref-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.ref-subtitle {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1.5rem;
+}
+
+.ref-back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+.ref-back:hover {
+  color: #fff;
+}
+
+.ref-nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.ref-nav-links a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.ref-nav-links a:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Main */
+.ref-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Sections */
+.ref-section {
+  margin-bottom: 3rem;
+}
+
+.ref-section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.ref-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: #444;
+}
+
+/* Quick facts */
+.ref-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.ref-fact {
+  background: #fff;
+  padding: 0.875rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.ref-fact-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: capitalize;
+  margin-bottom: 0.25rem;
+}
+
+.ref-fact-value {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Days */
+.ref-days-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ref-day {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.ref-day--special {
+  background: linear-gradient(135deg, #f5ebe0 0%, #f0e6d8 100%);
+  border: 1px solid #d4c4a8;
+}
+
+.ref-day-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.ref-day-header:hover {
+  background: rgba(0,0,0,0.02);
+}
+
+.ref-day-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+  padding-right: 1rem;
+  border-right: 1px solid #eee;
+}
+
+.ref-day-num {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.ref-day-weekday {
+  font-size: 0.8125rem;
+  color: #666;
+}
+
+.ref-day-date-str {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.ref-day-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ref-day-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 0.25rem;
+  color: #222;
+}
+
+.ref-day-summary {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ref-day-highlight {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #8b6914;
+  background: rgba(200, 160, 50, 0.15);
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.375rem;
+}
+
+.ref-day-chevron {
+  flex-shrink: 0;
+  color: #999;
+  transition: transform 0.2s;
+}
+
+.ref-day-chevron--open {
+  transform: rotate(180deg);
+}
+
+/* Day content */
+.ref-day-content {
+  padding: 0 1.25rem 1.25rem;
+  overflow: hidden;
+}
+
+.ref-day-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem;
+  color: #444;
+}
+
+/* Alert */
+.ref-alert {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.ref-alert--warning {
+  background: #fef3cd;
+  border-left: 3px solid #f0ad4e;
+}
+
+.ref-alert--critical {
+  background: #f8d7da;
+  border-left: 3px solid #dc3545;
+}
+
+.ref-alert strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.ref-alert p {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+/* Critical */
+.ref-critical {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ref-critical strong {
+  display: block;
+  color: #721c24;
+  margin-bottom: 0.5rem;
+}
+
+.ref-critical a {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.125rem;
+  color: #721c24;
+  margin-bottom: 0.5rem;
+}
+
+.ref-critical p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #721c24;
+}
+
+/* Booked */
+.ref-booked {
+  background: linear-gradient(135deg, #e8dcc8 0%, #e0d4c0 100%);
+  border: 1px solid #c9b896;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.ref-booked-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.ref-booked-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8b6914;
+}
+
+.ref-booked-time {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5a4510;
+}
+
+.ref-booked h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: #3a2a08;
+}
+
+.ref-booked-location,
+.ref-booked-conf {
+  font-size: 0.9375rem;
+  margin: 0.25rem 0;
+  color: #5a4510;
+}
+
+.ref-booked-conf code {
+  font-family: 'DM Mono', monospace;
+  background: rgba(0,0,0,0.1);
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+}
+
+.ref-booked p {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  color: #5a4510;
+}
+
+.ref-booked-note {
+  font-style: italic;
+}
+
+/* Options */
+.ref-options-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ref-option {
+  background: #f8f8f6;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.ref-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.ref-option h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.ref-option-weather {
+  font-size: 0.875rem;
+}
+
+.ref-option-desc {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0 0 0.75rem;
+}
+
+.ref-option-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+.ref-option-warning {
+  font-size: 0.8125rem;
+  color: #c0392b;
+  margin: 0.5rem 0 0;
+  font-weight: 500;
+}
+
+.ref-option-best {
+  font-size: 0.8125rem;
+  color: #27ae60;
+  margin: 0.25rem 0 0;
+  font-style: italic;
+}
+
+/* Schedule */
+.ref-schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ref-schedule-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ref-schedule-item:last-child {
+  border-bottom: none;
+}
+
+.ref-schedule-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.ref-schedule-activity {
+  font-size: 0.9375rem;
+  color: #333;
+}
+
+.ref-schedule-details {
+  grid-column: 2;
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+.ref-schedule-item--critical .ref-schedule-time,
+.ref-schedule-item--critical .ref-schedule-activity {
+  color: #c0392b;
+  font-weight: 500;
+}
+
+.ref-schedule-item--booked .ref-schedule-activity {
+  color: #8b6914;
+  font-weight: 500;
+}
+
+/* Hotel card */
+.ref-hotel-card {
+  background: #f8f8f6;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.ref-hotel-card strong {
+  display: block;
+  font-size: 1.0625rem;
+  margin-bottom: 0.375rem;
+}
+
+.ref-hotel-card p {
+  margin: 0.25rem 0;
+  font-size: 0.9375rem;
+  color: #666;
+}
+
+.ref-hotel-card code {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  background: #eee;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+}
+
+.ref-hotel-card a {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 1rem;
+  color: #2980b9;
+  margin: 0.5rem 0;
+}
+
+.ref-hotel-times {
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+/* Meals, walking, tips */
+.ref-meals p,
+.ref-walking li,
+.ref-tips li {
+  font-size: 0.9375rem;
+  margin: 0.25rem 0;
+  color: #555;
+}
+
+.ref-walking ol,
+.ref-tips ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+/* Sledding note */
+.ref-sledding-note {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.ref-sledding-note strong {
+  display: block;
+  color: #155724;
+  margin-bottom: 0.25rem;
+}
+
+.ref-sledding-note p {
+  font-size: 0.875rem;
+  color: #155724;
+  margin: 0 0 0.5rem;
+}
+
+.ref-sledding-note a {
+  font-family: 'DM Mono', monospace;
+  color: #155724;
+}
+
+/* Restaurants */
+.ref-restaurant-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ref-restaurant {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 1rem;
+  background: #fff;
+  padding: 0.875rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.ref-restaurant strong {
+  grid-column: 1 / -1;
+  font-size: 1rem;
+  color: #333;
+}
+
+.ref-restaurant-specialty {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.ref-restaurant-price {
+  font-size: 0.875rem;
+  color: #888;
+  text-align: right;
+}
+
+.ref-restaurant-note {
+  grid-column: 1 / -1;
+  font-size: 0.8125rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* Footer */
+.ref-footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ref-footer p {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.ref-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.ref-footer-links a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+.ref-footer-links a:hover {
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ref-header {
+    padding: 2rem 1rem;
+  }
+  
+  .ref-header h1 {
+    font-size: 2rem;
+  }
+  
+  .ref-day-header {
+    flex-wrap: wrap;
+  }
+  
+  .ref-day-date {
+    flex-direction: row;
+    gap: 0.5rem;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .ref-day-summary {
+    white-space: normal;
+  }
+  
+  .ref-facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,180 +1,145 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { chapters, emergencyNumbers, quickFacts } from '../data/chapters'
+import { hotels, flights, bookedActivities, toBookActivities, emergency, quickFacts } from '../data/verified-data'
 import './QuickReference.css'
 
 function QuickReference() {
-  // Extract hotels from chapters
-  const hotels = chapters
-    .filter(c => c.content.hotel)
-    .map(c => ({
-      ...c.content.hotel,
-      location: c.location,
-      dates: c.date
-    }))
-
-  // Get flight info
-  const departureChapter = chapters.find(c => c.id === 'beginning')
-  const returnChapter = chapters.find(c => c.id === 'until-next-time')
-  
-  const flight = departureChapter?.content.flight
-  const departure = returnChapter?.content.departure
-
   return (
-    <div className="quick-ref dark">
+    <div className="quick-ref">
       <header className="quick-ref-header">
-        <Link to="/" className="quick-ref-back">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          Back
-        </Link>
+        <Link to="/" className="quick-ref-back">Home</Link>
         <h1>Quick Reference</h1>
-        <p>All the essentials in one place</p>
+        <p>Switzerland | January 19-27, 2026</p>
       </header>
 
-      <main className="quick-ref-content">
+      <main className="quick-ref-main">
         {/* Emergency */}
-        <section className="quick-ref-section emergency-section">
-          <h2 className="section-title">Emergency</h2>
-          <div className="emergency-grid">
-            <div className="emergency-item">
-              <span className="emergency-label">General</span>
-              <a href={`tel:${emergencyNumbers.general}`} className="emergency-number">
-                {emergencyNumbers.general}
-              </a>
-            </div>
-            <div className="emergency-item">
-              <span className="emergency-label">Police</span>
-              <a href={`tel:${emergencyNumbers.police}`} className="emergency-number">
-                {emergencyNumbers.police}
-              </a>
-            </div>
-            <div className="emergency-item">
-              <span className="emergency-label">Ambulance</span>
-              <a href={`tel:${emergencyNumbers.ambulance}`} className="emergency-number">
-                {emergencyNumbers.ambulance}
-              </a>
-            </div>
-            <div className="emergency-item">
-              <span className="emergency-label">Fire</span>
-              <a href={`tel:${emergencyNumbers.fire}`} className="emergency-number">
-                {emergencyNumbers.fire}
-              </a>
-            </div>
+        <section className="quick-ref-section quick-ref-emergency">
+          <h2>Emergency</h2>
+          <div className="quick-ref-emergency-grid">
+            <a href="tel:112" className="quick-ref-emerg-btn">
+              <span className="quick-ref-emerg-num">112</span>
+              <span className="quick-ref-emerg-label">General Emergency</span>
+            </a>
+            <a href="tel:117" className="quick-ref-emerg-btn">
+              <span className="quick-ref-emerg-num">117</span>
+              <span className="quick-ref-emerg-label">Police</span>
+            </a>
+            <a href="tel:144" className="quick-ref-emerg-btn">
+              <span className="quick-ref-emerg-num">144</span>
+              <span className="quick-ref-emerg-label">Ambulance</span>
+            </a>
+            <a href="tel:118" className="quick-ref-emerg-btn">
+              <span className="quick-ref-emerg-num">118</span>
+              <span className="quick-ref-emerg-label">Fire</span>
+            </a>
           </div>
         </section>
 
-        {/* Reminders */}
+        {/* Flight */}
         <section className="quick-ref-section">
-          <h2 className="section-title">Don't Forget</h2>
-          <div className="reminder-card">
-            <strong>Saturday, January 24</strong>
-            <p>Book night sledding before 2 PM</p>
-            <a href="tel:+41338541616" className="reminder-phone">+41 33 854 16 16</a>
-          </div>
-          <div className="reminder-card warning">
-            <strong>Tuesday, January 27</strong>
-            <p>Flight at 1:00 PM. Leave hotel by 9:30 AM.</p>
+          <h2>Flight</h2>
+          <div className="quick-ref-card">
+            <div className="quick-ref-flight">
+              <div className="quick-ref-flight-leg">
+                <span className="quick-ref-flight-direction">Outbound</span>
+                <strong>{flights.outbound.date}</strong>
+                <span>{flights.outbound.departure.time} {flights.outbound.departure.airport}</span>
+                <span>→ {flights.outbound.arrival.time} {flights.outbound.arrival.airport}</span>
+                <code>{flights.outbound.flights}</code>
+              </div>
+              <div className="quick-ref-flight-leg">
+                <span className="quick-ref-flight-direction">Return</span>
+                <strong>{flights.return.date}</strong>
+                <span>{flights.return.departure.time} {flights.return.departure.airport}</span>
+                <span>→ {flights.return.arrival.time} {flights.return.arrival.airport}</span>
+                <code>{flights.return.flights}</code>
+                <span className="quick-ref-flight-warning">{flights.return.warning}</span>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Hotels */}
         <section className="quick-ref-section">
-          <h2 className="section-title">Hotels</h2>
-          <div className="hotels-list">
-            {hotels.map((hotel, i) => (
-              <motion.div 
-                key={i} 
-                className="hotel-item"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="hotel-item-header">
-                  <span className="hotel-item-location">{hotel.location}</span>
-                  <span className="hotel-item-dates">{hotel.dates}</span>
+          <h2>Hotels</h2>
+          <div className="quick-ref-hotels">
+            {hotels.map(hotel => (
+              <div key={hotel.id} className="quick-ref-card quick-ref-hotel">
+                <div className="quick-ref-hotel-header">
+                  <strong>{hotel.name}</strong>
+                  <span className="quick-ref-hotel-dates">
+                    {new Date(hotel.dates.checkIn).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - {new Date(hotel.dates.checkOut).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                  </span>
                 </div>
-                <h3 className="hotel-item-name">{hotel.name}</h3>
-                <div className="hotel-item-details">
-                  <div className="hotel-item-field">
-                    <span className="field-label">Confirmation</span>
-                    <span className="field-value mono">{hotel.confirmation}</span>
-                  </div>
-                  <div className="hotel-item-field">
-                    <span className="field-label">Phone</span>
-                    <a href={`tel:${hotel.phone}`} className="field-value phone">
-                      {hotel.phone}
-                    </a>
-                  </div>
+                <p className="quick-ref-hotel-addr">{hotel.address}</p>
+                <div className="quick-ref-hotel-meta">
+                  <span>Conf: <code>{hotel.confirmation}</code></span>
+                  <a href={`tel:${hotel.phone}`}>{hotel.phone}</a>
                 </div>
-              </motion.div>
+                <p className="quick-ref-hotel-times">
+                  In: {hotel.times.checkIn} | Out: {hotel.times.checkOut}
+                </p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* Flights */}
+        {/* Booked Activities */}
         <section className="quick-ref-section">
-          <h2 className="section-title">Flights</h2>
-          <div className="flight-card">
-            <div className="flight-row">
-              <div>
-                <span className="flight-label">Outbound</span>
-                <span className="flight-route">Newark → Zürich</span>
+          <h2>Booked</h2>
+          {bookedActivities.map((activity, i) => (
+            <div key={i} className="quick-ref-card quick-ref-booked">
+              <div className="quick-ref-booked-header">
+                <strong>{activity.name}</strong>
+                <span className="quick-ref-booked-datetime">
+                  {new Date(activity.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} @ {activity.time}
+                </span>
               </div>
-              <div className="flight-details">
-                <span>Jan 19, {flight?.departure}</span>
-                <span className="flight-arrive">Arrive Jan 20, {flight?.arrival?.split(' ')[0]}</span>
-              </div>
+              <p>{activity.location}</p>
+              {activity.confirmation && <span>Conf: <code>{activity.confirmation}</code></span>}
+              {activity.phone && <a href={`tel:${activity.phone}`}>{activity.phone}</a>}
+              {activity.note && <p className="quick-ref-note">{activity.note}</p>}
             </div>
-            <div className="flight-row">
-              <div>
-                <span className="flight-label">Return</span>
-                <span className="flight-route">Zürich → Newark</span>
+          ))}
+        </section>
+
+        {/* To Book */}
+        <section className="quick-ref-section">
+          <h2>To Book On-Site</h2>
+          {toBookActivities.map((activity, i) => (
+            <div key={i} className="quick-ref-card quick-ref-tobook">
+              <div className="quick-ref-tobook-header">
+                <strong>{activity.name}</strong>
+                {activity.critical && <span className="quick-ref-critical-badge">Critical</span>}
               </div>
-              <div className="flight-details">
-                <span>Jan 27, {departure?.flight}</span>
-              </div>
+              <p>Recommended: {new Date(activity.recommendedDate).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</p>
+              <p className="quick-ref-deadline">Book by: {activity.bookingDeadline}</p>
+              <a href={`tel:${activity.bookingPhone}`} className="quick-ref-book-phone">{activity.bookingPhone}</a>
+              <p className="quick-ref-price">{activity.price}</p>
             </div>
-            <p className="flight-numbers">{flight?.numbers}</p>
-          </div>
+          ))}
         </section>
 
         {/* Quick Facts */}
         <section className="quick-ref-section">
-          <h2 className="section-title">Quick Facts</h2>
-          <div className="facts-grid">
-            <div className="fact-item">
-              <span className="fact-label">Currency</span>
-              <span className="fact-value">{quickFacts.currency}</span>
-            </div>
-            <div className="fact-item">
-              <span className="fact-label">Plugs</span>
-              <span className="fact-value">{quickFacts.plugs}</span>
-            </div>
-            <div className="fact-item">
-              <span className="fact-label">Tipping</span>
-              <span className="fact-value">{quickFacts.tipping}</span>
-            </div>
-            <div className="fact-item">
-              <span className="fact-label">Water</span>
-              <span className="fact-value">{quickFacts.water}</span>
-            </div>
-            <div className="fact-item">
-              <span className="fact-label">Hello</span>
-              <span className="fact-value">{quickFacts.hello}</span>
-            </div>
-            <div className="fact-item">
-              <span className="fact-label">Thanks</span>
-              <span className="fact-value">{quickFacts.thanks}</span>
-            </div>
+          <h2>Quick Facts</h2>
+          <div className="quick-ref-facts">
+            {Object.entries(quickFacts).map(([key, value]) => (
+              <div key={key} className="quick-ref-fact">
+                <span className="quick-ref-fact-key">{key.replace(/([A-Z])/g, ' $1')}</span>
+                <span className="quick-ref-fact-val">{value}</span>
+              </div>
+            ))}
           </div>
         </section>
       </main>
 
       <footer className="quick-ref-footer">
-        <p>Ray & Katie</p>
-        <p>January 2026</p>
+        <div className="quick-ref-footer-links">
+          <Link to="/story">Story View</Link>
+          <Link to="/reference">Full Reference</Link>
+        </div>
+        <p>Ray & Katie | Switzerland 2026</p>
       </footer>
     </div>
   )
