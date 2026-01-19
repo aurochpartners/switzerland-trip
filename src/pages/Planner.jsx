@@ -27,8 +27,8 @@ function Planner() {
         <div className="planner-header-content">
           <Link to="/" className="planner-back">← Home</Link>
           <div className="planner-title-group">
-            <h1>Plan Your Trip</h1>
-            <p>Vote on activities, build your itinerary</p>
+            <h1>Pick Your Adventures</h1>
+            <p>Mark what interests you, see the costs</p>
           </div>
           <button 
             className="planner-cost-toggle"
@@ -84,7 +84,7 @@ function Planner() {
             </div>
 
             {locationActivities.length === 0 && (
-              <p className="no-activities">No activities found for this location.</p>
+              <p className="no-activities">Nothing here yet.</p>
             )}
           </section>
         </main>
@@ -103,7 +103,7 @@ function Planner() {
           <div className="selected-summary">
             <h4>Your Plan</h4>
             {selected.length === 0 ? (
-              <p className="no-selected">No activities selected yet. Click "+ Add to Plan" on activities you want to do.</p>
+              <p className="no-selected">Click "Add to Plan" on anything that catches your eye.</p>
             ) : (
               <ul className="selected-list">
                 {selected.map(activityId => {

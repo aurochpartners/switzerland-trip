@@ -162,21 +162,17 @@ function StoryMode() {
         </div>
       </LocationSection>
 
-      {/* Fondue Gondola - Special */}
+      {/* Fondue Gondola */}
       <LocationSection
         id="fondue"
-        title="The Evening"
+        title="Fondue Gondola"
         subtitle="January 25, 4pm"
         image={images.activities.fondue.url}
-        isSpecial={true}
       >
         <p>
-          This is the day you have been waiting for.
-        </p>
-        <p>
-          A relaxed morning, a light afternoon, and then—at four o'clock—a table for two 
-          in a vintage gondola cabin. Cheese fondue bubbles between you. The Eiger stands 
-          as backdrop. The cabin is stationary but the moment is not.
+          A relaxed morning, a light afternoon, and then—at four o'clock—fondue for two 
+          in a vintage gondola cabin. The Eiger stands as backdrop. A proper Swiss send-off 
+          from Grindelwald.
         </p>
         <div className="story-booked">
           <strong>Fondue Gondola</strong>

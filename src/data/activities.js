@@ -1,5 +1,6 @@
 // Comprehensive activity database for Switzerland trip
-// All prices in CHF, verified January 2026
+// All prices in CHF - verify at official sites before booking
+// Last updated: January 2026
 
 export const activities = {
   lucerne: [

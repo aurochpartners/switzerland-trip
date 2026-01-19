@@ -1,6 +1,6 @@
 /**
- * Simple password protection for the Switzerland trip site.
- * Not cryptographically secure, but blocks casual access.
+ * Password protection for the Switzerland trip site.
+ * Blocks casual access - not cryptographically secure.
  */
 (function() {
   const STORAGE_KEY = 'switzerland_unlocked';
@@ -8,21 +8,26 @@
   
   // Check if already unlocked this session
   if (sessionStorage.getItem(STORAGE_KEY) === 'true') {
-    return; // Already verified, show the page normally
+    return;
   }
   
   // Hide the page content until password is entered
   document.documentElement.style.visibility = 'hidden';
   
   function showLockScreen() {
-    // Create the lock screen
     const lockScreen = document.createElement('div');
     lockScreen.id = 'lock-screen';
     lockScreen.innerHTML = `
       <div class="lock-container">
-        <div class="lock-icon">🇨🇭</div>
-        <h1 class="lock-title">Switzerland 2026</h1>
-        <p class="lock-subtitle">This trip is just for us ♡</p>
+        <div class="lock-visual">
+          <svg class="lock-mountains" viewBox="0 0 200 60" fill="none">
+            <path d="M0 60 L40 20 L60 35 L100 5 L140 35 L160 25 L200 60 Z" fill="rgba(255,255,255,0.08)"/>
+            <path d="M0 60 L30 35 L50 45 L80 25 L120 50 L150 30 L200 60 Z" fill="rgba(255,255,255,0.04)"/>
+          </svg>
+        </div>
+        <span class="lock-eyebrow">January 2026</span>
+        <h1 class="lock-title">Switzerland</h1>
+        <p class="lock-subtitle">Ray & Katie</p>
         <form id="lock-form">
           <input 
             type="password" 
@@ -32,127 +37,154 @@
             autocomplete="off"
             autofocus
           >
-          <button type="submit" class="lock-button">Enter</button>
+          <button type="submit" class="lock-button">Continue</button>
         </form>
-        <p class="lock-hint" id="lock-error" style="display: none; color: #e74c3c;">
-          That's not it—try again!
-        </p>
+        <p class="lock-error" id="lock-error">Not quite. Try again.</p>
       </div>
     `;
     
-    // Add styles
     const styles = document.createElement('style');
     styles.textContent = `
       #lock-screen {
         position: fixed;
         inset: 0;
         z-index: 99999;
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+        background: linear-gradient(170deg, #1a202c 0%, #0f1419 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        overflow: hidden;
       }
       
       .lock-container {
         text-align: center;
-        padding: 3rem 2rem;
-        max-width: 360px;
+        padding: 2rem;
+        max-width: 340px;
         width: 100%;
+        position: relative;
       }
       
-      .lock-icon {
-        font-size: 4rem;
-        margin-bottom: 1.5rem;
-        animation: float 3s ease-in-out infinite;
+      .lock-visual {
+        margin-bottom: 2.5rem;
       }
       
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+      .lock-mountains {
+        width: 200px;
+        height: 60px;
+        opacity: 0.8;
+      }
+      
+      .lock-eyebrow {
+        display: block;
+        font-size: 0.6875rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.4);
+        margin-bottom: 0.75rem;
       }
       
       .lock-title {
         font-family: 'Playfair Display', Georgia, serif;
-        font-size: 2.5rem;
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
         font-weight: 400;
-        color: #faf8f5;
-        margin: 0 0 0.5rem;
-        letter-spacing: 0.02em;
+        color: #f8f8f6;
+        margin: 0;
+        letter-spacing: -0.02em;
+        line-height: 1;
       }
       
       .lock-subtitle {
-        font-size: 1rem;
-        color: rgba(250, 248, 245, 0.6);
-        margin: 0 0 2rem;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.125rem;
+        color: rgba(248, 248, 246, 0.5);
+        margin: 0.75rem 0 3rem;
         font-style: italic;
       }
       
       #lock-form {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.875rem;
       }
       
       .lock-input {
-        background: rgba(255, 255, 255, 0.08);
-        border: 2px solid rgba(255, 255, 255, 0.15);
-        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
         padding: 1rem 1.25rem;
-        font-size: 1.125rem;
-        color: #faf8f5;
+        font-size: 1rem;
+        color: #f8f8f6;
         text-align: center;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.15em;
         transition: all 0.2s ease;
         outline: none;
       }
       
       .lock-input::placeholder {
-        color: rgba(250, 248, 245, 0.4);
+        color: rgba(248, 248, 246, 0.3);
         letter-spacing: 0.05em;
       }
       
       .lock-input:focus {
-        border-color: #d4a574;
-        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(201, 168, 124, 0.5);
+        background: rgba(255, 255, 255, 0.08);
       }
       
       .lock-button {
-        background: linear-gradient(135deg, #d4a574 0%, #c49a6c 100%);
+        background: #c9a87c;
         border: none;
-        border-radius: 12px;
-        padding: 1rem;
-        font-size: 1rem;
+        border-radius: 8px;
+        padding: 0.9375rem 1.5rem;
+        font-size: 0.8125rem;
         font-weight: 600;
-        color: #1a1a2e;
+        color: #1a1a1a;
         cursor: pointer;
         transition: all 0.2s ease;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.1em;
       }
       
       .lock-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(212, 165, 116, 0.3);
+        background: #d4b88a;
+        transform: translateY(-1px);
       }
       
       .lock-button:active {
         transform: translateY(0);
       }
       
-      .lock-hint {
+      .lock-error {
         margin-top: 1rem;
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
+        color: #b06565;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      
+      .lock-error.visible {
+        opacity: 1;
       }
       
       .lock-input.shake {
-        animation: shake 0.5s ease;
+        animation: shake 0.4s ease;
       }
       
       @keyframes shake {
         0%, 100% { transform: translateX(0); }
-        20%, 60% { transform: translateX(-8px); }
-        40%, 80% { transform: translateX(8px); }
+        20%, 60% { transform: translateX(-6px); }
+        40%, 80% { transform: translateX(6px); }
+      }
+      
+      @media (max-width: 480px) {
+        .lock-container {
+          padding: 1.5rem;
+        }
+        
+        .lock-title {
+          font-size: 2.5rem;
+        }
       }
     `;
     
@@ -160,7 +192,6 @@
     document.body.insertBefore(lockScreen, document.body.firstChild);
     document.documentElement.style.visibility = 'visible';
     
-    // Handle form submission
     const form = document.getElementById('lock-form');
     const input = document.getElementById('lock-password');
     const error = document.getElementById('lock-error');
@@ -169,22 +200,19 @@
       e.preventDefault();
       
       if (input.value === PASSWORD) {
-        // Success! Store and reveal the page
         sessionStorage.setItem(STORAGE_KEY, 'true');
-        lockScreen.style.transition = 'opacity 0.4s ease';
+        lockScreen.style.transition = 'opacity 0.5s ease';
         lockScreen.style.opacity = '0';
-        setTimeout(() => lockScreen.remove(), 400);
+        setTimeout(() => lockScreen.remove(), 500);
       } else {
-        // Wrong password
         input.classList.add('shake');
-        error.style.display = 'block';
+        error.classList.add('visible');
         input.value = '';
-        setTimeout(() => input.classList.remove('shake'), 500);
+        setTimeout(() => input.classList.remove('shake'), 400);
       }
     });
   }
   
-  // Run immediately if DOM is ready, otherwise wait
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', showLockScreen);
   } else {

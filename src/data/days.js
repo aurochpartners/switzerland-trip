@@ -198,12 +198,11 @@ export const days = [
     number: 7,
     date: "2026-01-25",
     dayOfWeek: "Sunday",
-    title: "The Evening",
+    title: "Fondue Gondola",
     location: "Grindelwald",
     hotel: "grindelwald",
     summary: "Relaxed day, Fondue Gondola at 4pm",
     highlight: "Fondue Gondola (Booked)",
-    isSpecial: true,
     booked: {
       name: "Fondue Gondola",
       time: "16:00",
