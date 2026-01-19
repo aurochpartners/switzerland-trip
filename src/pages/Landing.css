@@ -126,6 +126,22 @@
   color: #c9a87c;
 }
 
+/* Countdown mobile */
+@media (max-width: 480px) {
+  .landing-countdown {
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .countdown-unit {
+    min-width: 40px;
+  }
+  
+  .countdown-separator {
+    padding-bottom: 0.75rem;
+  }
+}
+
 /* Scroll hint - now a button */
 .landing-scroll-hint {
   position: absolute;

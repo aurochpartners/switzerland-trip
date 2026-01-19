@@ -23,8 +23,10 @@ function useCountdown(targetDate) {
 
 function calculateTimeLeft(targetDate) {
   const now = new Date()
-  const target = new Date(targetDate)
-  target.setHours(19, 35, 0, 0) // Flight departure time: 7:35 PM
+  
+  // Parse date string as local date (not UTC) to avoid timezone issues
+  const [year, month, day] = targetDate.split('-').map(Number)
+  const target = new Date(year, month - 1, day, 19, 35, 0, 0) // Flight departure: 7:35 PM local
   
   const difference = target - now
   
