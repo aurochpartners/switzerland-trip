@@ -14,7 +14,7 @@
   // Hide the page content and show password screen
   document.documentElement.style.visibility = 'hidden';
   
-  document.addEventListener('DOMContentLoaded', function() {
+  function showLockScreen() {
     // Create the lock screen
     const lockScreen = document.createElement('div');
     lockScreen.id = 'lock-screen';
@@ -182,5 +182,12 @@
         setTimeout(() => input.classList.remove('shake'), 500);
       }
     });
-  });
+  }
+  
+  // Run immediately if DOM is ready, otherwise wait
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', showLockScreen);
+  } else {
+    showLockScreen();
+  }
 })();
