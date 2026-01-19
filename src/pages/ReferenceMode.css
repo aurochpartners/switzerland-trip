@@ -486,10 +486,23 @@
 
 .ref-hotel-card a {
   display: block;
-  font-family: 'DM Mono', monospace;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: #2980b9;
   margin: 0.5rem 0;
+  text-decoration: none;
+}
+
+.ref-hotel-card a:hover {
+  text-decoration: underline;
+}
+
+.ref-hotel-address {
+  font-family: inherit;
+}
+
+.ref-hotel-card a[href^="tel"] {
+  font-family: 'DM Mono', monospace;
+  font-size: 1rem;
 }
 
 .ref-hotel-times {

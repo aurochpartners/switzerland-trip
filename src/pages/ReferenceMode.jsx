@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { days } from '../data/days'
 import { hotels, restaurants, quickFacts } from '../data/verified-data'
+import { getMapsUrl } from '../utils/maps'
 import './ReferenceMode.css'
 
 function DayAccordion({ day }) {
@@ -128,7 +129,14 @@ function DayAccordion({ day }) {
                 <h4>Hotel</h4>
                 <div className="ref-hotel-card">
                   <strong>{hotel.name}</strong>
-                  <p>{hotel.address}</p>
+                  <a 
+                    href={getMapsUrl(hotel.address, hotel.name)} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="ref-hotel-address"
+                  >
+                    {hotel.address}
+                  </a>
                   <p>
                     <span>Confirmation: </span>
                     <code>{hotel.confirmation}</code>

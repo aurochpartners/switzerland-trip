@@ -271,6 +271,18 @@
   margin-bottom: 0.5rem;
 }
 
+/* Location links in story */
+.story-location-link {
+  color: #7eb8da;
+  text-decoration: none;
+  display: block;
+}
+
+.story-location-link:hover {
+  color: #a8d4f0;
+  text-decoration: underline;
+}
+
 /* ===== NAV SECTION ===== */
 .landing-nav-section {
   padding: 6rem 2rem;

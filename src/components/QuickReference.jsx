@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { hotels, flights, bookedActivities, emergency, quickFacts } from '../data/verified-data'
+import { getMapsUrl } from '../utils/maps'
 import './QuickReference.css'
 
 // Format date string (YYYY-MM-DD) without timezone issues
@@ -82,7 +83,14 @@ function QuickReference() {
                     {formatDate(hotel.dates.checkIn)} - {formatDate(hotel.dates.checkOut)}
                   </span>
                 </div>
-                <p className="quick-ref-hotel-addr">{hotel.address}</p>
+                <a 
+                  href={getMapsUrl(hotel.address, hotel.name)} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="quick-ref-hotel-addr"
+                >
+                  {hotel.address}
+                </a>
                 <div className="quick-ref-hotel-meta">
                   <span>Conf: <code>{hotel.confirmation}</code></span>
                   <a href={`tel:${hotel.phone}`}>{hotel.phone}</a>
@@ -106,7 +114,14 @@ function QuickReference() {
                   {formatDate(activity.date, { weekday: 'short', month: 'short', day: 'numeric' })} @ {activity.time}
                 </span>
               </div>
-              <p>{activity.location}</p>
+              <a 
+                href={getMapsUrl(activity.location, activity.name)} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="quick-ref-location-link"
+              >
+                {activity.location}
+              </a>
               {activity.confirmation && <span>Conf: <code>{activity.confirmation}</code></span>}
               {activity.phone && <a href={`tel:${activity.phone}`}>{activity.phone}</a>}
               {activity.note && <p className="quick-ref-note">{activity.note}</p>}

@@ -205,9 +205,29 @@
 }
 
 .quick-ref-hotel-addr {
+  display: block;
   font-size: 0.875rem;
-  color: #aaa;
+  color: #7eb8da;
   margin: 0 0 0.5rem;
+  text-decoration: none;
+}
+
+.quick-ref-hotel-addr:hover {
+  color: #a8d4f0;
+  text-decoration: underline;
+}
+
+.quick-ref-location-link {
+  display: block;
+  font-size: 0.875rem;
+  color: #7eb8da;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.quick-ref-location-link:hover {
+  color: #a8d4f0;
+  text-decoration: underline;
 }
 
 .quick-ref-hotel-meta {

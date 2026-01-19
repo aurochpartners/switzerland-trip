@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { images } from '../data/images'
 import { hotels, bookedActivities, events } from '../data/verified-data'
+import { getMapsUrl } from '../utils/maps'
 import './Landing.css'
 
 // Reusable location section with parallax background
@@ -209,7 +210,14 @@ function Landing() {
         </p>
         <div className="story-booked">
           <strong>Fondue Gondola</strong>
-          <span>Hotel Belvedere, Dorfstrasse 53</span>
+          <a 
+            href={getMapsUrl('Dorfstrasse 53, 3818 Grindelwald', 'Hotel Belvedere Grindelwald')} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="story-location-link"
+          >
+            Hotel Belvedere, Dorfstrasse 53
+          </a>
           <span>Confirmation: {bookedActivities[0].confirmation}</span>
           <span>Arrive 15 min early</span>
         </div>
