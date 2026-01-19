@@ -17,7 +17,7 @@ const DESTINATIONS = [
     name: 'Rigi Kaltbad', 
     dates: 'Jan 22-23',
     highlight: 'Thermal Spa',
-    image: images.rigi.spa.url
+    image: images.rigi.above_clouds.url
   },
   { 
     id: 'grindelwald', 
