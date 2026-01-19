@@ -9,6 +9,9 @@ Thumbs.db
 # Dependencies
 node_modules/
 
+# Build output
+dist/
+
 # Environment files
 .env
 .env.local
