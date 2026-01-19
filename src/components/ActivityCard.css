@@ -1,0 +1,362 @@
+.activity-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.activity-card:hover {
+  border-color: #ccc;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.activity-card--selected {
+  border-color: #c9a87c;
+  background: linear-gradient(to bottom, #fdfcfa, #fff);
+}
+
+.activity-card--booked {
+  border-color: #27ae60;
+  background: linear-gradient(to bottom, #f0fdf4, #fff);
+}
+
+.activity-card--critical {
+  border-left: 4px solid #c9a87c;
+}
+
+/* Header */
+.activity-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.activity-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.activity-card-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.activity-card-category {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: #f0f0f0;
+  color: #666;
+}
+
+.activity-card-category--mountain { background: #e3f2fd; color: #1565c0; }
+.activity-card-category--museum { background: #fce4ec; color: #c2185b; }
+.activity-card-category--event { background: #fff3e0; color: #e65100; }
+.activity-card-category--adventure { background: #e8f5e9; color: #2e7d32; }
+.activity-card-category--spa { background: #f3e5f5; color: #7b1fa2; }
+.activity-card-category--dining { background: #fff8e1; color: #f57f17; }
+.activity-card-category--walking { background: #e0f7fa; color: #00838f; }
+.activity-card-category--cruise { background: #e8eaf6; color: #3949ab; }
+.activity-card-category--indoor { background: #efebe9; color: #5d4037; }
+
+/* Weather icons */
+.weather-icon {
+  font-size: 1rem;
+}
+
+.weather-clear-only {
+  color: #f57f17;
+}
+
+/* Description */
+.activity-card-description {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0 0 1rem;
+}
+
+/* Details */
+.activity-card-details {
+  margin-bottom: 1rem;
+}
+
+.activity-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.activity-card-duration {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.activity-card-price {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.activity-card-price--free {
+  color: #27ae60;
+}
+
+.activity-card-savings {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #27ae60;
+}
+
+.activity-card-hours {
+  font-size: 0.8125rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.activity-card-tips {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.activity-card-tips li {
+  font-size: 0.8125rem;
+  color: #666;
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+.activity-card-tips li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #c9a87c;
+}
+
+.activity-card-booking-needed {
+  font-size: 0.8125rem;
+  color: #c0392b;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.booking-deadline {
+  font-weight: 400;
+}
+
+.activity-card-booked-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: #27ae60;
+}
+
+.booked-badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: #27ae60;
+  color: #fff;
+}
+
+/* Footer */
+.activity-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Votes */
+.activity-card-votes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.vote-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 0.8125rem;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vote-btn:hover {
+  border-color: #ccc;
+  background: #fafafa;
+}
+
+.vote-btn--interested.vote-btn--active {
+  border-color: #e91e63;
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.vote-btn--interested.vote-btn--active .vote-icon {
+  color: #e91e63;
+}
+
+.vote-btn--must.vote-btn--active {
+  border-color: #ffc107;
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+.vote-btn--must.vote-btn--active .vote-icon {
+  color: #ffc107;
+}
+
+.vote-icon {
+  font-size: 1rem;
+}
+
+.vote-label {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .vote-label {
+    display: inline;
+  }
+}
+
+/* Actions */
+.activity-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.8125rem;
+  color: #555;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  border-color: #ccc;
+  background: #fafafa;
+}
+
+.action-btn--link {
+  color: #2980b9;
+}
+
+.action-btn--webcam {
+  color: #8e44ad;
+}
+
+.action-btn--phone {
+  font-family: 'DM Mono', monospace;
+  color: #27ae60;
+}
+
+.action-btn--select {
+  border-color: #c9a87c;
+  color: #8b6914;
+  font-weight: 500;
+}
+
+.action-btn--select:hover {
+  background: #fdf8f0;
+}
+
+.action-btn--selected {
+  background: #c9a87c;
+  border-color: #c9a87c;
+  color: #fff;
+}
+
+.action-btn--selected:hover {
+  background: #b8976a;
+}
+
+/* Compact variant */
+.activity-card--compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+}
+
+.activity-card--compact .activity-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-card--compact .activity-card-header {
+  margin-bottom: 0.25rem;
+}
+
+.activity-card--compact .activity-card-name {
+  font-size: 1rem;
+}
+
+.activity-card--compact .activity-card-meta {
+  margin-bottom: 0;
+}
+
+.activity-card--compact .activity-card-actions {
+  flex-shrink: 0;
+}
+
+.activity-card--compact .vote-btn {
+  padding: 0.375rem 0.5rem;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+}
+
+.activity-card--compact .vote-btn .vote-label {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .activity-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .activity-card-votes {
+    justify-content: center;
+  }
+  
+  .activity-card-actions {
+    justify-content: center;
+  }
+}

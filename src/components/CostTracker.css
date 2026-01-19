@@ -1,0 +1,255 @@
+.cost-tracker {
+  background: #1a1a1a;
+  color: #f5f5f5;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.cost-tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.cost-tracker-header h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cost-tracker-count {
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+/* Pass toggle */
+.cost-tracker-toggle {
+  margin-bottom: 1.25rem;
+}
+
+.pass-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.pass-toggle input {
+  display: none;
+}
+
+.pass-toggle-slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #333;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.pass-toggle-slider::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #888;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.pass-toggle input:checked + .pass-toggle-slider {
+  background: #c9a87c;
+}
+
+.pass-toggle input:checked + .pass-toggle-slider::after {
+  left: 22px;
+  background: #fff;
+}
+
+.pass-toggle-label {
+  font-size: 0.9375rem;
+  color: #ccc;
+}
+
+/* Breakdown */
+.cost-tracker-breakdown {
+  margin-bottom: 1.25rem;
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.9375rem;
+}
+
+.cost-label {
+  color: #999;
+}
+
+.cost-value {
+  font-family: 'DM Mono', monospace;
+  color: #fff;
+}
+
+.cost-row--total {
+  border-top: 1px solid #333;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-weight: 600;
+}
+
+.cost-row--total .cost-label,
+.cost-row--total .cost-value {
+  color: #fff;
+  font-size: 1.0625rem;
+}
+
+/* Verdict */
+.cost-tracker-verdict {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.verdict--pass {
+  background: rgba(39, 174, 96, 0.15);
+  color: #27ae60;
+}
+
+.verdict--no-pass {
+  background: rgba(200, 160, 100, 0.15);
+  color: #c9a87c;
+}
+
+.verdict-icon {
+  font-size: 1.25rem;
+}
+
+/* Compare */
+.cost-tracker-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.compare-option {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  background: #252525;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.compare-label {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0.25rem;
+}
+
+.compare-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.125rem;
+  color: #fff;
+}
+
+/* Selected list */
+.cost-tracker-selected {
+  margin-bottom: 1rem;
+}
+
+.cost-tracker-selected h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.cost-tracker-selected ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cost-tracker-selected li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #252525;
+}
+
+.cost-tracker-selected li:last-child {
+  border-bottom: none;
+}
+
+.selected-name {
+  color: #ccc;
+}
+
+.selected-price {
+  font-family: 'DM Mono', monospace;
+  color: #999;
+}
+
+.selected-savings {
+  color: #27ae60;
+}
+
+/* Note */
+.cost-tracker-note {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0;
+  text-align: center;
+}
+
+/* Minimal variant */
+.cost-tracker--minimal {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.cost-tracker--minimal .cost-tracker-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cost-tracker--minimal .cost-label {
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+.cost-tracker--minimal .cost-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 1rem;
+  color: #c9a87c;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .cost-tracker {
+    padding: 1rem;
+  }
+  
+  .cost-tracker-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}

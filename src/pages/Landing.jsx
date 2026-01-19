@@ -1,14 +1,45 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { images } from '../data/images'
-import { tripInfo } from '../data/verified-data'
+import SmartReminders from '../components/SmartReminders'
 import './Landing.css'
+
+const DESTINATIONS = [
+  { 
+    id: 'lucerne', 
+    name: 'Lucerne', 
+    dates: 'Jan 20-22',
+    highlight: 'LILU Light Festival',
+    image: images.lucerne.chapel_bridge.url
+  },
+  { 
+    id: 'rigi', 
+    name: 'Rigi Kaltbad', 
+    dates: 'Jan 22-23',
+    highlight: 'Thermal Spa',
+    image: images.rigi.spa.url
+  },
+  { 
+    id: 'grindelwald', 
+    name: 'Grindelwald', 
+    dates: 'Jan 23-26',
+    highlight: 'Fondue Gondola',
+    image: images.grindelwald.village.url
+  },
+  { 
+    id: 'zurich', 
+    name: 'Zürich', 
+    dates: 'Jan 26-27',
+    highlight: 'Old Town',
+    image: images.zurich.old_town.url
+  }
+]
 
 function Landing() {
   return (
     <div className="landing">
-      {/* Hero */}
-      <header className="landing-hero">
+      {/* Hero - fullscreen */}
+      <section className="landing-hero">
         <div 
           className="landing-hero-bg"
           style={{ backgroundImage: `url(${images.hero.url})` }}
@@ -21,108 +52,131 @@ function Landing() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <p className="landing-hero-date">January 19-27, 2026</p>
+          <span className="landing-hero-dates">January 19–27, 2026</span>
           <h1 className="landing-hero-title">Switzerland</h1>
-          <p className="landing-hero-names">{tripInfo.travelers.join(' & ')}</p>
+          <p className="landing-hero-subtitle">Ray & Katie</p>
         </motion.div>
-      </header>
 
-      {/* Navigation */}
-      <main className="landing-main">
         <motion.div 
-          className="landing-nav-grid"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          className="landing-scroll-hint"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
         >
-          <Link to="/story" className="landing-nav-card landing-nav-card--story">
-            <div className="landing-nav-card-bg" style={{ backgroundImage: `url(${images.grindelwald.village.url})` }} />
-            <div className="landing-nav-card-overlay" />
-            <div className="landing-nav-card-content">
-              <h2>Story</h2>
-              <p>A flowing journey through the Alps. Beautiful photos, smooth scrolling, minimal text.</p>
-              <span className="landing-nav-card-cta">Begin the journey</span>
-            </div>
-          </Link>
-
-          <Link to="/reference" className="landing-nav-card landing-nav-card--reference">
-            <div className="landing-nav-card-bg" style={{ backgroundImage: `url(${images.lucerne.chapel_bridge.url})` }} />
-            <div className="landing-nav-card-overlay" />
-            <div className="landing-nav-card-content">
-              <h2>Reference</h2>
-              <p>Day-by-day details with all activity options, schedules, pricing, and restaurant picks.</p>
-              <span className="landing-nav-card-cta">View full guide</span>
-            </div>
-          </Link>
-
-          <Link to="/quick" className="landing-nav-card landing-nav-card--quick">
-            <div className="landing-nav-card-content">
-              <h2>Quick Reference</h2>
-              <p>Emergency numbers, hotel confirmations, booked activities. Dark mode, phone-friendly.</p>
-              <span className="landing-nav-card-cta">Open quick ref</span>
-            </div>
-          </Link>
+          <span>Scroll</span>
+          <div className="scroll-line" />
         </motion.div>
+      </section>
 
-        {/* Key dates */}
-        <motion.section 
-          className="landing-dates"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
+      {/* Intro */}
+      <section className="landing-intro">
+        <motion.p 
+          className="landing-intro-text"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <h3>Your Journey</h3>
-          <div className="landing-dates-timeline">
-            <div className="landing-date">
-              <span className="landing-date-day">Jan 20-22</span>
-              <span className="landing-date-place">Lucerne</span>
-              <span className="landing-date-highlight">LILU Light Festival</span>
-            </div>
-            <div className="landing-date">
-              <span className="landing-date-day">Jan 22-23</span>
-              <span className="landing-date-place">Rigi Kaltbad</span>
-              <span className="landing-date-highlight">Thermal Spa</span>
-            </div>
-            <div className="landing-date">
-              <span className="landing-date-day">Jan 23-26</span>
-              <span className="landing-date-place">Grindelwald</span>
-              <span className="landing-date-highlight">Fondue Gondola</span>
-            </div>
-            <div className="landing-date">
-              <span className="landing-date-day">Jan 26-27</span>
-              <span className="landing-date-place">Zürich</span>
-              <span className="landing-date-highlight">Old Town</span>
-            </div>
-          </div>
-        </motion.section>
+          Nine days. Four cities. One Swiss winter.
+        </motion.p>
+      </section>
 
-        {/* Critical reminders */}
-        <motion.section 
-          className="landing-reminders"
+      {/* Journey preview */}
+      <section className="landing-journey">
+        <motion.h2 
+          className="landing-section-title"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
         >
-          <h3>Don't Forget</h3>
-          <div className="landing-reminder">
-            <strong>Saturday Jan 24</strong>
-            <p>Book night sledding by 2pm</p>
-            <a href="tel:+41338541616">+41 33 854 16 16</a>
-          </div>
-          <div className="landing-reminder">
-            <strong>Sunday Jan 25 @ 4pm</strong>
-            <p>Fondue Gondola</p>
-            <span>Conf: 5093 | Arrive 15 min early</span>
-          </div>
-          <div className="landing-reminder landing-reminder--warning">
-            <strong>Tuesday Jan 27</strong>
-            <p>Flight at 1pm - leave hotel by 9:30am</p>
-          </div>
-        </motion.section>
-      </main>
+          The Route
+        </motion.h2>
 
+        <div className="landing-destinations">
+          {DESTINATIONS.map((dest, index) => (
+            <motion.div 
+              key={dest.id}
+              className="destination-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div 
+                className="destination-card-image"
+                style={{ backgroundImage: `url(${dest.image})` }}
+              />
+              <div className="destination-card-content">
+                <span className="destination-dates">{dest.dates}</span>
+                <h3 className="destination-name">{dest.name}</h3>
+                <span className="destination-highlight">{dest.highlight}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Reminders */}
+      <section className="landing-reminders-section">
+        <SmartReminders />
+      </section>
+
+      {/* Navigation cards */}
+      <section className="landing-nav-section">
+        <motion.h2 
+          className="landing-section-title"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          Explore
+        </motion.h2>
+
+        <div className="landing-nav-grid">
+          <Link to="/planner" className="nav-card nav-card--primary">
+            <div className="nav-card-content">
+              <h3>Plan Your Adventure</h3>
+              <p>Vote on activities, compare costs, build your itinerary</p>
+              <span className="nav-card-cta">Start planning →</span>
+            </div>
+          </Link>
+
+          <Link to="/story" className="nav-card nav-card--story">
+            <div 
+              className="nav-card-bg" 
+              style={{ backgroundImage: `url(${images.grindelwald.eiger.url})` }} 
+            />
+            <div className="nav-card-overlay" />
+            <div className="nav-card-content">
+              <h3>Story</h3>
+              <p>Scroll through the journey</p>
+            </div>
+          </Link>
+
+          <Link to="/reference" className="nav-card nav-card--reference">
+            <div 
+              className="nav-card-bg" 
+              style={{ backgroundImage: `url(${images.lucerne.old_town.url})` }} 
+            />
+            <div className="nav-card-overlay" />
+            <div className="nav-card-content">
+              <h3>Reference</h3>
+              <p>Day-by-day details</p>
+            </div>
+          </Link>
+
+          <Link to="/quick" className="nav-card nav-card--quick">
+            <div className="nav-card-content">
+              <h3>Quick Reference</h3>
+              <p>Confirmations & contacts</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer className="landing-footer">
-        <p>Have an amazing trip.</p>
+        <p>See you in the Alps.</p>
       </footer>
     </div>
   )
